@@ -1,5 +1,7 @@
 # The CLI (Command Line Interface)
 
+![](https://travis-ci.org/ga-wdi-curriculum/cli-intro.svg?branch=master)
+
 ## Learning Objectives
 
 ### Concepts
