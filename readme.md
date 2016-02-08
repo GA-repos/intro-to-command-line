@@ -23,7 +23,7 @@
 - Open files and directories with Atom
 - List unsafe commands
 
-## Framing
+## Framing(5/5)
 
 Turn & Talk: Given your exposure to the command line so far (prework and
 installfest), discuss the following questions:
@@ -36,7 +36,7 @@ installfest), discuss the following questions:
 
 ---------------------------------------------------------------------------
 
-### Why The CLI?
+### Why The CLI? (10/15)
 
 Why? Because if you want to learn to code, then you must learn how to use the CLI. Programming languages are advanced ways to control your computer with language. Learning the command line teaches you to control the computer using language. Once you get past that, you can then move on to writing code and feeling like you actually can make the hunk of metal in front of you do what you want.
 
@@ -69,7 +69,7 @@ well. Complex tasks can be achieved by chaining tools together.
 
 --------------------------------------------------------------------------------
 
-## Basics of CLI
+## Basics of CLI (45/60)
 
 You may already be familiar with some of these concepts, but it's worth
 reviewing them now, cementing the concepts and getting some more practice in.
@@ -139,11 +139,11 @@ a command do its job.
 
 --------------------------------------------------------------------------------
 
-## BREAK (10 minutes)
+## BREAK (10/70)
 
 --------------------------------------------------------------------------------
 
-## Paths
+## Paths (35/105)
 ### What is a 'path'?
 
 A path is the description that tells us (or a computer) where a file or folder
@@ -160,8 +160,7 @@ All paths point to a single file or folder, but we can write paths to be either
 
 #### Absolute Paths
 
-An absolute path will always tell us exactly where the file or folder is. An
-example in the real world would be a mailing address:
+An absolute path will always tell us exactly where the file or folder is. An example in the real world would be a mailing address:
 
 GA
 8th Floor
@@ -211,20 +210,17 @@ Periods or dots are special in relative paths:
 * One dot means "relative to the current directory"
 * Two dots means "go up to the parent directory"
 
-So if I'm in `~/code/work` then the relative path `../personal_projects` means
-"go up one level to the code folder, then down into personal_projects".
+So if I'm in `~/code/work` then the relative path `../personal_projects` means "go up one level to the code folder, then down into my `personal_projects` directory.
 
-We can use multiple `..` to go up multiple levels:
+**Note**: We can use multiple `..` to go up multiple levels:
 
-`../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up
-two levels, from `~/code/work` to `~` (my home directory), and then down into
-my favorite lolcat picture.
+`../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up two levels, from `~/code/work` to `~` (my home directory), and then down into my favorite lolcat picture.
 
 --------------------------------------------------------------------------------
 
 ## Common Commands
 
-### Getting help / info
+### Getting help / info (5/110)
 
 There are three general ways to get help with a command.
 
@@ -232,7 +228,7 @@ There are three general ways to get help with a command.
 * use the `man` tool (manual), e.g. `man brew`
 * search google
 
-### Common Command Teachbacks
+### Common Command Teachbacks (15/125)
 
 Form groups of ~3 and spend 15 minutes researching and preparing a short demo
 of your command. Focus on:
@@ -253,7 +249,13 @@ of your command. Focus on:
 7. rm
 8. atom
 
-## Unsafe Commands
+--------------------------------------------------------------------------------
+
+## BREAK (10/130)
+
+--------------------------------------------------------------------------------
+
+## Unsafe Commands (10/140)
 
 ### sudo
 
@@ -269,7 +271,7 @@ you're not sure, ask an instructor.
 `rm` deletes files with no confirmation, and there's no `trash` to recover them
 from. Use `rm`, and especially `rm -rf` with caution.
 
-## WDI Environment
+## WDI Environment (10/150)
 
 ### Directory Structure
 
