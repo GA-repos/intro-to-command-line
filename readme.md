@@ -1,6 +1,6 @@
 # The CLI (Command Line Interface)
 
-[![Build Status](https://travis-ci.org/ga-wdi-curriculum/cli-intro.svg?branch=master)](https://travis-ci.org/ga-wdi-curriculum/cli-intro)
+[![Build Status](https://travis-ci.org/ga-wdi-lessons/cli-intro.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/cli-intro)
 
 ## Learning Objectives
 
@@ -37,6 +37,8 @@ installfest), discuss the following questions:
 ---------------------------------------------------------------------------
 
 ### Why The CLI?
+
+Why? Because if you want to learn to code, then you must learn how to use the CLI. Programming languages are advanced ways to control your computer with language. Learning the command line teaches you to control the computer using language. Once you get past that, you can then move on to writing code and feeling like you actually can make the hunk of metal in front of you do what you want.
 
 The CLI has many benefits over a GUI:
 
@@ -119,6 +121,15 @@ http://catb.org/esr/writings/taoup/html/ch10s05.html#id2948149
 Finally come the arguments. These are what you want to do the action to. Usually
 these are file names, but they could be URLs, or other things.
 
+#### Common Patterns
+
+The commands given to a CLI shell are often in one of the following forms:
+
+- `doSomething how toFiles`
+- `doSomething how sourceFile destinationFile`
+
+Where *doSomething* is, in effect, a verb, *how* an adverb (for example, should the command be executed "verbosely" or "quietly") and *toFiles* an object or objects (typically one or more files) on which the command should act.
+
 ### Commands run in an 'environment'
 
 We won't go deep into environments yet, but everytime a command is run, it may
@@ -166,7 +177,7 @@ Absolute paths start with a `/` and go from top down (least specific to more spe
 ```bash
 /Milky_Way/Solar_System/Earth/USA/Washington_DC/1133_15th_St_NW/8th_Floor/GA
 # or a realistic example
-/Users/adambray/code/work/general_assembly/courses/wdi/dc/dc7/curriculum/01-front-end/
+/Users/adambray/code/work/general_assembly/courses/wdi/dc/dc8/lessons/cli-intro/
 ```
 
 The first slash essentially means "start at the root of the computer's file system".
@@ -233,14 +244,14 @@ of your command. Focus on:
 
 #### Commands
 
-* tab completion
-* ls
-* cd
-* touch / mkdir
-* cp
-* mv
-* rm
-* atom
+1. tab completion
+2. ls
+3. cd
+4. touch / mkdir
+5. cp
+6. mv
+7. rm
+8. atom
 
 ## Unsafe Commands
 
@@ -268,33 +279,30 @@ folders if they do not exist.
   * ~/wdi
     * sandbox
     * exercises
-    * curriculum
+    * lessons
     * projects
 
 --------------------------------------------------------------------------------
 
 ## Homework
-### CLI Gardening
+### To OZ
 
-[CLI Gardening](https://github.com/ga-dc/cli_gardening)
-
-### Kitchen Organizer
-
-[Kitchen Organizer](https://github.com/ga-dc/kitchen_organizer)
+[To Oz](https://github.com/ga-wdi-exercises/to_oz)
 
 To Submit:
 
-1. Go to the [issues page for the kitchen exercise](https://github.com/ga-dc/kitchen_organizer/issues)
+1. Go to the [issues page for the oz exercise](https://github.com/ga-wdi-exercises/to_oz/issues)
 2. Click 'New Issue’.
 3. For the title, just put “Day 1 HW” or something similar
-4. For the description, copy paste the commands you used to complete the kitchen organizer exercise. (No need to submit anything related to gardener.)
+4. For the description, copy paste the commands you used to complete the oz exercise.
 
-### Command Line Fu (Optional)
+### Further Practice (Optional)
 
-[Command Line Fu](https://github.com/ga-dc/command_line_fu)
+- [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
+- [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
+
 
 --------------------------------------------------------------------------------
-
 
 ## Sample Quiz Questions
 
@@ -331,3 +339,13 @@ Here are some advanced commands worth checking out that we may not explicitly go
 ## Feeling Adventurous?
 
 Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
+
+## Glossary
+
+- **Prompt** — is a sequence of (one or more) characters used in a command-line interface to indicate readiness to accept commands. Its intent is to literally prompt the user to take action. A prompt usually ends with one of the characters `$`, `%`, `#`, `:`, `>` and often includes other information, such as the path of the current working directory.
+
+- **Arguments(Parameters)** — are items of information provided to a program or command when it is started. A program can have many command-line arguments that identify sources or destinations of information, or that alter the operation of the program.
+
+- **Flags(Options)** — modify the operation of a command; the effect is determined by the command's program. Options follow the command name on the command line, separated by spaces. 
+
+- **Path** - is the description that tells us (or a computer) where a file or folder is on our computer.
