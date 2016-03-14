@@ -187,7 +187,7 @@ All paths point to a single file or folder, but we can write paths to be either
 An absolute path will always tell us exactly where the file or folder is. An example in the real world would be a mailing address of our location:
 
 ```
-Classroom 5
+Classroom 1
 GA
 8th Floor
 1133 15th St NW
