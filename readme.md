@@ -25,6 +25,8 @@
 
 ## Framing(5/5)
 
+As developers, we need a tool to interface with our computers. OS's generally provide a graphical user interface or GUI so that we can interface with our computer. They also provide a UI that is strictly text based.
+
 Turn & Talk: Given your exposure to the command line so far (prework and
 installfest), discuss the following questions:
 
@@ -67,6 +69,11 @@ Additionally, tools built for the command line usually follow something called
 the ['unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), which is that each tool should do ~1 thing, and do it
 well. Complex tasks can be achieved by chaining tools together.
 
+## DEMO: JS - Hello World Program using GUI vs CLI
+
+> Note: There's nothing wrong with combining the powers of both the CLI and a GUI!
+
+We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 --------------------------------------------------------------------------------
 
 ## Basics of CLI (45/60)
@@ -108,7 +115,7 @@ options), and finally arguments.
 
 
 The **command** is the first 'word', e.g. `ls`, `cd`, or `touch`. It is like the
-verb, which says generally, 'what do I want to do'.
+verb, which says generally, 'what do we want to do'.
 
 Next come the **flags** or **options**. These are optional; you may not use them
 for some commands. As the name implies, they set options to tell the command
@@ -163,6 +170,12 @@ Our terminal (shell) is always working out of a single path at a time. Commands
 that are run will take action in the current path (directory) unless we tell
 them to do otherwise.
 
+Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently through the course.
+
+- `pwd` - outputs the current working directory(print working directory)
+- `cd` - changes directories(change directory)
+- `ls` - lists folders and files(list)
+
 ### Relative vs Absolute Paths
 
 All paths point to a single file or folder, but we can write paths to be either
@@ -205,7 +218,7 @@ current working directory).
 
 They start with anything but a slash `/` or a tilde `~`.
 
-So if I were in my home directory, the path to my work folder could be written
+So if we were in our home directory, the path to our work folder could be written
 
 ```bash
 code/work                     # relative
@@ -213,14 +226,14 @@ code/work                     # relative
 /users/adambray/code/work/    # absolute
 ```
 
-If I were in a different folder, then the relative path would point to an
+If we were in a different folder, then the relative path would point to an
 entirely different folder/file.
 
 Periods or dots are special in relative paths:
 * One dot means "relative to the current directory"
 * Two dots means "go up to the parent directory"
 
-So if I'm in `~/code/work` then the relative path `../personal_projects` means "go up one level to the code folder, then down into my `personal_projects` directory.
+So if we're in `~/code/work` then the relative path `../personal_projects` means "go up one level to the code folder, then down into my `personal_projects` directory.
 
 **Note**: We can use multiple `..` to go up multiple levels:
 
