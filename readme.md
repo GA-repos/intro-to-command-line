@@ -243,6 +243,8 @@ So if we're in `~/code/work` then the relative path `../personal_projects` means
 
 `../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up two levels, from `~/code/work` to `~` (my home directory), and then down into my favorite lolcat picture.
 
+### Compare images in HTML
+
 --------------------------------------------------------------------------------
 
 ## Common Commands
