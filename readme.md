@@ -69,9 +69,9 @@ Additionally, tools built for the command line usually follow something called
 the ['unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), which is that each tool should do ~1 thing, and do it
 well. Complex tasks can be achieved by chaining tools together.
 
-## DEMO: JS - Hello World Program using GUI vs CLI
+## DEMO: Hello.txt using GUI vs CLI
 
-> Note: There's nothing wrong with combining the powers of both the CLI and a GUI!
+> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal. We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI. 
 
 We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 
