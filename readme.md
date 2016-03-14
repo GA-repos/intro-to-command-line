@@ -130,6 +130,16 @@ The commands given to a CLI shell are often in one of the following forms:
 
 Where *doSomething* is, in effect, a verb, *how* an adverb (for example, should the command be executed "verbosely" or "quietly") and *toFiles* an object or objects (typically one or more files) on which the command should act.
 
+Let's take a look at something we did for installfest.
+
+```
+$ brew install git
+```
+
+> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to do is install it.
+
+It should be noted that all commands follow this pattern, but many do.
+
 ### Commands run in an 'environment'
 
 We won't go deep into environments yet, but everytime a command is run, it may
@@ -285,6 +295,24 @@ folders if they do not exist.
     * projects
 
 --------------------------------------------------------------------------------
+
+## If time allows - aliases in your bash profile
+
+You may have noticed during installfest that the instructors messed with the `~/.bash_profile` file. During installfest, we changed the  `~/.bash_profile` to change your prompt to a better one! Turns out, there's a lot you can do with the  `~/.bash_profile`.
+
+There will be commands that you'll find yourself doing frequently it may become a pain to continue to type commands out all the time. It would be really nice if we could shorten some of these commands... enter aliasing. Aliasing is really quite simple!
+
+Let's open our  `~/.bash_profile` in atom and type in the following:
+
+```
+alias greeting="echo 'hello world'"
+alias gs='git status'
+```
+
+### You do - Make an alias
+Take the next 5 minutes to create your own alias and test it!
+
+Try and alias something you think you'll find yourself doing frequently!
 
 ## Homework
 ### To OZ
