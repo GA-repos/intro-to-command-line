@@ -171,7 +171,7 @@ Our terminal (shell) is always working out of a single path at a time. Commands
 that are run will take action in the current path (directory) unless we tell
 them to do otherwise.
 
-Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently through the course.
+Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently through this lesson and going forward in your career as a developer.
 
 - `pwd` - outputs the current working directory(print working directory)
 - `cd` - changes directories(change directory)
@@ -244,6 +244,21 @@ So if we're in `~/code/work` then the relative path `../personal_projects` means
 `../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up two levels, from `~/code/work` to `~` (my home directory), and then down into my favorite lolcat picture.
 
 ### Compare images in HTML
+
+Turns out paths are really important in HTML too. If we look at the image tags in the `index.html` file in this repo we'll see this:
+
+```HTML
+<img src="../heeler.jpg">
+<img src="firehydrant.jpg">
+<img src="images/troll.png">
+<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png" alt="">
+```
+
+Of these 4 paths which are relative vs absolute?
+
+> Note that we have 3 images in this repo. Turns out, it's really important where the file is in your directory when you link them in HTML.
+
+We can see here that the `troll.png` photo is linked in two different ways. Which way is better? does it matter?
 
 --------------------------------------------------------------------------------
 
