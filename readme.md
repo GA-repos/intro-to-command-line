@@ -184,8 +184,10 @@ All paths point to a single file or folder, but we can write paths to be either
 
 #### Absolute Paths
 
-An absolute path will always tell us exactly where the file or folder is. An example in the real world would be a mailing address:
+An absolute path will always tell us exactly where the file or folder is. An example in the real world would be a mailing address of our location:
 
+```
+Classroom 5
 GA
 8th Floor
 1133 15th St NW
@@ -194,6 +196,7 @@ USA
 Earth
 Solar System
 Milky Way
+```
 
 Absolute paths start with a `/` and go from top down (least specific to more specific):
 
