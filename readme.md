@@ -198,21 +198,22 @@ The first slash essentially means "start at the root of the computer's file syst
 
 Some absolute paths instead start with a `~`. This is a shortcut to the absolute path of our home directory. So the above absolute path could also be written as
 
+```bash
+~/wdi/lessons/cli-intro
 ```
-~/code/work/general_assembly/courses/wdi/dc/dc7/curriculum/01-front-end/
-```
+
+> On Macs, `~` corresponds to your user directory - `/users/your-mac-username`.
 
 #### Relative Paths
 
 Relative paths are interpreted as starting from the current working directory. They start with anything but a `/` or `~`.
 
-<!-- AM: Are student folders already set up in this way? If not, need earlier instructions? -->
-So if we were in our home directory, the path to our work folder could be written...
+So if we were in our home directory, the path to this lesson's directory could be written in the following ways...
 
 ```bash
-code/work                     # relative
-~/code/work                   # absolute
-/users/adambray/code/work/    # absolute
+wdi/lessons/cli-intro                                   # relative
+~/wdi/lessons/cli-intro                                 # absolute
+/Users/adrianmaseda/wdi/lessons/cli-intro               # absolute
 ```
 
 If we were in a different folder, then the relative path would point to an entirely different folder/file.
@@ -221,11 +222,11 @@ Periods have special meaning when used in relative paths..
 * `.`: one dot means "relative to the current directory"
 * `..`: two dots means "go up to the parent directory"
 
-So if we're in `~/code/work`, then the relative path `../personal_projects` means "go up one level to the code folder, then down into my `personal_projects` directory.
+So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the code folder, then down into my `projects` directory.
 
-We can use more than one `..` to go up multiple levels.
+We can use more than one `..` to go up multiple levels. For example...
 
-`../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up two levels, from `~/code/work` to `~` (my home directory), and then down into my favorite lolcat picture.
+This time, if we're in `~/wdi/lessons/cli-intro`, entering `cd ../../projects` would go up two levels to `wdi`, and then down one level into `projects`.
 
 ### Compare Images in HTML
 
@@ -427,5 +428,5 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 * **BASH.** What is it? Why do we use it? What are some alternatives?
 * Use `<details>` and `<summary>` wherever possible.
 * `brew install tree` - could be helpful for visualizing folder structure.
-* Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro - clone in here at start)
+* Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro and empty projects folder - clone in here at start)
 * Include `git clone` somewhere.
