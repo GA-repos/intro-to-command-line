@@ -27,28 +27,24 @@
 
 As developers, we need a tool to communicate with our computers. Operating systems like Windows or OSX generally provide a graphical user interface (GUI) so that we can do this. They also, however, provide an interface that is strictly text-based: the Command Line (CLI).
 
-Turn & Talk: Given your exposure to the Command Line in the pre-work and Installfest, discuss and write down some answers for the following questions with a partner...
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down some answers for the following questions with a partner...
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
 * Compared to a GUI, in what ways might using the CLI be better or worse for developers?
-
-<!-- AM: What's this screenshot for? -->
-![](http://coding-journal.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-30-at-12.02.14.png)
 
 ---------------------------------------------------------------------------
 
 ### Why The CLI? (10 minutes / 0:15)
 
 <!-- AM: Need to re-word this -->
-**Simply put: if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controller your computer. Learning the command line teaches you to control the computer using language. Once you get past that, you can then move on to writing code and feeling like you actually can make the hunk of metal in front of you do what you want.
+**Simply put: if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controlling your computer. Learning the CLI teaches you to control the computer purely using language. Once you get past that, you can then move on to writing code and make the hunk of metal in front of you do what you want.
 
 #### Benefits of the CLI
 
 **Speed.** Developers can execute common tasks much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
-<!-- AM: Come up with example of how GUI does not provide precision. -->
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
@@ -60,6 +56,10 @@ command history, piping and more all contribute to this.
 > Tools built for the command line usually follow something called
 the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it
 well. Complex tasks can be achieved by chaining tools together.  
+
+**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
+
+![](http://coding-journal.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-30-at-12.02.14.png)
 
 ## CLI vs. GUI: `hello.txt`
 
@@ -118,8 +118,8 @@ Finally come the **Arguments**. These are "targets", or what you want to do the 
 
 The commands entered into the CLI are often in one of the following forms..
 
-- `doSomething how toFiles`
-- `doSomething how sourceFile destinationFile`
+- `doSomething --how toFiles`
+- `doSomething --how sourceFile destinationFile`
 
 Where **doSomething** is, in effect, a verb, **how** an adverb (for example, should the command be executed "verbosely" or "quietly") and **toFiles** an object or objects (typically one or more files) on which the command should act.
 
@@ -136,7 +136,13 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
 ### Commands Run in an "Environment"
 
 We won't go deep into environments yet, but every time a command is run, it may choose to look at what are called "environment variables". These are semi-permanent variables that provide information or options to help a command do its job.
-<!-- AM: Any worthwhile examples? Worth mentioning this? -->
+
+We actually set an environment variable during Installfest when entering this into the CLI...
+
+```bash
+$ echo "EDITOR=atom" >> ~/.bash_profile
+```
+> This creates an `EDITOR` environment variable that is set to `atom`. This affects git which, whenever it needs to open a text editor, will use Atom instead of vim by default.
 
 --------------------------------------------------------------------------------
 
@@ -185,7 +191,7 @@ Absolute paths start with a `/` and go from the top down...
 /Milky_Way/Solar_System/Earth/USA/Washington_DC/1133_15th_St_NW/8th_Floor/GA
 
 # ...but here's a more realistic example...
-/Users/adambray/code/work/general_assembly/courses/wdi/dc/dc8/lessons/cli-intro/
+/Users/adrianmaseda/wdi/lessons/cli-intro
 ```
 
 The first slash essentially means "start at the root of the computer's file system."
@@ -217,7 +223,7 @@ Periods have special meaning when used in relative paths..
 
 So if we're in `~/code/work`, then the relative path `../personal_projects` means "go up one level to the code folder, then down into my `personal_projects` directory.
 
-We can use multiple `..` to go up multiple levels:
+We can use more than one `..` to go up multiple levels.
 
 `../../documents/top_secret/lol_cats/favorites/so_many_kittenz.jpg` would go up two levels, from `~/code/work` to `~` (my home directory), and then down into my favorite lolcat picture.
 
@@ -271,6 +277,19 @@ Form groups of 3 and spend 15 minutes researching and preparing a short demo of 
 6. `mv`
 7. `rm`
 8. `atom`
+
+#### Bonus Commands
+
+If you finish early, do the same for one or more of the following commands...
+
+* `grep`
+* `cat`
+* `less`
+* `find`
+* `tmux`
+* `cal`
+* `vim`
+* `vimtutor`
 
 --------------------------------------------------------------------------------
 
@@ -377,7 +396,7 @@ home
 
 ## Hungry for More?
 
-Here are some advanced commands worth checking out that we may not explicitly go over in class...
+Look into the bonus commands included in this lesson's Teachback exercise...
 
 * `grep`
 * `cat`
@@ -387,8 +406,6 @@ Here are some advanced commands worth checking out that we may not explicitly go
 * `cal`
 * `vim`
 * `vimtutor`
-
-<!-- AM: Add these as bonuses to the Teachback -->
 
 ## Feeling Adventurous?
 
@@ -409,3 +426,6 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 * At the end of CLI Basics, go through list of commands and ask students to identify the command, flags and arguments.
 * **BASH.** What is it? Why do we use it? What are some alternatives?
 * Use `<details>` and `<summary>` wherever possible.
+* `brew install tree` - could be helpful for visualizing folder structure.
+* Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro - clone in here at start)
+* Include `git clone` somewhere.
