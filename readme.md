@@ -408,4 +408,4 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 # TO DO
 * At the end of CLI Basics, go through list of commands and ask students to identify the command, flags and arguments.
 * **BASH.** What is it? Why do we use it? What are some alternatives?
-* Use <details> and <summary> wherever possible.
+* Use `<details>` and `<summary>` wherever possible.
