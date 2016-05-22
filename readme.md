@@ -44,7 +44,7 @@ Simply put: **if you want to learn to code, you must know your way around the CL
 **Speed.** Developers can execute common tasks much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
-> Try creating five files in a directory, first using only the GUI, then only the CLI. Which one's faster?
+> Try creating five `.txt` files in a directory, first using only the GUI, then only the CLI. Which one's faster?
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
 
@@ -95,7 +95,7 @@ Other commands' primary purpose is to execute some **side-effect**, or in other 
 
 **See `haircut` command for demo.**
 
-    $ ./haircut --mohawk adrian
+    `$ ./haircut --mohawk adrian`
 
 Commands generally consist of three parts...
   1. Command
