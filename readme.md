@@ -37,8 +37,7 @@ As developers, we need a tool to communicate with our computers. Operating syste
 
 ### Why The CLI? (10 minutes / 0:15)
 
-<!-- AM: Need to re-word this -->
-**Simply put: if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controlling your computer. Learning the CLI teaches you to control the computer purely using language. Once you get past that, you can then move on to writing code and make the hunk of metal in front of you do what you want.
+Simply put: **if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controlling your computer. Learning the CLI teaches you to control the computer purely using language. Once you get past that, you can then move on to writing code and make the hunk of metal in front of you do what you want.
 
 #### Benefits of the CLI
 
@@ -77,17 +76,20 @@ You may already be familiar with some of these concepts, but it's worth reviewin
 
 Everything we enter into the command line is a **command**. When we hit enter, the command is executed.
 
-### Commands have Output and Side Effects
+> In this and future lesson plans, we will indicate a line of code is a CLI command by prefacing it with the `$` symbol.
+
+### Output and Side Effects
 
 Some commands have **output**, which is displayed on the screen for us to see. Examples of commands that have output are...
 
 * `pwd`
 * `ls`
 * `telnet towel.blinkenlights.nl`
-<!-- AM: Explain what is going on with telnet -->
+
+> Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
 
 Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
-* For example, `touch`. This creates a file in an indicated location.
+* For example, `touch`. This creates a file in an indicated location. We do not, however, get a confirmation it did this immediately after hitting enter.
 
 > Often times, a command whose main job is a side effect may not provide any output if it succeeds. If there is an error, it will provide output.
 >
@@ -123,15 +125,12 @@ The commands entered into the CLI are often in one of the following forms..
 
 Where **doSomething** is, in effect, a verb, **how** an adverb (for example, should the command be executed "verbosely" or "quietly") and **toFiles** an object or objects (typically one or more files) on which the command should act.
 
-Let's take a look at something we did for Installfest...
-
-```
-$ brew install git
-```
-
-When we type this command and hit enter, we're saying, "Computer, we're about to do something with Homebrew. The thing were going to do is install something. What we want to do is install `git`.
-
 > Not all commands follow this pattern, but many do.
+
+**Q:** What are the commands, flags and arguments for the following commands?
+  1. `$ touch index.html`
+  2. `$ ls -al`
+  3. `$ brew install git`
 
 ### Commands Run in an "Environment"
 
@@ -156,7 +155,7 @@ $ echo "EDITOR=atom" >> ~/.bash_profile
 
 A path is a description that tells us where a file or folder is located on our computer.
 
-Our terminal is always working out of a single path at a time. Commands that are run will take action in the current path (directory) unless we tell them to do otherwise.
+Our terminal is always working from a single path at a time. Commands that are run will take action in the current path (directory) unless we tell them to do otherwise.
 
 Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently throughout this lesson.
 
@@ -228,6 +227,11 @@ We can use more than one `..` to go up multiple levels. For example...
 
 This time, if we're in `~/wdi/lessons/cli-intro`, entering `cd ../../projects` would go up two levels to `wdi`, and then down one level into `projects`.
 
+**Q:** In English, what are the following commands doing?
+  1. `$ cd ./lessons`
+  2. `$ ls ..`
+  3. `$ mv ../index.html .`
+
 ### Compare Images in HTML
 
 Turns out paths are really important in HTML too. If we look at the image tags in the `index.html` file in this repo we'll see this...
@@ -241,9 +245,7 @@ Turns out paths are really important in HTML too. If we look at the image tags i
 
 Of these four paths, which are relative vs absolute?
 
-> We can see here that the `troll.png` photo is linked in two different ways. Which way is better? does it matter?
-
-<!-- AM: Any additional CFUs to add here? -->
+> We can see here that the `troll.png` photo is linked in two different ways. Which way is better? Does it matter?
 
 --------------------------------------------------------------------------------
 
@@ -266,7 +268,7 @@ Form groups of 3 and spend 15 minutes researching and preparing a short demo of 
 * What it does.
 * Common uses.
 * Common flags or arguments.
-* Any 'gotchas'?
+* Any "gotchas" (i.e., things we should be aware of when using this command)?
 
 #### Commands
 
@@ -320,8 +322,7 @@ You should especially use `rm -rf` with caution.
 
 ### Directory Structure
 
-Here's the suggested structure for your WDI folder. Please create the following
-folders if they do not exist.
+Here's the suggested structure for your WDI folder. Please create the following folders if they do not exist.
 
   * ~/wdi
     * sandbox
@@ -341,9 +342,6 @@ Essentially, we changed the  `~/.bash_profile` to make your prompt into a better
 
 There will be commands you will find yourself doing frequently. It might become a pain to type out these commands in full all the time. It would be really nice if we could shorten some of these commands... enter aliasing. Aliasing is really quite simple!
 
-<!-- AM: Opportunity for industry experience - show aliases that I and other instructors use. -->
-<!-- AM: Another one -- sometimes we alias things that aren't that long (e.g., ls -al to ls). As developers, we're always trying to find the shortest way to do something. -->
-
 Let's open our  `~/.bash_profile` in atom and type in the following...
 
 ```
@@ -353,7 +351,7 @@ alias gs='git status'
 
 ### You Do: Make An Alias
 
-Take the next five minutes to create your own alias and test it. Alias something you think you'll find yourself doing frequently!
+Take the next five minutes to create your own alias and test it. If possible, alias something you think you'll find yourself doing frequently!
 
 --------------------------------------------------------------------------------
 
@@ -424,9 +422,7 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 
 
 # TO DO
-* At the end of CLI Basics, go through list of commands and ask students to identify the command, flags and arguments.
 * **BASH.** What is it? Why do we use it? What are some alternatives?
-* Use `<details>` and `<summary>` wherever possible.
 * `brew install tree` - could be helpful for visualizing folder structure.
 * Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro and empty projects folder - clone in here at start)
 * Include `git clone` somewhere.
