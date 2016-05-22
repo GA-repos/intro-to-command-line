@@ -44,6 +44,8 @@ Simply put: **if you want to learn to code, you must know your way around the CL
 **Speed.** Developers can execute common tasks much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
+> Try creating five files in a directory, first using only the GUI, then only the CLI. Which one's faster?
+
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
@@ -59,12 +61,6 @@ well. Complex tasks can be achieved by chaining tools together.
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
 
 ![](http://coding-journal.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-30-at-12.02.14.png)
-
-## CLI vs. GUI: `hello.txt`
-
-> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal. We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI.
-
-We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds." But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 
 --------------------------------------------------------------------------------
 
