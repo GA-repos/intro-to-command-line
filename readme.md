@@ -289,10 +289,8 @@ If you finish early, do the same for one or more of the following commands...
 * `cat`
 * `less`
 * `find`
-* `tmux`
 * `cal`
-* `vim`
-* `vimtutor`
+* `vim` and `vimtutor`
 
 --------------------------------------------------------------------------------
 
@@ -376,10 +374,9 @@ Take the next five minutes to create your own alias and test it. If possible, al
 ## Sample Quiz Questions
 
 * Why would a developer prefer the command line over a GUI?
-* Write a command to list only files beginning with your first name.  Label the parts of the command.
 * Where can we find help for shell commands?
 * Describe 4 bash commands for managing folders and files.
-* Describe 2 unsafe commands
+* Describe 2 unsafe commands.
 * You are currently in the "code" folder in the below file tree. How would you get to the folder that contains "beach.png" using the command line?
 
 ```
@@ -393,6 +390,8 @@ home
 └── videos
 ```
 
+* **BONUS:** Write a command to list only files beginning with your first name. Label the parts of the command.
+
 ## Hungry for More?
 
 Look into the bonus commands included in this lesson's Teachback exercise...
@@ -401,10 +400,8 @@ Look into the bonus commands included in this lesson's Teachback exercise...
 * `cat`
 * `less`
 * `find`
-* `tmux`
 * `cal`
-* `vim`
-* `vimtutor`
+* `vim` and `vimtutor`
 
 ## Feeling Adventurous?
 
@@ -425,4 +422,4 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 * **BASH.** What is it? Why do we use it? What are some alternatives?
 * `brew install tree` - could be helpful for visualizing folder structure.
 * Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro and empty projects folder - clone in here at start)
-* Include `git clone` somewhere.
+* Have answers/suggestions ready for teachback.
