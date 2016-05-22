@@ -334,9 +334,12 @@ Here's the suggested structure for your WDI folder. Please create the following 
 
 You may have noticed during Installfest that the instructors messed with this file: `~/.bash_profile`.
 
-> Based on the path, where is this file located?
+<details>
+  <summary>**Q:** Based on the path, where is this file located?</summary>
+  In the home directory (i.e., Users/your-name-here).
+</details>
 
-Essentially, we changed the  `~/.bash_profile` to make your prompt into a better one!
+Essentially, we changed the `~/.bash_profile` to make your prompt into a better one!
 
 There will be commands you will find yourself doing frequently. It might become a pain to type out these commands in full all the time. It would be really nice if we could shorten some of these commands... enter aliasing. Aliasing is really quite simple!
 
@@ -346,6 +349,8 @@ Let's open our  `~/.bash_profile` in atom and type in the following...
 alias greeting="echo 'hello world'"
 alias gs='git status'
 ```
+
+> At this point you may be wondering what exactly "bash" is. Bash is a language we can use to interact with our computer via the shell (via Terminal or some other text-based interface).
 
 ### You Do: Make An Alias
 
@@ -416,10 +421,3 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 *  **Flags(Options)** — modify the operation of a command; the effect is determined by the command's program. Options follow the command name on the command line, separated by spaces. 
 
 *  **Path** - is the description that tells us (or a computer) where a file or folder is on our computer.
-
-
-# TO DO
-* **BASH.** What is it? Why do we use it? What are some alternatives?
-* `brew install tree` - could be helpful for visualizing folder structure.
-* Set up basic folder structure before class (i.e., wdi folder in home with lessons/cli-intro and empty projects folder - clone in here at start)
-* Have answers/suggestions ready for teachback.
