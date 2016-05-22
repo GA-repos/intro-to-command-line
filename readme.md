@@ -127,7 +127,7 @@ Where **doSomething** is, in effect, a verb, **how** an adverb (for exampl
 
 > Not all commands follow this pattern, but many do.
 
-**Q:** What are the commands, flags and arguments for the following commands?
+**Q:** What are the commands, flags and arguments for the following...
   1. `$ touch index.html`
   2. `$ ls -al`
   3. `$ brew install git`
