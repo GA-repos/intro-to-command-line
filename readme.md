@@ -44,7 +44,7 @@ Simply put: **if you want to learn to code, you must know your way around the CL
 **Speed.** Developers can execute common tasks much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
-> Try creating five `.txt` files in a directory, first using only the GUI, then only the CLI. Which one's faster?
+> Try a `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
 
@@ -54,6 +54,8 @@ command history, piping and more all contribute to this.
 
 **Tools.** There are tons of tools we can use in the CLI to achieve a vast number of tasks. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
+> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading it by running this in the CLI: `$ brew install tree`.
+>
 > Tools built for the command line usually follow something called
 the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it
 well. Complex tasks can be achieved by chaining tools together.  
@@ -61,6 +63,8 @@ well. Complex tasks can be achieved by chaining tools together.
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
 
 ![](http://coding-journal.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-30-at-12.02.14.png)
+
+> All these benefits aren't necessarily exclusive to the CLI (compared to a traditional GUI), but they tend to be more consistent.
 
 --------------------------------------------------------------------------------
 
@@ -70,9 +74,9 @@ You may already be familiar with some of these concepts, but it's worth reviewin
 
 ### Everything is a Command
 
-Everything we enter into the command line is a **command**. When we hit enter, the command is executed.
+Everything we enter into the command line is a **command**. When we hit enter, the command is executed.  
 
-> In this and future lesson plans, we will indicate a line of code is a CLI command by prefacing it with the `$` symbol.
+In this and future lesson plans, we will indicate a line of code is a CLI command by prefacing it with the `$` symbol.
 
 ### Output and Side Effects
 
@@ -119,14 +123,17 @@ Where **doSomething** is, in effect, a verb, **how** an adverb (for exampl
 
 > Not all commands follow this pattern, but many do.
 
-**Q:** What are the commands, flags and arguments for the following...
+**Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
   1. `$ touch index.html`
   2. `$ ls -al`
-  3. `$ brew install git`
+  3. `$ cp index.html index2.html`
+  4. `$ brew install git`
+
+> Remember, not all of these have flags and/or arguments.
 
 ### Commands Run in an "Environment"
 
-We won't go deep into environments yet, but every time a command is run, it may choose to look at what are called "environment variables". These are semi-permanent variables that provide information or options to help a command do its job.
+Something else that may influence how a command is the "environment" it's being run in. We won't go deep into that yet, but every time a command is run, it may choose to look at what are called "environment variables". These are semi-permanent variables that provide information or options to help a command do its job.
 
 We actually set an environment variable during Installfest when entering this into the CLI...
 
@@ -219,7 +226,7 @@ We can use more than one `..` to go up multiple levels. For example...
 
 This time, if we're in `~/wdi/lessons/cli-intro`, entering `cd ../../projects` would go up two levels to `wdi`, and then down one level into `projects`.
 
-**Q:** In English, what are the following commands doing?
+**Q:** Spend two minutes writing out what the following commands are doing in English...
   1. `$ cd ./lessons`
   2. `$ ls ..`
   3. `$ mv ../index.html .`
@@ -232,10 +239,10 @@ Turns out paths are really important in HTML too. If we look at the image tags i
 <img src="../heeler.jpg">
 <img src="firehydrant.jpg">
 <img src="images/troll.png">
-<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png" alt="">
+<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png">
 ```
 
-Of these four paths, which are relative vs absolute?
+Of these four paths, which are relative vs. absolute?
 
 > We can see here that the `troll.png` photo is linked in two different ways. Which way is better? Does it matter?
 
