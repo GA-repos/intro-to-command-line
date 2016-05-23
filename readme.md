@@ -93,10 +93,6 @@ Other commands' primary purpose is to execute some **side-effect**, or in other 
 
 ### Command Syntax (Flags and Arguments)
 
-**See `haircut` command for demo.**
-
-    `$ ./haircut --mohawk adrian`
-
 Commands generally consist of three parts...
   1. Command
   2. Flags
@@ -155,9 +151,9 @@ Our terminal is always working from a single path at a time. Commands that are r
 
 Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently throughout this lesson.
 
-* `pwd`:  outputs the current working directory(print working directory)
-* `cd`:  changes directories(change directory)
-* `ls`:  lists folders and files(list)
+* `pwd`:  outputs the current working directory ("print working directory").
+* `cd`:  changes directories ("change directory").
+* `ls`:  lists folders and files ("list").
 
 ### Relative vs. Absolute Paths
 
@@ -168,7 +164,7 @@ All paths point to a single file or folder. They can, however, be written in two
 An absolute path tells us exactly where the file or folder is located based on a root starting point. An example in the real world would be a (meticulous) mailing address for General Assembly...
 
 ```
-Classroom 1
+Classroom 5
 GA
 8th Floor
 1133 15th St NW
