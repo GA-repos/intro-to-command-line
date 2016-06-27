@@ -135,7 +135,7 @@ Let's take a look at something we did for installfest.
 $ brew install git
 ```
 
-> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to do is install it.
+> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
 
 
 **Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
