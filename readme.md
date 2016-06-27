@@ -68,6 +68,12 @@ well. Complex tasks can be achieved by chaining tools together.
 
 --------------------------------------------------------------------------------
 
+## DEMO: Hello.txt using GUI vs CLI
+
+> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal. We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI.
+
+We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
+
 ## CLI Basics (30 minutes / 0:45)
 
 You may already be familiar with some of these concepts, but it's worth reviewing them now and getting some practice in.
@@ -123,6 +129,15 @@ Where **doSomething** is, in effect, a verb, **how** an adverb (for exampl
 
 > Not all commands follow this pattern, but many do.
 
+Let's take a look at something we did for installfest.
+
+```
+$ brew install git
+```
+
+> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to do is install it.
+
+
 **Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
   1. `$ touch index.html`
   2. `$ ls -al`
@@ -171,7 +186,7 @@ All paths point to a single file or folder. They can, however, be written in two
 An absolute path tells us exactly where the file or folder is located based on a root starting point. An example in the real world would be a (meticulous) mailing address for General Assembly...
 
 ```
-Classroom 5
+Classroom 6
 GA
 8th Floor
 1133 15th St NW
@@ -220,7 +235,7 @@ Periods have special meaning when used in relative paths..
 * `.`: one dot means "relative to the current directory"
 * `..`: two dots means "go up to the parent directory"
 
-So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the code folder, then down into my `projects` directory.
+So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the wdi folder, then down into my `projects` directory.
 
 We can use more than one `..` to go up multiple levels. For example...
 
