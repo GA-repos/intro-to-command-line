@@ -1,7 +1,5 @@
 # The CLI (Command Line Interface)
 
-[![Build Status](https://travis-ci.org/ga-wdi-lessons/cli-intro.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/cli-intro)
-
 ## Learning Objectives
 
 ### Concepts
@@ -76,7 +74,6 @@ We might be thinking to ourselves, "These differences are negligible! Which in t
 
 ## CLI Basics (30 minutes / 0:45)
 
-You may already be familiar with some of these concepts, but it's worth reviewing them now and getting some practice in.
 
 ### Everything is a Command
 
@@ -145,17 +142,6 @@ $ brew install git
   4. `$ brew install git`
 
 > Remember, not all of these have flags and/or arguments.
-
-### Commands Run in an "Environment"
-
-Something else that may influence how a command is the "environment" it's being run in. We won't go deep into that yet, but every time a command is run, it may choose to look at what are called "environment variables". These are semi-permanent variables that provide information or options to help a command do its job.
-
-We actually set an environment variable during Installfest when entering this into the CLI...
-
-```bash
-$ echo "EDITOR=atom" >> ~/.bash_profile
-```
-> This creates an `EDITOR` environment variable that is set to `atom`. This affects git which, whenever it needs to open a text editor, will use Atom instead of vim by default.
 
 --------------------------------------------------------------------------------
 
@@ -273,38 +259,7 @@ There are three general ways to get help with a command.
 * Use the manual -- or `man` -- tool (e.g., `man brew`).
 * Google!
 
-### Common Command Teachbacks (25 minutes / 1:55)
-
-> 15 minutes preparation. 10 minutes review.
-
-Form groups of 3 and spend 15 minutes researching and preparing a short demo of your command. Focus on...
-
-* What it does.
-* Common uses.
-* Common flags or arguments.
-* Any "gotchas" (i.e., things we should be aware of when using this command)?
-
-#### Commands
-
-1. Tab completion.
-2. `ls`
-3. `cd`
-4. `touch` and `mkdir`
-5. `cp`
-6. `mv`
-7. `rm`
-8. `atom`
-
-#### Bonus Commands
-
-If you finish early, do the same for one or more of the following commands...
-
-* `grep`
-* `cat`
-* `less`
-* `find`
-* `cal`
-* `vim` and `vimtutor`
+The first two options will display text using a program called `less`. Use the arrow keys to navigate. Type `q` to quit.
 
 --------------------------------------------------------------------------------
 
@@ -319,7 +274,6 @@ If you finish early, do the same for one or more of the following commands...
 `sudo` -- or "super user do" -- runs the command that follows as the super user (i.e., 'root' or 'admin'). That means your computer will not prevent you from running the command and may not even confirm if this is what you actually want to do. This is of particular concern when the command may have destructive effects.
 
 > Generally, you shouldn't need to run commands with `sudo` in this course. If you're not sure, ask an instructor.
-
 
 ### `rm`
 
@@ -341,6 +295,75 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * exercises
     * lessons
     * projects
+
+---
+
+## Own your terminal
+
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+  - It will be WAY easier to read
+2. [Choose a theme](http://apple.stackexchange.com/a/92769)
+  - Pick something you like to look at
+
+## Ultimate Time Savers
+
+The next three points are reasons not to hold down the arrow or delete keys.
+
+### `ctrl-c`
+
+Cancel whatever you were typing before. Abort!
+
+### `ctrl-e`
+
+Move cursor to the **e**nd of the line.
+
+### `ctrl-a`
+
+Move cursor to the beginning of the line
+
+> a is the beginning of the English alphabet
+
+### The up and down arrows
+
+Cycle through previous commands
+
+### Tab completion
+
+When typing a command that has a file as an argument, like `cd`,
+type only the first few letters and hit the TAB key.
+
+## You do: Speed Rounds
+
+Copy and paste each of the following commands into the terminal without
+pressing enter. 
+
+### 1. Cancel the really long line of text
+
+```
+$ kjahlkjhsadlkjfhlaksjdhf asdjkfhlsadjhflkjashdf lasjkhdfjhasd sdjhfjhsgajhgf
+```
+
+### 2. Fix the typo at the beginning of the command
+
+```
+$ cdd ~/Documents && pwd && ls && ccd -
+```
+
+### 3. Fix the typo at the end of the command
+
+```
+Same as the previous command
+```
+
+## [iTerm2](https://www.iterm2.com/features.html)
+
+Most of the instructors use iTerm2 as a terminal replacement.
+
+My favorite features include:
+
+- A better, more readable font
+- Hotkey support (full screen and tabs)
+- Unlimited Scroll Back history
 
 --------------------------------------------------------------------------------
 
@@ -412,8 +435,6 @@ home
 * **BONUS:** Write a command to list only files beginning with your first name. Label the parts of the command.
 
 ## Hungry for More?
-
-Look into the bonus commands included in this lesson's Teachback exercise...
 
 * `grep`
 * `cat`
