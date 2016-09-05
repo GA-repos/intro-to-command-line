@@ -247,6 +247,10 @@ Of these four paths, which are relative vs. absolute?
 
 > We can see here that the `troll.png` photo is linked in two different ways. Which way is better? Does it matter?
 
+## You do
+
+https://github.com/ga-wdi-exercises/dc_directory_tree
+
 --------------------------------------------------------------------------------
 
 ## Common Commands
