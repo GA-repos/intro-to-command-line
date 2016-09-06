@@ -302,12 +302,6 @@ Here's the suggested structure for your WDI folder. Please create the following 
 
 ---
 
-## Own your terminal
-
-1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-  - It will be WAY easier to read
-2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-  - Pick something you like to look at
 
 ## Ultimate Time Savers
 
@@ -336,6 +330,12 @@ Cycle through previous commands
 When typing a command that has a file as an argument, like `cd`,
 type only the first few letters and hit the TAB key.
 
+### Clear the screen
+
+- ctrl-l
+- command-k
+- `clear`
+
 ## You do: Speed Rounds
 
 Copy and paste each of the following commands into the terminal without
@@ -358,6 +358,13 @@ $ cdd ~/Documents && pwd && ls && ccd -
 ```
 Same as the previous command
 ```
+
+## Own your terminal
+
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+  - It will be WAY easier to read
+2. [Choose a theme](http://apple.stackexchange.com/a/92769)
+  - Pick something you like to look at
 
 ## [iTerm2](https://www.iterm2.com/features.html)
 
