@@ -60,7 +60,7 @@ well. Complex tasks can be achieved by chaining tools together.
 
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
 
-![](http://coding-journal.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-30-at-12.02.14.png)
+![](unhelpful-error.png)
 
 > All these benefits aren't necessarily exclusive to the CLI (compared to a traditional GUI), but they tend to be more consistent.
 
