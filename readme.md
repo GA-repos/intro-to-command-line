@@ -48,15 +48,13 @@ command history, piping and more all contribute to this.
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
 
-> What you did during Installfest was run a set of scripts that we shared with you!  
+> What you did during Installfest was run a set of scripts that we shared with you!
 
 **Tools.** There are tons of tools we can use in the CLI to achieve a vast number of tasks. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
 > Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading it by running this in the CLI: `$ brew install tree`.
 >
-> Tools built for the command line usually follow something called
-the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it
-well. Complex tasks can be achieved by chaining tools together.  
+> Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
 
@@ -74,6 +72,37 @@ We might be thinking to ourselves, "These differences are negligible! Which in t
 
 ## CLI Basics (30 minutes / 0:45)
 
+### Graphics and Text
+
+An [interface](https://en.wikipedia.org/wiki/Interface_(computing)) is a profoundly important idea in programming (NB: important doesn't have to mean complicated!). Distinguishing a Graphical User Interface and a Command Line Interface is a great introduction to the idea. An interface is a boundary across which information is exchanged.
+
+In a GUI, the computer provides information to the user via graphics or images. The user provides information to the computer using a cursor and clicks, and a keyboard and character input. They borrow from intuition users already have about the physical world and take advantage of natural human skills involving spatial reasoning.
+
+In a CLI, the computer provides information to the user via text output. The user provides information to the computer using text input. They take advantage of natural human skills involving language.
+
+GUIs are great at presenting information but are limited in how they can receive information and are expensive to run; CLIs are great at receiving information but are limited in how they present it.
+
+Mainstream modern operating systems for personal machines use graphical interfaces because of a dramatically lower barrier to entry than CLIs.
+
+### The Terminal and the Shell
+
+How do we get at this text based interface from our GUI desktop? We'll run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
+
+A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**.
+
+Let's fire up our terminals and get exploring!
+
+#### Getting Oriented
+
+First, open Terminal by clicking the icon on your dock, finding the application in Applications > Utilities > Terminal, or using Spotlight (**&#x2318; + SPC**)
+
+You should see the following prompt (which we customized at installfest)
+![Command Line Prompt](./images/cl_prompt.png)
+
+
+
+Typing a random string of characters and hitting enter will (likely) produce a message "-bash: <your-random-string>: command not found"
+![Command not found](./images/command_not_found.png)
 
 ### Everything is a Command
 
