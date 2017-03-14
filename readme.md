@@ -99,14 +99,14 @@ Let's fire up our terminals and get exploring!
 First, open Terminal by clicking the icon on your dock, finding the application in Applications > Utilities > Terminal, or using Spotlight (**&#x2318; + SPC**)
 
 You should see the following prompt (which we customized at installfest)
-![Command Line Prompt](./images/cl_prompt.png)
+![Command Line Prompt](./assets/cl_prompt.png)
 
 The prompt is the shell asking for input; when you see `$ <something>` in documentation, it generally means, input this command into a shell.
 
 If you have a terminal open but do not see a prompt, that means that the shell is not ready to receive input.
 
 Typing a random string of characters and hitting enter will (likely) produce a message `-bash: <your-random-string>: command not found`
-![Command not found](./images/command_not_found.png)
+![Command not found](./assets/command_not_found.png)
 
 > What is a command?
 
