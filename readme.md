@@ -25,7 +25,7 @@
 - Open files and directories with Atom.
 - List unsafe commands.
 
-## Framing (5 minutes / 0:05)
+## Framing
 
 We are used to interacting with computers by means of a graphical user interface (GUI). A GUI let us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
 
@@ -45,9 +45,11 @@ We avoid these costs when interacting with a computer via text (though at signif
 
 ---------------------------------------------------------------------------
 
-### Why The CLI? (10 minutes / 0:15)
+### Why The CLI?
 
 Simply put: **if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controlling your computer. Learning the CLI teaches you to control the computer purely using language. Once you get past that, you can then move on to writing code and make the hunk of metal in front of you do what you want.
+
+Further, this should be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling but the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
@@ -70,7 +72,7 @@ command history, piping and more all contribute to this.
 
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
 
-![](unhelpful-error.png)
+![unhelpful error](./assets/unhelpful-error.png)
 
 > All these benefits aren't necessarily exclusive to the CLI (compared to a traditional GUI), but they tend to be more consistent.
 
@@ -82,25 +84,13 @@ command history, piping and more all contribute to this.
 
 We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 
-## CLI Basics (30 minutes / 0:45)
-
-### Graphics and Text
-
-An [interface](https://en.wikipedia.org/wiki/Interface_(computing)) is a profoundly important idea in programming (NB: important doesn't have to mean complicated!). Distinguishing a Graphical User Interface and a Command Line Interface is a great introduction to the idea. An interface is a boundary across which information is exchanged.
-
-In a GUI, the computer provides information to the user via graphics or images. The user provides information to the computer using a cursor and clicks, and a keyboard and character input. They borrow from intuition users already have about the physical world and take advantage of natural human skills involving spatial reasoning.
-
-In a CLI, the computer provides information to the user via text output. The user provides information to the computer using text input. They take advantage of natural human skills involving language.
-
-GUIs are great at presenting information but are limited in how they can receive information and are expensive to run; CLIs are great at receiving information but are limited in how they present it.
-
-Mainstream modern operating systems for personal machines use graphical interfaces because of a dramatically lower barrier to entry than CLIs.
+## CLI Basics
 
 #### The Terminal and the Shell
 
-How do we get at this text based interface from our GUI desktop? We'll run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
+How do we get at this text based interface from our GUI desktop? We run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
-A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**.
+A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**. There are other shells but all operate very similarly
 
 Let's fire up our terminals and get exploring!
 
@@ -120,88 +110,29 @@ Typing a random string of characters and hitting enter will (likely) produce a m
 
 > What is a command?
 
+A command is a program. Some come built into the shell and provide the basics for interacting with the OS and some are written by programmers (like you!) to provide further functionality.
+
 We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
 
-### Directory Navigation
+### The Working Directory
 
-You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*); the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
+You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
 
 At the very top level of this tree is a directory called the **root directory** signified by `/`. All directories have a full name called the **absolute path** which is the path of all directories from root to the directory.
 
-A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is 
+The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but the primary of these is not presenting them to GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
 
-### Output and Side Effects
+A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
 
-Some commands have **output**, which is displayed on the screen for us to see. Examples of commands that have output are...
+Most commands function relative to your working directory so this should be the question yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
 
-* `pwd`
-* `ls`
-* `telnet towel.blinkenlights.nl`
+When I am working on the command line and something unexpected happens, nine in ten times it is because I was not in the directory where I though I was / where I should have been. `pwd` early and often.
 
-> Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
-
-Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
-* For example, `touch`. This creates a file in an indicated location. We do not, however, get a confirmation it did this immediately after hitting enter.
-
-> Often times, a command whose main job is a side effect may not provide any output if it succeeds. If there is an error, it will provide output.
->
-> Some commands may provide both an output and side effects.
-
-### Command Syntax (Flags and Arguments)
-
-Commands generally consist of three parts...
-  1. Command
-  2. Flags
-  3. Arguments
-
-The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
-
-Next come the **Flags**. Think of these as "options" that tell the command how to do what it's about to do. There may be zero or more options.
-* Sometimes you won't be using any options. Other times just one or maybe even more!
-* Options usually start with one or two dashes. If the option is a letter, then one dash (e.g., `-a`). If it's a whole word, then two dashes (e.g., `--all`).
-
-> [Here's a list](http://catb.org/esr/writings/taoup/html/ch10s05.html#id2948149) of some single-letter flags you might encounter. This is not an exhaustive list.
-
-Finally come the **Arguments**. These are "targets", or what you want to do the action to. These could be file names, URLs, etc.
-
-#### Common Patterns
-
-The commands entered into the CLI are often in one of the following forms..
-
-- `doSomething --how toFiles`
-- `doSomething --how sourceFile destinationFile`
-
-Where **doSomething** is, in effect, a verb, **how** an adverb (for example, should the command be executed "verbosely" or "quietly") and **toFiles** an object or objects (typically one or more files) on which the command should act.
-
-> Not all commands follow this pattern, but many do.
-
-Let's take a look at something we did for installfest.
-
-```
-$ brew install git
-```
-
-> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
-
-
-**Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
-  1. `$ touch index.html`
-  2. `$ ls -al`
-  3. `$ cp index.html index2.html`
-  4. `$ brew install git`
-
-> Remember, not all of these have flags and/or arguments.
+## BREAK
 
 --------------------------------------------------------------------------------
 
-
-<!--  LocalWords:  png
- -->
-## BREAK (10 minutes / 0:55)
-
---------------------------------------------------------------------------------
-
-## Paths (30 minutes / 1:25)
+## Paths
 
 ### What is a Path?
 
@@ -299,13 +230,82 @@ Of these four paths, which are relative vs. absolute?
 
 > We can see here that the `troll.png` photo is linked in two different ways. Which way is better? Does it matter?
 
-## You do
+### Output and Side Effects
 
-https://github.com/ga-wdi-exercises/dc_directory_tree
+Some commands have **output**, which is displayed on the screen for us to see. Examples of commands that have output are...
+
+* `pwd`
+* `ls`
+* `telnet towel.blinkenlights.nl`
+
+> Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
+
+This introduces our second command useful to telling us about where we are. `ls` means "list the contents of the current working directory". This will be one of your most used commands.
+
+Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
+
+The command you will likely use with the second greatest frequency is `cd` for "change working directory". `cd` also needs to be told a directory to which it should move
+
+To be clear, this changes the current directory but does not have an effect on the file system
+
+Let's spend a few minutes just exploring the file system.
+
+For example, `touch`. This creates a file in an indicated location. We do not, however, get a confirmation it did this immediately after hitting enter (we would get an error if there were a problem so no news is good news).
+
+> Often times, a command whose main job is a side effect may not provide any output if it succeeds. If there is an error, it will provide output.
+>
+> Some commands may provide both an output and side effects.
+
+### Command Syntax (Flags and Arguments)
+
+Commands generally consist of three parts...
+  1. Command
+  2. Flags
+  3. Arguments
+  
+The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
+
+Next come the **Flags**. Think of these as "options" that tell the command how to do what it's about to do. There may be zero or more options.
+* Sometimes you won't be using any options. Other times just one or maybe even more!
+* Options usually start with one or two dashes. If the option is a letter, then one dash (e.g., `-a`). If it's a whole word, then two dashes (e.g., `--all`).
+
+> [Here's a list](http://catb.org/esr/writings/taoup/html/ch10s05.html#id2948149) of some single-letter flags you might encounter. This is not an exhaustive list.
+
+Finally come the **Arguments**. These are "targets", or what you want to do the action to. These could be file names, URLs, etc.
+
+#### Common Patterns
+
+The commands entered into the CLI are often in one of the following forms..
+
+- `doSomething --how toFiles`
+- `doSomething --how sourceFile destinationFile`
+
+Where **doSomething** is, in effect, a verb, **how** an adverb (for example, should the command be executed "verbosely" or "quietly") and **toFiles** an object or objects (typically one or more files) on which the command should act.
+
+> Not all commands follow this pattern, but many do.
+
+Let's take a look at something we did for installfest.
+
+```
+$ brew install git
+```
+
+> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
+
+
+**Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
+  1. `$ touch index.html`
+  2. `$ ls -al`
+  3. `$ cp index.html index2.html`
+  4. `$ brew install git`
+
+> Remember, not all of these have flags and/or arguments.
 
 --------------------------------------------------------------------------------
 
-## Common Commands
+
+<!--  LocalWords:  png
+ -->
 
 ### Getting Help (5 minutes / 1:30)
 
@@ -317,7 +317,10 @@ There are three general ways to get help with a command.
 
 The first two options will display text using a program called `less`. Use the arrow keys to navigate. Type `q` to quit.
 
---------------------------------------------------------------------------------
+
+## [You do](https://github.com/ga-wdi-exercises/dc_directory_tree)
+
+
 
 ## BREAK (10 minutes / 2:05)
 
