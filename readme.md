@@ -4,11 +4,15 @@
 
 ### Concepts
 
-- Compare and contrast CLIs with GUIs.
-- Explain how command line usage can increase efficiency.
-- Describe the anatomy of a command: statements, flags and arguments.
+- Define and explain the idea of a GUI
+- Define and explain the idea of a CLI
+- Understand the rational for learning to get comfortable with the shell
+- Conceptualize the file system
+- Understand how shells represent the file system
 - Explain what a path is and why the 'current path' is important in the CLI.
 - Explain the difference between absolute and relative paths.
+- Describe the anatomy of a command: statements, flags and arguments
+- Know how to find more information on how to use commands
 
 ### Mechanics
 
@@ -23,7 +27,15 @@
 
 ## Framing (5 minutes / 0:05)
 
-As developers, we need a tool to communicate with our computers. Operating systems like Windows or OSX generally provide a graphical user interface (GUI) so that we can do this. They also, however, provide an interface that is strictly text-based: the Command Line (CLI).
+We are used to interacting with computers by means of a graphical user interface (GUI). A GUI let us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
+
+While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
+
+- GUIs are computationally expensive (though a manageable task for modern personal computers)
+- GUIs require a lot of work to design and implement
+- Related to the last, it is extremely difficult to design a GUI to do something beyond what the creator conceived of
+
+We avoid these costs when interacting with a computer via text (though at significant cost of the computers ability to present information back to us)
 
 **Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down some answers for the following questions with a partner...
 
@@ -39,10 +51,10 @@ Simply put: **if you want to learn to code, you must know your way around the CL
 
 #### Benefits of the CLI
 
-**Speed.** Developers can execute common tasks much faster using the CLI. Features such as tab completion,
+**Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
-> Try a `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
+> Try creating `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
 
@@ -52,7 +64,7 @@ command history, piping and more all contribute to this.
 
 **Tools.** There are tons of tools we can use in the CLI to achieve a vast number of tasks. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
-> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading it by running this in the CLI: `$ brew install tree`.
+> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading (using `brew`, another very nifty tool) it by running this command in your Terminal: `$ brew install tree`.
 >
 > Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
@@ -66,7 +78,7 @@ command history, piping and more all contribute to this.
 
 ## DEMO: Hello.txt using GUI vs CLI
 
-> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal. We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI.
+> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal (though we definitely could). We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI.
 
 We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 
@@ -84,7 +96,7 @@ GUIs are great at presenting information but are limited in how they can receive
 
 Mainstream modern operating systems for personal machines use graphical interfaces because of a dramatically lower barrier to entry than CLIs.
 
-### The Terminal and the Shell
+#### The Terminal and the Shell
 
 How do we get at this text based interface from our GUI desktop? We'll run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
@@ -92,23 +104,31 @@ A shell is a program that takes commands, passes them to the operating system an
 
 Let's fire up our terminals and get exploring!
 
-#### Getting Oriented
+### Getting Oriented
 
 First, open Terminal by clicking the icon on your dock, finding the application in Applications > Utilities > Terminal, or using Spotlight (**&#x2318; + SPC**)
 
 You should see the following prompt (which we customized at installfest)
 ![Command Line Prompt](./images/cl_prompt.png)
 
+The prompt is the shell asking for input; when you see `$ <something>` in documentation, it generally means, input this command into a shell.
 
+If you have a terminal open but do not see a prompt, that means that the shell is not ready to receive input.
 
-Typing a random string of characters and hitting enter will (likely) produce a message "-bash: <your-random-string>: command not found"
+Typing a random string of characters and hitting enter will (likely) produce a message `-bash: <your-random-string>: command not found`
 ![Command not found](./images/command_not_found.png)
 
-### Everything is a Command
+> What is a command?
 
-Everything we enter into the command line is a **command**. When we hit enter, the command is executed.  
+We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
 
-In this and future lesson plans, we will indicate a line of code is a CLI command by prefacing it with the `$` symbol.
+### Directory Navigation
+
+You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*); the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
+
+At the very top level of this tree is a directory called the **root directory** signified by `/`. All directories have a full name called the **absolute path** which is the path of all directories from root to the directory.
+
+A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is 
 
 ### Output and Side Effects
 
@@ -134,7 +154,7 @@ Commands generally consist of three parts...
   2. Flags
   3. Arguments
 
-The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the "verb" which indicates what we want to do.
+The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
 
 Next come the **Flags**. Think of these as "options" that tell the command how to do what it's about to do. There may be zero or more options.
 * Sometimes you won't be using any options. Other times just one or maybe even more!
@@ -174,6 +194,9 @@ $ brew install git
 
 --------------------------------------------------------------------------------
 
+
+<!--  LocalWords:  png
+ -->
 ## BREAK (10 minutes / 0:55)
 
 --------------------------------------------------------------------------------
