@@ -27,16 +27,6 @@
 
 ## Framing
 
-We are used to interacting with computers by means of a graphical user interface (GUI). A GUI let us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
-
-While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
-
-- GUIs are computationally expensive (though a manageable task for modern personal computers)
-- GUIs require a lot of work to design and implement
-- Related to the last, it is extremely difficult to design a GUI to do something beyond what the creator conceived of
-
-We avoid these costs when interacting with a computer via text (though at significant cost of the computers ability to present information back to us)
-
 **Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down some answers for the following questions with a partner...
 
 * How is the CLI different from the GUI?
@@ -45,15 +35,26 @@ We avoid these costs when interacting with a computer via text (though at signif
 
 ---------------------------------------------------------------------------
 
+We are used to interacting with computers by means of a graphical user interface (GUI). A GUI let us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
+
+While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
+
+- GUIs are computationally expensive (though a manageable task for modern personal computers)
+- GUIs require a lot of work to design and implement
+- Related to the last, it is extremely difficult to design a GUI to do something beyond what the creator conceived of
+
+By using a precisely defined language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions 
+
+
 ### Why The CLI?
 
-Simply put: **if you want to learn to code, you must know your way around the CLI.** Programming languages are an advanced means of controlling your computer. Learning the CLI teaches you to control the computer purely using language. Once you get past that, you can then move on to writing code and make the hunk of metal in front of you do what you want.
+Simply put: **if you want to learn to code, you must know your way around the CLI.** We are joining a new community of users for whom tools are designed preferring flexibility to ease of use (though as with all software, both are important). By investing time in learning the conventions, standards, and tools of this community, we are greatly empowered to write powerful and useful software.
 
-Further, this should be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling but the facade of the GUI starts to reveal this.
+This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling but the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
-**Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
+**Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
 
 > Try creating `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
@@ -66,7 +67,7 @@ command history, piping and more all contribute to this.
 
 **Tools.** There are tons of tools we can use in the CLI to achieve a vast number of tasks. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
-> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading (using `brew`, another very nifty tool) it by running this command in your Terminal: `$ brew install tree`.
+> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading it by running this command in your Terminal: `$ brew install tree`.
 >
 > Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
