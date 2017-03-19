@@ -130,12 +130,6 @@ When I am working on the command line and something unexpected happens, nine in 
 
 ## Navigating the File System
 
-In exploring the file system, we will find the following commands useful.
-
-* `pwd`:  outputs the path of the current working directory ("print working directory").
-* `cd`:  changes directories ("change directory").
-* `ls`:  lists folders and files ("list").
-
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
 In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
@@ -148,7 +142,9 @@ On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `
 
 A path specifies the location of a particular file or folder in a file system.
 
-A location can be specified by a relative path or an absolute path. What would you expect the difference to be based on names?
+A location can be specified by a relative path or an absolute path. 
+
+> What would you expect the difference to be based on names?
 
 ### Absolute Paths
 
@@ -170,7 +166,7 @@ USA
 Expressed as a path the address might look something like this:
 
 ```bash
-# General Assembly in path form...
+; General Assembly in path form...
 /USA/Washington_DC/20003/1133_15th_St_NW/8th_Floor/GA/Classroom_6
 ```
 
@@ -181,47 +177,71 @@ Expressed as a path the address might look something like this:
 An absolute path can be expressed in terms of the `~` shorthand for the home directory by appending the rest of the path after the home directory to the tilda
 
 ```bash
-# path using short hand
+; this path written using short hand
 ~/wdi/lessons/cli-intro
-# is the same as the path written out
+
+; is the same as this path written out
 /Users/your_username/wdi/lessons/cli-intro
 ```
 
 > What are some reasons having a short hand for the user directory might be important?
 
+### Exploring the file system
+
+There are a few commands that will very useful to us in our exploration
+
+We have already talked about `pwd` which outputs the name of the current working directory ("print working directory").
+
+> After we know where we are, what's the next piece of information we might require?
+
+The `ls` command lists the files in the current working directory.
+
+And crucial to exploring, we will need to change the working directory which we can do with `cd` ("change directory").
+
+#### A bit more about `ls` and `cd`
+
+On its own, `cd` will change the directory to the home directory. We can also provide it a directory name to change to that directory.
+
+We can modify commands' behavior using **options** (which we will discuss the specifics of below). Two useful options for `ls` are `-a` which includes hidden files with names beginning with `.`, and `-l` which lists files in long form (including some information about the files)
+
+> Let's spend a few minutes exploring the file system using these commands and what we've learned about paths. I'll start a glossary of commands on the board.
 
 ### Relative Paths
 
-Relative paths are interpreted as starting from the current working directory. They start with anything but a `/` or `~`.
+> Let's talk a little about the argument we provide to `cd`
+
+Relative paths are interpreted as starting from the current working directory. In order to be explicit, we frequently begin them with `./`
+
+> How is this more clear?
 
 So if we were in our home directory, the path to this lesson's directory could be written in the following ways...
 
 ```bash
 wdi/lessons/cli-intro                                   # relative
+./wdi/lessons/cli-intro                                 # relative
 ~/wdi/lessons/cli-intro                                 # absolute
 /Users/adrianmaseda/wdi/lessons/cli-intro               # absolute
 ```
 
-If we were in a different folder, then the relative path would point to an entirely different folder/file.
+> When might we prefer relative paths? When might we prefer absolute paths?
 
-Periods have special meaning when used in relative paths..
-* `.`: one dot means "relative to the current directory"
-* `..`: two dots means "go up to the parent directory"
+Keep in mind these special directories' meanings:
+* `.`: one dot refers to the current directory
+* `..`: two dots refers to the parent directory
 
 So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the wdi folder, then down into my `projects` directory.
 
-We can use more than one `..` to go up multiple levels. For example...
+> Spend a few minutes with someone sitting near you writing out what the following commands are doing in English...
 
-This time, if we're in `~/wdi/lessons/cli-intro`, entering `cd ../../projects` would go up two levels to `wdi`, and then down one level into `projects`.
+1. `$ pwd`
+2. `$ cd ./lessons`
+3. `$ ls ..`
+4. `$ cd ../..`
+5. `$ mv ../index.html .`
 
-**Q:** Spend two minutes writing out what the following commands are doing in English...
-  1. `$ cd ./lessons`
-  2. `$ ls ..`
-  3. `$ mv ../index.html .`
+### Paths in HTML
 
-### Compare Images in HTML
-
-Turns out paths are really important in HTML too. If we look at the image tags in the `index.html` file in this repo we'll see this...
+Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 ```html
 <img src="../heeler.jpg">
@@ -230,9 +250,9 @@ Turns out paths are really important in HTML too. If we look at the image tags i
 <img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png">
 ```
 
-Of these four paths, which are relative vs. absolute?
+> Of these four paths, which are relative vs. absolute?
 
-> We can see here that the `troll.png` photo is linked in two different ways. Which way is better? Does it matter?
+> We can see here that the `troll.png` photo is linked in two different ways. Why might we prefer one way or another?
 
 ### Output and Side Effects
 
