@@ -4,13 +4,10 @@
 
 ### Concepts
 
-- Define and explain the idea of a GUI
-- Define and explain the idea of a CLI
-- Understand the rational for learning to get comfortable with the shell
-- Conceptualize the file system
-- Understand how shells represent the file system
-- Explain what a path is and why the 'current path' is important in the CLI.
-- Explain the difference between absolute and relative paths.
+- Define and explain the strengths and weaknesses of GUIs and CLIs
+- List reasons for learning to get comfortable with the shell
+- Describe how a shell program relates to the file system
+- Recognize and explain absolute and relative paths
 - Describe the anatomy of a command: statements, flags and arguments
 - Know how to find more information on how to use commands
 
@@ -59,16 +56,14 @@ command history, piping and more all contribute to this.
 
 > Try creating `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
 
-**Precision.** We can look at the commands we're about to enter and understand exactly what they will do. This allows for...
+**Precision.** We can look at the commands we're about to enter and understand exactly what they will do.
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
 
 > What you did during Installfest was run a set of scripts that we shared with you!
 
-**Tools.** There are tons of tools we can use in the CLI to achieve a vast number of tasks. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
+**Tools.** There are tons of tools (programs really) we can run from the CLI. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
-> Tree is an example of a nifty third-party tool. It's useful in visualizing directory structure. Try downloading it by running this command in your Terminal: `$ brew install tree`.
->
 > Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
 **Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
@@ -87,7 +82,7 @@ We might be thinking to ourselves, "These differences are negligible! Which in t
 
 ## CLI Basics
 
-#### The Terminal and the Shell
+### The Terminal and the Shell
 
 How do we get at this text based interface from our GUI desktop? We run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
@@ -106,7 +101,7 @@ The prompt is the shell asking for input; when you see `$ <something>` in docume
 
 If you have a terminal open but do not see a prompt, that means that the shell is not ready to receive input.
 
-Typing a random string of characters and hitting enter will (likely) produce a message `-bash: <your-random-string>: command not found`
+Typing a random string of characters and hitting enter will produce a message `-bash: <your-random-string>: command not found`
 ![Command not found](./assets/command_not_found.png)
 
 > What is a command?
@@ -115,17 +110,17 @@ A command is a program. Some come built into the shell and provide the basics fo
 
 We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
 
-### The Working Directory
+### The Current Working Directory
 
 You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
 
-At the very top level of this tree is a directory called the **root directory** signified by `/`. All directories have a full name called the **absolute path** which is the path of all directories from root to the directory.
+On our machines, at the very top level of this tree is a directory called the **root directory** signified by `/`.
 
 The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but the primary of these is not presenting them to GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
 
 A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
 
-Most commands function relative to your working directory so this should be the question yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
+Most commands function relative to your working directory so "what is my current working directory" should be the question yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
 
 When I am working on the command line and something unexpected happens, nine in ten times it is because I was not in the directory where I though I was / where I should have been. `pwd` early and often.
 
@@ -133,61 +128,69 @@ When I am working on the command line and something unexpected happens, nine in 
 
 --------------------------------------------------------------------------------
 
-## Paths
+## Navigating the File System
 
-### What is a Path?
+In exploring the file system, we will find the following commands useful.
 
-A path is a description that tells us where a file or folder is located on our computer.
-
-Our terminal is always working from a single path at a time. Commands that are run will take action in the current path (directory) unless we tell them to do otherwise.
-
-Before we get too deep into paths. Let's review a couple of important commands that we'll be using frequently throughout this lesson.
-
-* `pwd`:  outputs the current working directory ("print working directory").
+* `pwd`:  outputs the path of the current working directory ("print working directory").
 * `cd`:  changes directories ("change directory").
 * `ls`:  lists folders and files ("list").
 
-### Relative vs. Absolute Paths
+For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
-All paths point to a single file or folder. They can, however, be written in two different formats: **relative** or **absolute**.
+In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
 
-#### Absolute Paths
+On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
 
-An absolute path tells us exactly where the file or folder is located based on a root starting point. An example in the real world would be a (meticulous) mailing address for General Assembly...
+## Paths
+
+### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
+
+A path specifies the location of a particular file or folder in a file system.
+
+A location can be specified by a relative path or an absolute path. What would you expect the difference to be based on names?
+
+### Absolute Paths
+
+An **absolute path** is the sequence of all directories from the root to a particular file using the `/` symbol as a delimiter between directories.
+
+You may have noticed that `pwd` returns not just the name of the current directory but the whole absolute path. Why is the name of the current directory alone not particularly helpful?
+
+We can think of an absolute path like this very specific mailing address of our classroom:
 
 ```
-Classroom 6
+Classroom 1
 GA
 8th Floor
 1133 15th St NW
 Washington, DC 20003
 USA
-Earth
-Solar System
-Milky Way
 ```
 
-Absolute paths start with a `/` and go from the top down...
+Expressed as a path the address might look something like this:
 
 ```bash
 # General Assembly in path form...
-/Milky_Way/Solar_System/Earth/USA/Washington_DC/1133_15th_St_NW/8th_Floor/GA
-
-# ...but here's a more realistic example...
-/Users/adrianmaseda/wdi/lessons/cli-intro
+/USA/Washington_DC/20003/1133_15th_St_NW/8th_Floor/GA/Classroom_6
 ```
 
-The first slash essentially means "start at the root of the computer's file system."
+> How does the post office read a mailing address?
 
-Some absolute paths instead start with a `~`. This is a shortcut to the absolute path of our home directory. So the above absolute path could also be written as
+> What would root (`/`) be in our physical location metaphor?
+
+An absolute path can be expressed in terms of the `~` shorthand for the home directory by appending the rest of the path after the home directory to the tilda
 
 ```bash
+# path using short hand
 ~/wdi/lessons/cli-intro
+# is the same as the path written out
+/Users/your_username/wdi/lessons/cli-intro
 ```
 
-> On Macs, `~` corresponds to your user directory - `/users/your-mac-username`.
+> What are some reasons having a short hand for the user directory might be important?
 
-#### Relative Paths
+
+### Relative Paths
 
 Relative paths are interpreted as starting from the current working directory. They start with anything but a `/` or `~`.
 
@@ -237,11 +240,10 @@ Some commands have **output**, which is displayed on the screen for us to see. E
 
 * `pwd`
 * `ls`
+* `brew install tree`.
 * `telnet towel.blinkenlights.nl`
 
 > Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
-
-This introduces our second command useful to telling us about where we are. `ls` means "list the contents of the current working directory". This will be one of your most used commands.
 
 Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
 
@@ -304,9 +306,6 @@ $ brew install git
 
 --------------------------------------------------------------------------------
 
-
-<!--  LocalWords:  png
- -->
 
 ### Getting Help (5 minutes / 1:30)
 
