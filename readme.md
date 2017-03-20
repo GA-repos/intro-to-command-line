@@ -22,7 +22,7 @@
 - Open files and directories with Atom.
 - List unsafe commands.
 
-## Framing
+## Framing (30 minutes / 0:30)
 
 **Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/10)
 
@@ -32,7 +32,7 @@
 
 ---------------------------------------------------------------------------
 
-We are used to interacting with computers by means of a graphical user interface (GUI). A GUI let us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
+We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
 
 While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
 
@@ -49,7 +49,7 @@ We are joining a new community of users for whom tools are designed preferring f
 
 If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
 
-This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling but the facade of the GUI starts to reveal this.
+This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
@@ -60,21 +60,19 @@ command history, piping and more all contribute to this.
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
 
-> What you did during Installfest was run a set of scripts that we shared with you!
+What you did during Installfest was run a set of scripts that we shared with you!
 
 **Tools.** There are tons of tools (programs really) we can run from the CLI. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
-> Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
+Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
-**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors, like this...
+**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors
 
 ![unhelpful error](./assets/unhelpful-error.png)
 
-> All these benefits aren't necessarily exclusive to the CLI (compared to a traditional GUI), but they tend to be more consistent.
-
 --------------------------------------------------------------------------------
 
-## CLI Basics
+## CLI Basics (20 minutes / 0:50)
 
 ### The Terminal and the Shell
 
@@ -122,7 +120,7 @@ When I am working on the command line and something unexpected happens, nine in 
 
 --------------------------------------------------------------------------------
 
-## Navigating the File System
+## Navigating the File System (10 minutes / 1:10)
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
@@ -130,7 +128,7 @@ In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder 
 
 On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
 
-## Paths
+## Paths (30 minutes / 1:50)
 
 ### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
 
@@ -307,7 +305,7 @@ $ brew install git
 
 When we type this command and hit enter, we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
 
-### Getting Help (5 minutes / 1:30)
+### Getting Help
 
 There are three general ways to get help with a command.
 
@@ -327,7 +325,7 @@ The man will display the man pages using a program `less`. Use the arrow keys to
 
 --------------------------------------------------------------------------------
 
-## Unsafe Commands (10 minutes / 2:15)
+## Unsafe Commands (10 minutes / 1:50)
 
 ### `sudo`
 
@@ -344,7 +342,7 @@ You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
 
-## WDI Environment (10 minutes / 2:25)
+## WDI Environment (10 minutes / 2:00)
 
 ### Directory Structure
 
@@ -356,7 +354,7 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * lessons
     * projects
 
-## BREAK (10 minutes / 2:05)
+## BREAK (10 minutes / 2:10)
 
 --------------------------------------------------------------------------------
 
