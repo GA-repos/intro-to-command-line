@@ -24,7 +24,7 @@
 
 ## Framing
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down some answers for the following questions with a partner...
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/10)
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
@@ -40,12 +40,14 @@ While GUIs are fantastic at presenting information, this is at a cost. GUIs are 
 - GUIs require a lot of work to design and implement
 - Related to the last, it is extremely difficult to design a GUI to do something beyond what the creator conceived of
 
-By using a precisely defined language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions 
+By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
 
 
 ### Why The CLI?
 
-Simply put: **if you want to learn to code, you must know your way around the CLI.** We are joining a new community of users for whom tools are designed preferring flexibility to ease of use (though as with all software, both are important). By investing time in learning the conventions, standards, and tools of this community, we are greatly empowered to write powerful and useful software.
+We are joining a new community of users for whom tools are designed preferring flexibility to ease of use (though as with all software, both are important). By investing time in learning the conventions, standards, and tools of this community, we are greatly empowered to write powerful and useful software.
+
+If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
 
 This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling but the facade of the GUI starts to reveal this.
 
@@ -53,8 +55,6 @@ This should also be demystifying to a degree. Software is the collective effort 
 
 **Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
 command history, piping and more all contribute to this.
-
-> Try creating `.txt` file on your computer, first via the GUI, then the CLI using the `touch` command. Which way is quicker?
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do.
 
@@ -73,12 +73,6 @@ command history, piping and more all contribute to this.
 > All these benefits aren't necessarily exclusive to the CLI (compared to a traditional GUI), but they tend to be more consistent.
 
 --------------------------------------------------------------------------------
-
-## DEMO: Hello.txt using GUI vs CLI
-
-> Note: There's nothing wrong with combining the powers of both the CLI and a GUI! We generally won't be writing files in the terminal (though we definitely could). We'll be using the Atom GUI. This just highlights that there are efficiencies that can be garnered from knowledge of CLI.
-
-We might be thinking to ourselves, "These differences are negligible! Which in this contrived example, it's a difference of MAYBE 5 seconds. But in the span of our careers as developers, becoming proficient with the command line is extremely important. It will end up saving us lots of time.
 
 ## CLI Basics
 
@@ -250,7 +244,7 @@ Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 <img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png">
 ```
 
-> Of these four paths, which are relative vs. absolute?
+> Of these four paths, which are relative and which are absolute?
 
 > We can see here that the `troll.png` photo is linked in two different ways. Why might we prefer one way or another?
 
@@ -267,32 +261,30 @@ Some commands have **output**, which is displayed on the screen for us to see. E
 
 Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
 
-The command you will likely use with the second greatest frequency is `cd` for "change working directory". `cd` also needs to be told a directory to which it should move
+Often times, a command whose main job is a side effect may not provide any output if it succeeds. If there is an error, it will provide output (we would get an error if there were a problem so no news is good news).
 
-To be clear, this changes the current directory but does not have an effect on the file system
+> What's an example of this we've already seen?
 
-Let's spend a few minutes just exploring the file system.
+Another example would be `touch`. This command creates a file in an indicated location. We do not, however, get a confirmation it did this immediately after hitting enter.
 
-For example, `touch`. This creates a file in an indicated location. We do not, however, get a confirmation it did this immediately after hitting enter (we would get an error if there were a problem so no news is good news).
+> Related to touch, what do you think `mkdir` does?
 
-> Often times, a command whose main job is a side effect may not provide any output if it succeeds. If there is an error, it will provide output.
->
-> Some commands may provide both an output and side effects.
+Some commands may provide both an output and side effects.
 
 ### Command Syntax (Flags and Arguments)
 
-Commands generally consist of three parts...
-  1. Command
-  2. Flags
-  3. Arguments
+Commands generally consist of three parts
+
+1. Command
+2. Options
+3. Arguments
   
 The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
 
-Next come the **Flags**. Think of these as "options" that tell the command how to do what it's about to do. There may be zero or more options.
-* Sometimes you won't be using any options. Other times just one or maybe even more!
-* Options usually start with one or two dashes. If the option is a letter, then one dash (e.g., `-a`). If it's a whole word, then two dashes (e.g., `--all`).
-
-> [Here's a list](http://catb.org/esr/writings/taoup/html/ch10s05.html#id2948149) of some single-letter flags you might encounter. This is not an exhaustive list.
+Next come the **Options**, sometimes called flags or switches. 
+* Sometimes you won't be using any options. Other times you may use several
+* By convention, options will start with a dash or two; one if the option is a single letter and two for the "long" name
+* Sometimes an option takes an argument. In these cases, the argument comes right after the option
 
 Finally come the **Arguments**. These are "targets", or what you want to do the action to. These could be file names, URLs, etc.
 
@@ -305,7 +297,7 @@ The commands entered into the CLI are often in one of the following forms..
 
 Where **doSomething** is, in effect, a verb, **how** an adverb (for example, should the command be executed "verbosely" or "quietly") and **toFiles** an object or objects (typically one or more files) on which the command should act.
 
-> Not all commands follow this pattern, but many do.
+Not all commands follow this pattern, but many do.
 
 Let's take a look at something we did for installfest.
 
@@ -313,19 +305,7 @@ Let's take a look at something we did for installfest.
 $ brew install git
 ```
 
-> When we type this command and hit enter , we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
-
-
-**Q:** Spend 2 minutes writing down the commands, flags and arguments for each of the below commands.
-  1. `$ touch index.html`
-  2. `$ ls -al`
-  3. `$ cp index.html index2.html`
-  4. `$ brew install git`
-
-> Remember, not all of these have flags and/or arguments.
-
---------------------------------------------------------------------------------
-
+When we type this command and hit enter, we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
 
 ### Getting Help (5 minutes / 1:30)
 
@@ -335,14 +315,15 @@ There are three general ways to get help with a command.
 * Use the manual -- or `man` -- tool (e.g., `man brew`).
 * Google!
 
-The first two options will display text using a program called `less`. Use the arrow keys to navigate. Type `q` to quit.
+The man will display the man pages using a program `less`. Use the arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the next or previous search result
 
 
-## [You do](https://github.com/ga-wdi-exercises/dc_directory_tree)
-
-
-
-## BREAK (10 minutes / 2:05)
+> Spend 2 minutes writing down the commands, options, and arguments for each of the below commands. (some may not have flags and/or arguments.)
+  1. `$ touch index.html`
+  2. `$ ls -al`
+  3. `$ cp index.html index2.html`
+  4. `$ brew install git`
+  5. `$ mkdir -p lessons/sandbox`
 
 --------------------------------------------------------------------------------
 
@@ -375,10 +356,14 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * lessons
     * projects
 
----
+## BREAK (10 minutes / 2:05)
+
+--------------------------------------------------------------------------------
 
 
-## Ultimate Time Savers
+## [You do](https://github.com/ga-wdi-exercises/dc_directory_tree)
+
+## Keyboard Shortcuts
 
 The next three points are reasons not to hold down the arrow or delete keys.
 
@@ -393,8 +378,6 @@ Move cursor to the **e**nd of the line.
 ### `ctrl-a`
 
 Move cursor to the beginning of the line
-
-> a is the beginning of the English alphabet
 
 ### The up and down arrows
 
@@ -471,6 +454,7 @@ Let's open our  `~/.bash_profile` in atom and type in the following...
 ```
 alias greeting="echo 'hello world'"
 alias gs='git status'
+alias l='ls -al'
 ```
 
 > At this point you may be wondering what exactly "bash" is. Bash is a language we can use to interact with our computer via the shell (via Terminal or some other text-based interface).
@@ -528,6 +512,8 @@ home
 * `find`
 * `cal`
 * `vim` and `vimtutor`
+
+[Linux Command](http://linuxcommand.org/) is a wonderful introduction to the command line. Macs are Unix systems and so very similar to Linux. Almost everything (everything I've found so far)
 
 ## Feeling Adventurous?
 
