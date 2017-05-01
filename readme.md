@@ -233,7 +233,7 @@ Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 ```html
 <img src="images/firehydrant.jpg">
-<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/images.jpg">
+<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/firehydrant.jpg">
 ```
 
 > Of these two paths, which is relative and which is absolute?
