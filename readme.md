@@ -253,9 +253,6 @@ Some commands have **output**, which is displayed on the screen for us to see. E
 * `pwd`
 * `ls`
 * `brew install tree`.
-* `telnet towel.blinkenlights.nl`
-
-> Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
 
 Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
 
@@ -324,8 +321,31 @@ The man will display the man pages using a program `less`. Use the arrow keys to
   5. `$ mkdir -p lessons/sandbox`
 
 --------------------------------------------------------------------------------
+## BREAK
+--------------------------------------------------------------------------------
 
-## Unsafe Commands (10 minutes / 1:50)
+### Common Command Teachbacks (25 minutes)
+
+> 15 minutes preparation. 10 minutes review.
+
+Form groups of 3 and spend 15 minutes researching and preparing a short demo of your command. Focus on...
+
+* What it does.
+* Common uses.
+* Common flags or arguments.
+* Any "gotchas" (i.e., things we should be aware of when using this command)?
+
+#### Commands
+
+1. `ls`
+2. `cd`
+3. `touch` and `mkdir`
+4. `cp`
+5. `mv`
+6. `rm`
+7. `atom`
+
+## Unsafe Commands (5 minutes)
 
 ### `sudo`
 
@@ -342,7 +362,7 @@ You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
 
-## WDI Environment (10 minutes / 2:00)
+## WDI Environment (5 minutes)
 
 ### Directory Structure
 
@@ -354,12 +374,8 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * lessons
     * projects
 
-## BREAK (10 minutes / 2:10)
 
---------------------------------------------------------------------------------
-
-
-## [You do](https://github.com/ga-wdi-exercises/dc_directory_tree)
+## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
 
 ## Keyboard Shortcuts
 
@@ -371,7 +387,7 @@ Cancel whatever you were typing before. Abort!
 
 ### `ctrl-e`
 
-Move cursor to the **e**nd of the line.
+Move cursor to the end of the line.
 
 ### `ctrl-a`
 
@@ -392,51 +408,29 @@ type only the first few letters and hit the TAB key.
 - command-k
 - `clear`
 
-## You do: Speed Rounds
+--------------------------------------------------------------------------------
 
-Copy and paste each of the following commands into the terminal without
-pressing enter.
+## Homework: To Oz
 
-### 1. Cancel the really long line of text
+[To Oz](https://github.com/ga-wdi-exercises/to_oz)
 
-```
-$ kjahlkjhsadlkjfhlaksjdhf asdjkfhlsadjhflkjashdf lasjkhdfjhasd sdjhfjhsgajhgf
-```
+#### Submission Instructions
 
-### 2. Fix the typo at the beginning of the command
+1. Go to the assignment's [issues page](https://github.com/ga-wdi-exercises/to_oz/issues).
+2. Click 'New Issue’.
+3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
+4. For the description, copy paste the CLI commands you used to complete the assignment.
 
-```
-$ cdd ~/Documents && pwd && ls && ccd -
-```
+## Additional Practice
 
-### 3. Fix the typo at the end of the command
-
-```
-Same as the previous command
-```
-
-## Own your terminal
-
-1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-  - It will be WAY easier to read
-2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-  - Pick something you like to look at
-
-## [iTerm2](https://www.iterm2.com/features.html)
-
-Most of the instructors use iTerm2 as a terminal replacement.
-
-My favorite features include:
-
-- A better, more readable font
-- Hotkey support (full screen and tabs)
-- Unlimited Scroll Back history
+- [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
+- [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
 
-## Bash Profile Aliases (If Time Allows)
+## Bash Profile Aliases (Bonus Content)
 
-You may have noticed during Installfest that the instructors messed with this file: `~/.bash_profile`.
+You may have noticed during Installfest that we messed with this file: `~/.bash_profile`.
 
 <details>
   <summary>**Q:** Based on the path, where is this file located?</summary>
@@ -457,27 +451,9 @@ alias l='ls -al'
 
 > At this point you may be wondering what exactly "bash" is. Bash is a language we can use to interact with our computer via the shell (via Terminal or some other text-based interface).
 
-### You Do: Make An Alias
+### Make An Alias
 
 Take the next five minutes to create your own alias and test it. If possible, alias something you think you'll find yourself doing frequently!
-
---------------------------------------------------------------------------------
-
-## Homework: To Oz
-
-[To Oz](https://github.com/ga-wdi-exercises/to_oz)
-
-#### Submission Instructions
-
-1. Go to the assignment's [issues page](https://github.com/ga-wdi-exercises/to_oz/issues).
-2. Click 'New Issue’.
-3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
-4. For the description, copy paste the CLI commands you used to complete the assignment.
-
-## Additional Practice
-
-- [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
-- [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
 
@@ -512,6 +488,23 @@ home
 * `vim` and `vimtutor`
 
 [Linux Command](http://linuxcommand.org/) is a wonderful introduction to the command line. Macs are Unix systems and so very similar to Linux. Almost everything (everything I've found so far)
+
+## Own your terminal
+
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+  - It will be WAY easier to read
+2. [Choose a theme](http://apple.stackexchange.com/a/92769)
+  - Pick something you like to look at
+
+## [iTerm2](https://www.iterm2.com/features.html)
+
+Some instructors use iTerm2 as a terminal replacement.
+
+Our favorite features include:
+
+- A better, more readable font
+- Hotkey support (full screen and tabs)
+- Unlimited Scroll Back history
 
 ## Feeling Adventurous?
 
