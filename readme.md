@@ -116,11 +116,11 @@ Most commands function relative to your working directory so "what is my current
 
 When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
 
-## BREAK
+## BREAK (10 minutes)
 
 --------------------------------------------------------------------------------
 
-## Navigating the File System (10 minutes)
+## Navigating the File System (45 minutes)
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
@@ -128,7 +128,7 @@ In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder 
 
 On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
 
-## Paths (15 minutes)
+## Paths
 
 ### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
 
@@ -177,10 +177,6 @@ An absolute path can be expressed in terms of the `~` shorthand for the home dir
 ```
 
 > What are some reasons having a short hand for the user directory might be important?
-
-
-## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
-
 
 ### Exploring the file system
 
@@ -250,6 +246,8 @@ Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 > We can see here that the `troll.png` photo is linked in two different ways. Why might we prefer one way or another?
 
+## [You Do: Directory Tree](https://github.com/ga-wdi-exercises/dc_directory_tree)
+
 ### Output and Side Effects
 
 Some commands have **output**, which is displayed on the screen for us to see. Examples of commands that have output are...
@@ -270,7 +268,7 @@ Another example would be `touch`. This command creates a file in an indicated lo
 
 Some commands may provide both an output and side effects.
 
-### Command Syntax (Flags and Arguments)
+### Command Syntax
 
 Commands generally consist of three parts
 
@@ -325,7 +323,7 @@ The man will display the man pages using a program `less`. Use the arrow keys to
   5. `$ mkdir -p lessons/sandbox`
 
 --------------------------------------------------------------------------------
-## BREAK
+## BREAK (10 minutes)
 --------------------------------------------------------------------------------
 
 ### Common Command Teachbacks (25 minutes)
@@ -379,7 +377,7 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * projects
 
 
-## Keyboard Shortcuts
+## Keyboard Shortcuts (5 minutes)
 
 The next three points are reasons not to hold down the arrow or delete keys.
 
