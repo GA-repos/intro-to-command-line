@@ -364,8 +364,8 @@ Here's the suggested structure for your WDI folder. Please create the following 
 
   * ~/wdi
     * sandbox
-    * exercises
-    * lessons
+    * homework
+    * labs
     * projects
 
 
