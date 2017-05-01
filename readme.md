@@ -210,7 +210,7 @@ So if we were in our home directory, the path to this lesson's directory could b
 wdi/lessons/cli-intro                                   # relative
 ./wdi/lessons/cli-intro                                 # relative
 ~/wdi/lessons/cli-intro                                 # absolute
-/Users/adrianmaseda/wdi/lessons/cli-intro               # absolute
+/Users/nayanadavis/wdi/lessons/cli-intro               # absolute
 ```
 
 Keep in mind these special directories' meanings:
@@ -233,7 +233,7 @@ Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 ```html
 <img src="images/firehydrant.jpg">
-<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/firehydrant.jpg">
+<img src="/Users/nayanadavis/wdi/lessons/cli-intro/demo_html/images/firehydrant.jpg">
 ```
 
 > Of these two paths, which is relative and which is absolute?
