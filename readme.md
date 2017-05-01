@@ -202,7 +202,7 @@ We can modify commands' behavior using **options** (which we will discuss the sp
 
 > Let's talk a little about the argument we provide to `cd`
 
-Relative paths are interpreted as starting from the current working directory. In order to be explicit, we frequently begin them with `./`
+Relative paths are interpreted as starting from the current working directory. In order to be explicit, we can begin them with `./`
 
 > How is this more clear?
 
@@ -375,8 +375,6 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * projects
 
 
-## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
-
 ## Keyboard Shortcuts
 
 The next three points are reasons not to hold down the arrow or delete keys.
@@ -407,6 +405,8 @@ type only the first few letters and hit the TAB key.
 - ctrl-l
 - command-k
 - `clear`
+
+## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
 
 --------------------------------------------------------------------------------
 
