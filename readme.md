@@ -5,11 +5,11 @@
 ### Concepts
 
 - Define and explain the strengths and weaknesses of GUIs and CLIs
-- List reasons for learning to get comfortable with the shell
+- List advantages for using the shell
 - Describe how a shell program relates to the file system
 - Recognize and explain absolute and relative paths
-- Describe the anatomy of a command: statements, flags and arguments
-- Know how to find more information on how to use commands
+- Describe the anatomy of a command
+- Learn how to find more information on using commands
 
 ### Mechanics
 
@@ -20,19 +20,12 @@
   - Navigate to different directories.
   - Manage files and directories.
 - Open files and directories with Atom.
-- List unsafe commands.
+- List unsafe commands
 
-## Framing (30 minutes / 0:30)
+## Framing (30 minutes)
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/10)
 
-* How is the CLI different from the GUI?
-* What do you like / dislike about using it?
-* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
-
----------------------------------------------------------------------------
-
-We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
+We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and presents a strong visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images.
 
 While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
 
@@ -42,10 +35,17 @@ While GUIs are fantastic at presenting information, this is at a cost. GUIs are 
 
 By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
 
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/13)
+
+* How is the CLI different from the GUI?
+* What do you like / dislike about using it?
+* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
+
+---------------------------------------------------------------------------
 
 ### Why The CLI?
 
-We are joining a new community of users for whom tools are designed preferring flexibility to ease of use (though as with all software, both are important). By investing time in learning the conventions, standards, and tools of this community, we are greatly empowered to write powerful and useful software.
+We are joining a new community of users who prefer flexibility to ease of use (though as with all software, both are important) and, as such, the tools they use are designed to optimize this preference. By investing time in learning the conventions, standards and tools of this community, we are greatly empowered to write powerful and useful software.
 
 If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
 
@@ -54,7 +54,7 @@ This should also be demystifying to a degree. Software is the collective effort 
 #### Benefits of the CLI
 
 **Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
-command history, piping and more all contribute to this.
+command history, piping (sending the output of one program to another for additional processing) and more all contribute to this.
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do.
 
@@ -66,17 +66,17 @@ What you did during Installfest was run a set of scripts that we shared with you
 
 Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
-**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors
+**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this is preferable to what can often be unhelpful GUI errors
 
 ![unhelpful error](./assets/unhelpful-error.png)
 
 --------------------------------------------------------------------------------
 
-## CLI Basics (20 minutes / 0:50)
+## CLI Basics (20 minutes)
 
 ### The Terminal and the Shell
 
-How do we get at this text based interface from our GUI desktop? We run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
+How do we get at this text based interface from our GUI desktop? We run what's called a terminal application. The default on OSX is `Terminal.app`. When you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
 A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**. There are other shells but all operate very similarly
 
@@ -98,29 +98,29 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 > What is a command?
 
-A command is a program. Some come built into the shell and provide the basics for interacting with the OS and some are written by programmers (like you!) to provide further functionality.
+A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
 We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
 
 ### The Current Working Directory
 
-You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
+You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure.
 
 On our machines, at the very top level of this tree is a directory called the **root directory** signified by `/`.
 
-The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but the primary of these is not presenting them to GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
+The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but these protections are primarily aimed at GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
 
-A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
+A running shell is always in the context of some directory called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
 
-Most commands function relative to your working directory so "what is my current working directory" should be the question yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
+Most commands function relative to your working directory so "what is my current working directory?" should be the question you ask yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
 
-When I am working on the command line and something unexpected happens, nine in ten times it is because I was not in the directory where I though I was / where I should have been. `pwd` early and often.
+When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
 
 ## BREAK
 
 --------------------------------------------------------------------------------
 
-## Navigating the File System (10 minutes / 1:10)
+## Navigating the File System (10 minutes)
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
@@ -128,13 +128,13 @@ In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder 
 
 On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
 
-## Paths (30 minutes / 1:50)
+## Paths (30 minutes)
 
 ### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
 
 A path specifies the location of a particular file or folder in a file system.
 
-A location can be specified by a relative path or an absolute path. 
+A location can be specified by a relative path or an absolute path.
 
 > What would you expect the difference to be based on names?
 
@@ -147,7 +147,7 @@ You may have noticed that `pwd` returns not just the name of the current directo
 We can think of an absolute path like this very specific mailing address of our classroom:
 
 ```
-Classroom 1
+Classroom 6
 GA
 8th Floor
 1133 15th St NW
@@ -276,10 +276,10 @@ Commands generally consist of three parts
 1. Command
 2. Options
 3. Arguments
-  
+
 The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
 
-Next come the **Options**, sometimes called flags or switches. 
+Next come the **Options**, sometimes called flags or switches.
 * Sometimes you won't be using any options. Other times you may use several
 * By convention, options will start with a dash or two; one if the option is a single letter and two for the "long" name
 * Sometimes an option takes an argument. In these cases, the argument comes right after the option
@@ -395,7 +395,7 @@ type only the first few letters and hit the TAB key.
 ## You do: Speed Rounds
 
 Copy and paste each of the following commands into the terminal without
-pressing enter. 
+pressing enter.
 
 ### 1. Cancel the really long line of text
 
