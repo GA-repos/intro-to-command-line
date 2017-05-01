@@ -49,7 +49,7 @@ We are joining a new community of users who prefer flexibility to ease of use (t
 
 If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
 
-This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
+This should also be demystifying to a degree. Software is the collective effort of an enormous number of people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
@@ -126,7 +126,7 @@ For this section, we will compare file system navigation and representation betw
 
 In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
 
-On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
+On Unix machines (like OS X), In paths, `~` is shorthand for your home directory - `/Users/you`.
 
 ## Paths
 
@@ -196,8 +196,6 @@ On its own, `cd` will change the directory to the home directory. We can also pr
 
 We can modify commands' behavior using **options** (which we will discuss the specifics of below). Two useful options for `ls` are `-a` which includes hidden files with names beginning with `.`, and `-l` which lists files in long form (including some information about the files)
 
-> Let's spend a few minutes exploring the file system using these commands and what we've learned about paths. I'll start a glossary of commands on the board.
-
 ### Relative Paths
 
 > Let's talk a little about the argument we provide to `cd`
@@ -214,8 +212,6 @@ wdi/lessons/cli-intro                                   # relative
 ~/wdi/lessons/cli-intro                                 # absolute
 /Users/adrianmaseda/wdi/lessons/cli-intro               # absolute
 ```
-
-> When might we prefer relative paths? When might we prefer absolute paths?
 
 Keep in mind these special directories' meanings:
 * `.`: one dot refers to the current directory
@@ -236,17 +232,13 @@ So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go u
 Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 ```html
-<img src="../heeler.jpg">
-<img src="firehydrant.jpg">
-<img src="images/troll.png">
-<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png">
+<img src="images/firehydrant.jpg">
+<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/images.jpg">
 ```
 
-> Of these four paths, which are relative and which are absolute?
+> Of these two paths, which is relative and which is absolute?
 
-> We can see here that the `troll.png` photo is linked in two different ways. Why might we prefer one way or another?
-
-## [You Do: Directory Tree](https://github.com/ga-wdi-exercises/dc_directory_tree)
+## [You Do: Directory Tree](https://ga-wdi-exercises.github.io/dc_directory_tree/)
 
 ### Output and Side Effects
 
