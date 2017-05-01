@@ -5,11 +5,11 @@
 ### Concepts
 
 - Define and explain the strengths and weaknesses of GUIs and CLIs
-- List reasons for learning to get comfortable with the shell
+- List advantages for using the shell
 - Describe how a shell program relates to the file system
 - Recognize and explain absolute and relative paths
-- Describe the anatomy of a command: statements, flags and arguments
-- Know how to find more information on how to use commands
+- Describe the anatomy of a command
+- Learn how to find more information on using commands
 
 ### Mechanics
 
@@ -20,19 +20,12 @@
   - Navigate to different directories.
   - Manage files and directories.
 - Open files and directories with Atom.
-- List unsafe commands.
+- List unsafe commands
 
-## Framing (30 minutes / 0:30)
+## Framing (15 minutes)
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **2 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/10)
 
-* How is the CLI different from the GUI?
-* What do you like / dislike about using it?
-* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
-
----------------------------------------------------------------------------
-
-We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and a visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images. 
+We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and presents a strong visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images.
 
 While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
 
@@ -42,19 +35,26 @@ While GUIs are fantastic at presenting information, this is at a cost. GUIs are 
 
 By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
 
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/13)
+
+* How is the CLI different from the GUI?
+* What do you like / dislike about using it?
+* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
+
+---------------------------------------------------------------------------
 
 ### Why The CLI?
 
-We are joining a new community of users for whom tools are designed preferring flexibility to ease of use (though as with all software, both are important). By investing time in learning the conventions, standards, and tools of this community, we are greatly empowered to write powerful and useful software.
+We are joining a new community of users who prefer flexibility to ease of use (though as with all software, both are important) and, as such, the tools they use are designed to optimize this preference. By investing time in learning the conventions, standards and tools of this community, we are greatly empowered to write powerful and useful software.
 
 If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
 
-This should also be demystifying to a degree. Software is the collective effort of an enormous number or people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
+This should also be demystifying to a degree. Software is the collective effort of an enormous number of people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
 **Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
-command history, piping and more all contribute to this.
+command history, piping (sending the output of one program to another for additional processing) and more all contribute to this.
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do.
 
@@ -66,17 +66,17 @@ What you did during Installfest was run a set of scripts that we shared with you
 
 Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
-**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this preferable to what can often be unhelpful GUI errors
+**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this is preferable to what can often be unhelpful GUI errors
 
 ![unhelpful error](./assets/unhelpful-error.png)
 
 --------------------------------------------------------------------------------
 
-## CLI Basics (20 minutes / 0:50)
+## CLI Basics (15 minutes)
 
 ### The Terminal and the Shell
 
-How do we get at this text based interface from our GUI desktop? We run what's called a terminal emulator. The default on OSX is `Terminal.app`; when you open a new Terminal window, the Terminal app will call a program called a **shell**.
+How do we get at this text based interface from our GUI desktop? We run what's called a terminal application. The default on OSX is `Terminal.app`. When you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
 A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**. There are other shells but all operate very similarly
 
@@ -98,43 +98,43 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 > What is a command?
 
-A command is a program. Some come built into the shell and provide the basics for interacting with the OS and some are written by programmers (like you!) to provide further functionality.
+A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
 We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
 
 ### The Current Working Directory
 
-You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure. 
+You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure.
 
 On our machines, at the very top level of this tree is a directory called the **root directory** signified by `/`.
 
-The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but the primary of these is not presenting them to GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
+The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but these protections are primarily aimed at GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
 
-A running shell is always in the context of some directory, called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
+A running shell is always in the context of some directory called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
 
-Most commands function relative to your working directory so "what is my current working directory" should be the question yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
+Most commands function relative to your working directory so "what is my current working directory?" should be the question you ask yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
 
-When I am working on the command line and something unexpected happens, nine in ten times it is because I was not in the directory where I though I was / where I should have been. `pwd` early and often.
+When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
 
-## BREAK
+## BREAK (10 minutes)
 
 --------------------------------------------------------------------------------
 
-## Navigating the File System (10 minutes / 1:10)
+## Navigating the File System (45 minutes)
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
 In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
 
-On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
+On Unix machines (like OS X), In paths, `~` is shorthand for your home directory - `/Users/you`.
 
-## Paths (30 minutes / 1:50)
+## Paths
 
 ### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
 
 A path specifies the location of a particular file or folder in a file system.
 
-A location can be specified by a relative path or an absolute path. 
+A location can be specified by a relative path or an absolute path.
 
 > What would you expect the difference to be based on names?
 
@@ -147,7 +147,7 @@ You may have noticed that `pwd` returns not just the name of the current directo
 We can think of an absolute path like this very specific mailing address of our classroom:
 
 ```
-Classroom 1
+Classroom 6
 GA
 8th Floor
 1133 15th St NW
@@ -196,13 +196,11 @@ On its own, `cd` will change the directory to the home directory. We can also pr
 
 We can modify commands' behavior using **options** (which we will discuss the specifics of below). Two useful options for `ls` are `-a` which includes hidden files with names beginning with `.`, and `-l` which lists files in long form (including some information about the files)
 
-> Let's spend a few minutes exploring the file system using these commands and what we've learned about paths. I'll start a glossary of commands on the board.
-
 ### Relative Paths
 
 > Let's talk a little about the argument we provide to `cd`
 
-Relative paths are interpreted as starting from the current working directory. In order to be explicit, we frequently begin them with `./`
+Relative paths are interpreted as starting from the current working directory. In order to be explicit, we can begin them with `./`
 
 > How is this more clear?
 
@@ -212,10 +210,8 @@ So if we were in our home directory, the path to this lesson's directory could b
 wdi/lessons/cli-intro                                   # relative
 ./wdi/lessons/cli-intro                                 # relative
 ~/wdi/lessons/cli-intro                                 # absolute
-/Users/adrianmaseda/wdi/lessons/cli-intro               # absolute
+/Users/nayanadavis/wdi/lessons/cli-intro               # absolute
 ```
-
-> When might we prefer relative paths? When might we prefer absolute paths?
 
 Keep in mind these special directories' meanings:
 * `.`: one dot refers to the current directory
@@ -236,15 +232,13 @@ So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go u
 Let's take a look at the `src` attribute of the `img` tags in `index.html`.
 
 ```html
-<img src="../heeler.jpg">
-<img src="firehydrant.jpg">
-<img src="images/troll.png">
-<img src="/Users/andrewkim/wdi/lessons/cli-intro/demo_html/images/troll.png">
+<img src="images/firehydrant.jpg">
+<img src="/Users/nayanadavis/wdi/lessons/cli-intro/demo_html/images/firehydrant.jpg">
 ```
 
-> Of these four paths, which are relative and which are absolute?
+> Of these two paths, which is relative and which is absolute?
 
-> We can see here that the `troll.png` photo is linked in two different ways. Why might we prefer one way or another?
+## [You Do: Directory Tree](https://ga-wdi-exercises.github.io/dc_directory_tree/)
 
 ### Output and Side Effects
 
@@ -253,9 +247,6 @@ Some commands have **output**, which is displayed on the screen for us to see. E
 * `pwd`
 * `ls`
 * `brew install tree`.
-* `telnet towel.blinkenlights.nl`
-
-> Don't worry about `telnet`. Chances are you won't see it again in WDI. It's just a means of connecting to a remote computer via the Terminal.
 
 Other commands' primary purpose is to execute some **side-effect**, or in other words, to make some change that isn't necessarily printed in the Terminal after hitting enter.
 
@@ -269,17 +260,17 @@ Another example would be `touch`. This command creates a file in an indicated lo
 
 Some commands may provide both an output and side effects.
 
-### Command Syntax (Flags and Arguments)
+### Command Syntax
 
 Commands generally consist of three parts
 
 1. Command
 2. Options
 3. Arguments
-  
+
 The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
 
-Next come the **Options**, sometimes called flags or switches. 
+Next come the **Options**, sometimes called flags or switches.
 * Sometimes you won't be using any options. Other times you may use several
 * By convention, options will start with a dash or two; one if the option is a single letter and two for the "long" name
 * Sometimes an option takes an argument. In these cases, the argument comes right after the option
@@ -324,8 +315,31 @@ The man will display the man pages using a program `less`. Use the arrow keys to
   5. `$ mkdir -p lessons/sandbox`
 
 --------------------------------------------------------------------------------
+## BREAK (10 minutes)
+--------------------------------------------------------------------------------
 
-## Unsafe Commands (10 minutes / 1:50)
+### Common Command Teachbacks (25 minutes)
+
+> 15 minutes preparation. 10 minutes review.
+
+Form groups of 3 and spend 15 minutes researching and preparing a short demo of your command. Focus on...
+
+* What it does.
+* Common uses.
+* Common flags or arguments.
+* Any "gotchas" (i.e., things we should be aware of when using this command)?
+
+#### Commands
+
+1. `ls`
+2. `cd`
+3. `touch` and `mkdir`
+4. `cp`
+5. `mv`
+6. `rm`
+7. `atom`
+
+## Unsafe Commands (5 minutes)
 
 ### `sudo`
 
@@ -342,7 +356,7 @@ You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
 
-## WDI Environment (10 minutes / 2:00)
+## WDI Environment (5 minutes)
 
 ### Directory Structure
 
@@ -354,14 +368,8 @@ Here's the suggested structure for your WDI folder. Please create the following 
     * lessons
     * projects
 
-## BREAK (10 minutes / 2:10)
 
---------------------------------------------------------------------------------
-
-
-## [You do](https://github.com/ga-wdi-exercises/dc_directory_tree)
-
-## Keyboard Shortcuts
+## Keyboard Shortcuts (5 minutes)
 
 The next three points are reasons not to hold down the arrow or delete keys.
 
@@ -371,7 +379,7 @@ Cancel whatever you were typing before. Abort!
 
 ### `ctrl-e`
 
-Move cursor to the **e**nd of the line.
+Move cursor to the end of the line.
 
 ### `ctrl-a`
 
@@ -392,51 +400,29 @@ type only the first few letters and hit the TAB key.
 - command-k
 - `clear`
 
-## You do: Speed Rounds
+--------------------------------------------------------------------------------
 
-Copy and paste each of the following commands into the terminal without
-pressing enter. 
+## Homework: To Oz
 
-### 1. Cancel the really long line of text
+[To Oz](https://github.com/ga-wdi-exercises/to_oz)
 
-```
-$ kjahlkjhsadlkjfhlaksjdhf asdjkfhlsadjhflkjashdf lasjkhdfjhasd sdjhfjhsgajhgf
-```
+#### Submission Instructions
 
-### 2. Fix the typo at the beginning of the command
+1. Go to the assignment's [issues page](https://github.com/ga-wdi-exercises/to_oz/issues).
+2. Click 'New Issue’.
+3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
+4. For the description, copy paste the CLI commands you used to complete the assignment.
 
-```
-$ cdd ~/Documents && pwd && ls && ccd -
-```
+## Additional Practice
 
-### 3. Fix the typo at the end of the command
-
-```
-Same as the previous command
-```
-
-## Own your terminal
-
-1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-  - It will be WAY easier to read
-2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-  - Pick something you like to look at
-
-## [iTerm2](https://www.iterm2.com/features.html)
-
-Most of the instructors use iTerm2 as a terminal replacement.
-
-My favorite features include:
-
-- A better, more readable font
-- Hotkey support (full screen and tabs)
-- Unlimited Scroll Back history
+- [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
+- [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
 
-## Bash Profile Aliases (If Time Allows)
+## Bash Profile Aliases (Bonus Content)
 
-You may have noticed during Installfest that the instructors messed with this file: `~/.bash_profile`.
+You may have noticed during Installfest that we messed with this file: `~/.bash_profile`.
 
 <details>
   <summary>**Q:** Based on the path, where is this file located?</summary>
@@ -457,27 +443,9 @@ alias l='ls -al'
 
 > At this point you may be wondering what exactly "bash" is. Bash is a language we can use to interact with our computer via the shell (via Terminal or some other text-based interface).
 
-### You Do: Make An Alias
+### Make An Alias
 
 Take the next five minutes to create your own alias and test it. If possible, alias something you think you'll find yourself doing frequently!
-
---------------------------------------------------------------------------------
-
-## Homework: To Oz
-
-[To Oz](https://github.com/ga-wdi-exercises/to_oz)
-
-#### Submission Instructions
-
-1. Go to the assignment's [issues page](https://github.com/ga-wdi-exercises/to_oz/issues).
-2. Click 'New Issue’.
-3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
-4. For the description, copy paste the CLI commands you used to complete the assignment.
-
-## Additional Practice
-
-- [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
-- [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
 
@@ -512,6 +480,23 @@ home
 * `vim` and `vimtutor`
 
 [Linux Command](http://linuxcommand.org/) is a wonderful introduction to the command line. Macs are Unix systems and so very similar to Linux. Almost everything (everything I've found so far)
+
+## Own your terminal
+
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+  - It will be WAY easier to read
+2. [Choose a theme](http://apple.stackexchange.com/a/92769)
+  - Pick something you like to look at
+
+## [iTerm2](https://www.iterm2.com/features.html)
+
+Some instructors use iTerm2 as a terminal replacement.
+
+Our favorite features include:
+
+- A better, more readable font
+- Hotkey support (full screen and tabs)
+- Unlimited Scroll Back history
 
 ## Feeling Adventurous?
 
