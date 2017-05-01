@@ -22,7 +22,7 @@
 - Open files and directories with Atom.
 - List unsafe commands
 
-## Framing (30 minutes)
+## Framing (15 minutes)
 
 
 We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and presents a strong visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images.
@@ -72,7 +72,7 @@ Tools built for the command line usually follow something called the ['Unix phil
 
 --------------------------------------------------------------------------------
 
-## CLI Basics (20 minutes)
+## CLI Basics (15 minutes)
 
 ### The Terminal and the Shell
 
@@ -128,7 +128,7 @@ In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder 
 
 On Unix machines (like OS X), In paths, `~` is shorthand your home directory - `/Users/you`.
 
-## Paths (30 minutes)
+## Paths (15 minutes)
 
 ### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
 
@@ -177,6 +177,10 @@ An absolute path can be expressed in terms of the `~` shorthand for the home dir
 ```
 
 > What are some reasons having a short hand for the user directory might be important?
+
+
+## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
+
 
 ### Exploring the file system
 
@@ -405,8 +409,6 @@ type only the first few letters and hit the TAB key.
 - ctrl-l
 - command-k
 - `clear`
-
-## [You Do: Directory Tree (15 minutes)](https://github.com/ga-wdi-exercises/dc_directory_tree)
 
 --------------------------------------------------------------------------------
 
