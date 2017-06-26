@@ -35,7 +35,7 @@ While GUIs are fantastic at presenting information, this is at a cost. GUIs are 
 
 By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/13)
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/15)
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
