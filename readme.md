@@ -76,6 +76,7 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
+--------------------------------------------------------------------------------
 ## BREAK (10 minutes)
 
 --------------------------------------------------------------------------------
@@ -398,7 +399,7 @@ type only the first few letters and hit the TAB key.
 You may have noticed during Installfest that we messed with this file: `~/.bash_profile`.
 
 <details>
-  <summary>**Q:** Based on the path, where is this file located?</summary>
+  <summary> <b>Q:</b> Based on the path, where is this file located?</summary>
   In the home directory (i.e., Users/your-name-here).
 </details>
 
