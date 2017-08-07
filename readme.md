@@ -3,6 +3,7 @@
 ## Learning Objectives
 
 - Define and explain the strengths and weaknesses of GUIs and CLIs
+- Learn how access the terminal and break down its components
 - Describe the file system and how it relates to the CLI
 - Introduce common commands and list unsafe ones
 - Learn how to find more information on using commands
