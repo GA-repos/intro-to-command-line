@@ -2,28 +2,14 @@
 
 ## Learning Objectives
 
-### Concepts
-
 - Define and explain the strengths and weaknesses of GUIs and CLIs
-- List advantages for using the shell
-- Describe how a shell program relates to the file system
-- Recognize and explain absolute and relative paths
-- Describe the anatomy of a command
+- Learn how access the terminal and break down its components
+- Describe the file system and how it relates to the CLI
+- Introduce common commands and list unsafe ones
 - Learn how to find more information on using commands
-
-### Mechanics
-
-- Setup your working directory / environment for WDI.
-- List common commands to...
-  - View the path of the current directory.
-  - View the contents of a directory.
-  - Navigate to different directories.
-  - Manage files and directories.
-- Open files and directories with Atom.
-- List unsafe commands
+- Introduce Bash and how to customize the command line
 
 ## Framing (15 minutes)
-
 
 We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and presents a strong visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images.
 
@@ -42,14 +28,6 @@ By using precise language to issue commands, these expenses are reduced and we a
 * Compared to a GUI, in what ways might using the CLI be better or worse for developers?
 
 ---------------------------------------------------------------------------
-
-### Why The CLI?
-
-We are joining a new community of users who prefer flexibility to ease of use (though as with all software, both are important) and, as such, the tools they use are designed to optimize this preference. By investing time in learning the conventions, standards and tools of this community, we are greatly empowered to write powerful and useful software.
-
-If we are to be effective at programming, we want access to these tools. If we want to be quick to adopt new tools and have an immediate intuition about them, we need to get comfortable at the command line.
-
-This should also be demystifying to a degree. Software is the collective effort of an enormous number of people and organizations each having made incremental progress. Peeling back the facade of the GUI starts to reveal this.
 
 #### Benefits of the CLI
 
@@ -70,7 +48,6 @@ Tools built for the command line usually follow something called the ['Unix phil
 
 ![unhelpful error](./assets/unhelpful-error.png)
 
---------------------------------------------------------------------------------
 
 ## CLI Basics (15 minutes)
 
@@ -100,9 +77,12 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
-We'll address commands in more detail shortly but first we need to address the idea of the **working directory**
+--------------------------------------------------------------------------------
+## BREAK (10 minutes)
 
-### The Current Working Directory
+--------------------------------------------------------------------------------
+
+## File Systems(45 minutes)
 
 You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure.
 
@@ -116,17 +96,13 @@ Most commands function relative to your working directory so "what is my current
 
 When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
 
-## BREAK (10 minutes)
-
---------------------------------------------------------------------------------
-
-## Navigating the File System (45 minutes)
+### Navigating the File System 
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
 In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
 
-On Unix machines (like OS X), In paths, `~` is shorthand for your home directory - `/Users/you`.
+On Unix machines (like OS X), `~` is shorthand for your home directory - `/Users/you`.
 
 ## Paths
 
@@ -147,7 +123,7 @@ You may have noticed that `pwd` returns not just the name of the current directo
 We can think of an absolute path like this very specific mailing address of our classroom:
 
 ```
-Classroom 6
+Classroom 1
 GA
 8th Floor
 1133 15th St NW
@@ -159,12 +135,8 @@ Expressed as a path the address might look something like this:
 
 ```bash
 ; General Assembly in path form...
-/USA/Washington_DC/20003/1133_15th_St_NW/8th_Floor/GA/Classroom_6
+/USA/Washington_DC/20003/1133_15th_St_NW/8th_Floor/GA/Classroom_1
 ```
-
-> How does the post office read a mailing address?
-
-> What would root (`/`) be in our physical location metaphor?
 
 An absolute path can be expressed in terms of the `~` shorthand for the home directory by appending the rest of the path after the home directory to the tilda
 
@@ -177,6 +149,18 @@ An absolute path can be expressed in terms of the `~` shorthand for the home dir
 ```
 
 > What are some reasons having a short hand for the user directory might be important?
+
+### Exploring the file system
+
+There are a few commands that will very useful to us in our exploration
+
+We have already talked about `pwd` which outputs the name of the current working directory ("print working directory").
+
+> After we know where we are, what's the next piece of information we might require?
+
+The `ls` command lists the files in the current working directory.
+
+And crucial to exploring, we will need to change the working directory which we can do with `cd` ("change directory").
 
 ### Exploring the file system
 
@@ -210,7 +194,7 @@ So if we were in our home directory, the path to this lesson's directory could b
 wdi/lessons/cli-intro                                   # relative
 ./wdi/lessons/cli-intro                                 # relative
 ~/wdi/lessons/cli-intro                                 # absolute
-/Users/nayanadavis/wdi/lessons/cli-intro               # absolute
+/Users/generalassembly/wdi/lessons/cli-intro               # absolute
 ```
 
 Keep in mind these special directories' meanings:
@@ -226,17 +210,6 @@ So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go u
 3. `$ ls ..`
 4. `$ cd ../..`
 5. `$ mv ../index.html .`
-
-### Paths in HTML
-
-Let's take a look at the `src` attribute of the `img` tags in `index.html`.
-
-```html
-<img src="images/firehydrant.jpg">
-<img src="/Users/nayanadavis/wdi/lessons/cli-intro/demo_html/images/firehydrant.jpg">
-```
-
-> Of these two paths, which is relative and which is absolute?
 
 ## [You Do: Directory Tree](https://ga-wdi-exercises.github.io/dc_directory_tree/)
 
@@ -296,6 +269,27 @@ $ brew install git
 
 When we type this command and hit enter, we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
 
+> Spend 2 minutes writing down the commands, options, and arguments for each of the below commands. (some may not have flags and/or arguments.)
+  1. `$ touch index.html`
+  2. `$ ls -al`
+  3. `$ cp index.html index2.html`
+  4. `$ brew install git`
+  5. `$ mkdir -p lessons/sandbox`
+
+
+## WDI Environment (5 minutes)
+
+### Directory Structure
+
+Here's the suggested structure for your WDI folder. Please create the following folders if they do not exist.
+
+  * ~/wdi
+    * sandbox
+    * homework
+    * labs
+    * projects
+
+
 ### Getting Help
 
 There are three general ways to get help with a command.
@@ -307,13 +301,6 @@ There are three general ways to get help with a command.
 The man will display the man pages using a program `less`. Use the arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the next or previous search result
 
 
-> Spend 2 minutes writing down the commands, options, and arguments for each of the below commands. (some may not have flags and/or arguments.)
-  1. `$ touch index.html`
-  2. `$ ls -al`
-  3. `$ cp index.html index2.html`
-  4. `$ brew install git`
-  5. `$ mkdir -p lessons/sandbox`
-
 --------------------------------------------------------------------------------
 ## BREAK (10 minutes)
 --------------------------------------------------------------------------------
@@ -322,7 +309,7 @@ The man will display the man pages using a program `less`. Use the arrow keys to
 
 > 15 minutes preparation. 10 minutes review.
 
-Form groups of 3 and spend 15 minutes researching and preparing a short demo of your command. Focus on...
+Form groups of 3 and spend 10 minutes researching and preparing a short demo of your command. Focus on...
 
 * What it does.
 * Common uses.
@@ -355,18 +342,6 @@ from.  So use `rm` with caution.
 You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
-
-## WDI Environment (5 minutes)
-
-### Directory Structure
-
-Here's the suggested structure for your WDI folder. Please create the following folders if they do not exist.
-
-  * ~/wdi
-    * sandbox
-    * homework
-    * labs
-    * projects
 
 
 ## Keyboard Shortcuts (5 minutes)
@@ -419,13 +394,13 @@ type only the first few letters and hit the TAB key.
 - [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
-
-## Bash Profile Aliases (Bonus Content)
+ 
+ ## Bash Profile Aliases (Bonus Content)
 
 You may have noticed during Installfest that we messed with this file: `~/.bash_profile`.
 
 <details>
-  <summary>**Q:** Based on the path, where is this file located?</summary>
+  <summary> <b>Q:</b> Based on the path, where is this file located?</summary>
   In the home directory (i.e., Users/your-name-here).
 </details>
 
@@ -511,3 +486,5 @@ Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.h
 *  **Flags(Options)** — modify the operation of a command; the effect is determined by the command's program. Options follow the command name on the command line, separated by spaces. 
 
 *  **Path** - is the description that tells us (or a computer) where a file or folder is on our computer.
+
+* [More clarification between the shell, console, and terminal]( https://hackernoon.com/what-is-the-difference-between-shell-console-and-terminal-807aa8c7ab5c)
