@@ -3,7 +3,7 @@
 ## Learning Objectives
 
 - Define and explain the strengths and weaknesses of GUIs and CLIs
-- Learn how access the terminal and break down its components
+- Learn how to access the terminal and break down its components
 - Describe the file system and how it relates to the CLI
 - Introduce common commands and list unsafe ones
 - Learn how to find more information on using commands
@@ -21,7 +21,7 @@ While GUIs are fantastic at presenting information, this is at a cost. GUIs are 
 
 By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner. After discussing, each add a comment to [this issue](https://github.com/ga-wdi-lessons/cli-intro/issues/15)
+**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner.
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
@@ -29,7 +29,7 @@ By using precise language to issue commands, these expenses are reduced and we a
 
 ---------------------------------------------------------------------------
 
-#### Benefits of the CLI
+### Benefits of the CLI
 
 **Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
 command history, piping (sending the output of one program to another for additional processing) and more all contribute to this.
@@ -53,9 +53,9 @@ Tools built for the command line usually follow something called the ['Unix phil
 
 ### The Terminal and the Shell
 
-How do we get at this text based interface from our GUI desktop? We run what's called a terminal application. The default on OSX is `Terminal.app`. When you open a new Terminal window, the Terminal app will call a program called a **shell**.
+How do we get at this text-based interface from our GUI desktop? We run what's called a terminal application (also often referred to as a terminal emulator). The default on OSX is `Terminal.app`. When you open a new Terminal window, the Terminal app will call a program called a **shell**.
 
-A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **bash**. There are other shells but all operate very similarly
+A shell is a program that takes commands, passes them to the operating system and returns any output or errors. The default shell used by terminal is called **Bash**. There are other shells but all operate very similarly.
 
 Let's fire up our terminals and get exploring!
 
@@ -77,10 +77,6 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
---------------------------------------------------------------------------------
-## BREAK (10 minutes)
-
---------------------------------------------------------------------------------
 
 ## File Systems(45 minutes)
 
@@ -96,7 +92,7 @@ Most commands function relative to your working directory so "what is my current
 
 When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
 
-### Navigating the File System 
+### Navigating the File System
 
 For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
 
@@ -150,17 +146,6 @@ An absolute path can be expressed in terms of the `~` shorthand for the home dir
 
 > What are some reasons having a short hand for the user directory might be important?
 
-### Exploring the file system
-
-There are a few commands that will very useful to us in our exploration
-
-We have already talked about `pwd` which outputs the name of the current working directory ("print working directory").
-
-> After we know where we are, what's the next piece of information we might require?
-
-The `ls` command lists the files in the current working directory.
-
-And crucial to exploring, we will need to change the working directory which we can do with `cd` ("change directory").
 
 ### Exploring the file system
 
@@ -198,8 +183,8 @@ wdi/lessons/cli-intro                                   # relative
 ```
 
 Keep in mind these special directories' meanings:
-* `.`: one dot refers to the current directory
-* `..`: two dots refers to the parent directory
+* `.` - one dot refers to the current directory
+* `..` - two dots refers to the parent directory
 
 So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the wdi folder, then down into my `projects` directory.
 
@@ -241,7 +226,7 @@ Commands generally consist of three parts
 2. Options
 3. Arguments
 
-The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the `verb" which indicates what we want to do.
+The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or `touch`). Think of it as the "verb" which indicates what we want to do.
 
 Next come the **Options**, sometimes called flags or switches.
 * Sometimes you won't be using any options. Other times you may use several
@@ -324,7 +309,7 @@ Form groups of 3 and spend 10 minutes researching and preparing a short demo of 
 4. `cp`
 5. `mv`
 6. `rm`
-7. `atom`
+7. `atom` and `apm`
 
 ## Unsafe Commands (5 minutes)
 
@@ -379,11 +364,11 @@ type only the first few letters and hit the TAB key.
 
 ## Homework: To Oz
 
-[To Oz](https://github.com/ga-wdi-exercises/to_oz)
+[To Oz](https://git.generalassemb.ly/ga-wdi-exercises/to_oz)
 
 #### Submission Instructions
 
-1. Go to the assignment's [issues page](https://github.com/ga-wdi-exercises/to_oz/issues).
+1. Go to the assignment's [issues page](https://git.generalassemb.ly/ga-wdi-exercises/to_oz/issues).
 2. Click 'New Issue’.
 3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
 4. For the description, copy paste the CLI commands you used to complete the assignment.
@@ -394,8 +379,8 @@ type only the first few letters and hit the TAB key.
 - [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
 
 --------------------------------------------------------------------------------
- 
- ## Bash Profile Aliases (Bonus Content)
+
+## Bash Profile Aliases (Bonus Content)
 
 You may have noticed during Installfest that we messed with this file: `~/.bash_profile`.
 
@@ -413,7 +398,14 @@ Let's open our  `~/.bash_profile` in atom and type in the following...
 ```
 alias greeting="echo 'hello world'"
 alias gs='git status'
-alias l='ls -al'
+alias sbx='cd ~/wdi/sandbox'
+```
+
+We can also design functions in bash to allow for arguments and options...
+```
+cdls () {
+cd "$@" && ls;
+}
 ```
 
 > At this point you may be wondering what exactly "bash" is. Bash is a language we can use to interact with our computer via the shell (via Terminal or some other text-based interface).
