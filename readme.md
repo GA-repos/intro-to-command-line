@@ -310,6 +310,7 @@ Form groups of 3 and spend 10 minutes researching and preparing a short demo of 
 5. `mv`
 6. `rm`
 7. `atom`/`apm` OR `code`
+8. `sudo`
 
 ## Unsafe Commands (5 minutes)
 
