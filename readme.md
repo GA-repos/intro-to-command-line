@@ -309,7 +309,7 @@ Form groups of 3 and spend 10 minutes researching and preparing a short demo of 
 4. `cp`
 5. `mv`
 6. `rm`
-7. `atom` and `apm`
+7. `atom`/`apm` OR `code`
 
 ## Unsafe Commands (5 minutes)
 
