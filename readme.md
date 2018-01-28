@@ -80,7 +80,7 @@ A command is a program. Some come built into the shell and provide the basics fo
 
 ## Break (10 minutes / 0:55
 
-## File Systems(45 minutes / 1:40)
+## File System (45 minutes / 1:40)
 
 In the next section of this lesson, we're going to work through a couple of commands that you'll end up using almost every day as a developer. The commands can be divided into two kinds of tasks: Navigating around the file system and working with files and directories. 
 
@@ -117,7 +117,7 @@ Here is how that translates into actual commands you could run to navigate to yo
 cd ./Documents/
 ```
 
-**Relative Path:**
+**Absolute Path:**
 ```sh
 cd /Users/wdistudent/Documents
 ```
@@ -331,9 +331,9 @@ type only the first few letters and hit the TAB key.
 
 ## Closing
 
-- learned the common commands for moving around and working with the file system (80% of your cli usage)
-- hopefully you are starting to see the power of using the CLI
-- your next step is to get really comfortable with the command line. That can mean practicing these commands more or learning about what else is capable with the command line
+The commands we've covered in this lesson will probably account for 80% of your CLI usage. On the one hand, that means that learning them well and getting comfortable is really important; on the other hand, it's not a big universe of commands to learn and memorize.
+
+Regardless of how much experience with the command line you have coming in to this class, your next step should be to get really comfortable with it - we're going to spend a lot of time in the command line over the next 12 weeks. That can mean practicing these commands more, almost like you would practice scales from music or drills from sports. That can also mean learning more about what else is capable with these commands.
 
 ### Go figure some stuff out
 
@@ -350,9 +350,7 @@ For the remainder of class, here are some things you can go try to figure out ho
 - **Review some more advanced commands.** Look up `grep`, `less`, `cal`, and `vim`. View the `man` pages or google them!
 - **Learn some custom, advanced commands.** [`Z`](https://github.com/rupa/z) is a command line tool for quickly navigating and traversing the file system. See if you can figure out how to install and use it. [This may be helpful!](https://commandlinepoweruser.com/).
 
-## Homework: To Oz
-
-[To Oz](https://git.generalassemb.ly/ga-wdi-exercises/to_oz)
+## [Homework: To Oz](https://git.generalassemb.ly/ga-wdi-exercises/to_oz)
 
 ### Submission Instructions
 
