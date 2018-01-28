@@ -9,47 +9,47 @@
 - Learn how to find more information on using commands
 - Introduce Bash and how to customize the command line
 
-## Framing (15 minutes)
+## Framing (10 minutes / 0:10)
 
-We are used to interacting with computers by means of a graphical user interface (GUI). A GUI lets us tell computers what we would like for them to do using a cursor and presents a strong visual representation of a subject matter. This is wonderful for getting information from the computer because "a picture is worth a thousand words". GUIs leverage our natural intuition about space and images.
+The majority of our interactions with computers so far have been through the graphical user interface (GUI) - the visual and spatial representation of the filesystem on our computer. The GUI is a great tool, it's what made modern consumer computing possible.
 
-While GUIs are fantastic at presenting information, this is at a cost. GUIs are expensive in a few ways.
+While the GUI is perfect for the average computer user, there are drawbacks for power users:
 
-- GUIs are computationally expensive (though a manageable task for modern personal computers)
-- GUIs require a lot of work to design and implement
-- Related to the last, it is extremely difficult to design a GUI to do something beyond what the creator conceived of
+- GUIs are slow - we can only work as fast as we can move and click with our mouse
+- GUIs are inflexible - we can only perform tasks in an application that the application creators preconceived
+- GUIs require manual effort - anything we want to achieve through a GUI we have to do by pointing and clicking ourselves
 
-By using precise language to issue commands, these expenses are reduced and we are afforded the ability to issue exact and powerful instructions.
+As a budding web developer, you are on your way to becoming a computer power user and will soon start to feel these limitations (if you haven't already). This is where the Command Line comes in.
 
-**Turn & Talk:** Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner.
+The Command Line is a text-based interface for navigating and working with the file system on your computer. "Text-based" means you interact with it with text commands that are interpreted. There are a lot of different commands you can learn, each of which only performs a single action. You can use these commands as they are for performing simple tasks or you can combine them to perform really complex tasks.
+
+#### Turn & Talk (10 minutes / 0:20)
+Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner.
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
 * Compared to a GUI, in what ways might using the CLI be better or worse for developers?
 
----------------------------------------------------------------------------
-
-### Benefits of the CLI
+### Benefits of the CLI (10 minutes / 0:30)
 
 **Power/Speed.** Many tasks can be accomplished much faster using the CLI. Features such as tab completion,
-command history, piping (sending the output of one program to another for additional processing) and more all contribute to this.
+command history, piping (sending the output of one command to another for additional processing) and more all contribute to this.
 
 **Precision.** We can look at the commands we're about to enter and understand exactly what they will do.
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them, or even share them with others.
 
-What you did during Installfest was run a set of scripts that we shared with you!
+What you did during Installfest was run a script that we shared with you!
 
 **Tools.** There are tons of tools (programs really) we can run from the CLI. Most of them are built in, but we can also download external ones using services like Homebrew (OSX) and `apt-get` (Linux).
 
 Tools built for the command line usually follow something called the ['Unix philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each tool should do one thing and do it well. Complex tasks can be achieved by chaining tools together.
 
-**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this is preferable to what can often be unhelpful GUI errors
+**Debugging.** Whenever we get an error in the CLI, it will often come with a lot of information that we can use to then debug it. As developers, this is preferable to what can often be unhelpful GUI errors.
 
 ![unhelpful error](./assets/unhelpful-error.png)
 
-
-## CLI Basics (15 minutes)
+## CLI Basics (15 minutes / 0:45)
 
 ### The Terminal and the Shell
 
@@ -63,7 +63,8 @@ Let's fire up our terminals and get exploring!
 
 First, open Terminal by clicking the icon on your dock, finding the application in Applications > Utilities > Terminal, or using Spotlight (**&#x2318; + SPC**)
 
-You should see the following prompt (which we customized at installfest)
+You should see something like the following prompt:
+
 ![Command Line Prompt](./assets/cl_prompt.png)
 
 The prompt is the shell asking for input; when you see `$ <something>` in documentation, it generally means, input this command into a shell.
@@ -77,126 +78,110 @@ Typing a random string of characters and hitting enter will produce a message `-
 
 A command is a program. Some come built into the shell and provide the basics for interacting with the operating system and some are written by programmers (like you!) to provide further functionality.
 
+## Break (10 minutes / 0:55
 
-## File Systems(45 minutes)
+## File Systems(45 minutes / 1:40)
 
-You are likely already familiar with the idea of a hierarchical directory structure (we will use the term **directory** for what is commonly referred to as a *folder*) - the idea that directories contain sub-directories, and are themselves contained by a parent directory. This creates a tree structure.
-
-On our machines, at the very top level of this tree is a directory called the **root directory** signified by `/`.
-
-The directories at the root of the file system are used for general system configuration and functionality. There are some protections in place to try to prevent a user unwittingly breaking anything at this level but these protections are primarily aimed at GUI users. Ultimately, it's your machine and you should be able to do what you want with it so it is certainly in your power to cause considerable trouble.
-
-A running shell is always in the context of some directory called the working directory. The first command we'll discuss is `pwd` which stands for "print working directory". This is asking "where am I?"
-
-Most commands function relative to your working directory so "what is my current working directory?" should be the question you ask yourself before you do anything. For convenience, the command line prompt will frequently show the name of your working directory
-
-When working on the command line and something unexpected happens, many times you'll find that it's because you're not in the directory where you thought you where. `pwd` early and often.
+In the next section of this lesson, we're going to work through a couple of commands that you'll end up using almost every day as a developer. The commands can be divided into two kinds of tasks: Navigating around the file system and working with files and directories. 
 
 ### Navigating the File System
 
-For this section, we will compare file system navigation and representation between the GUI and the CLI. Open `Finder` and, if you don't already have one, a terminal window. Arrange the windows so that you can see both at the same time.
+The first set of commands we'll cover are for navigating: getting form one directory to another.
 
-In recent versions of OS X, the finder opens to an "All My Files" pseudo-folder (it doesn't really exist). If you'd like the behavior to more closely mirror the shell's behavior (starting in the **Home Directory**), this can be changed in the Finder preferences (the name of the home directory will vary depending on your username but the icon will be a house).
+You may have seen these commands before (maybe in the prework):
 
-On Unix machines (like OS X), `~` is shorthand for your home directory - `/Users/you`.
+| command | definition |
+| --- | --- |
+| `pwd` | print working directory |
+| `ls` | list files and directories |
+| `cd` | change directory |
 
-## Paths
+How do these relate to navigating? 
 
-### What is a [Path](https://en.wikipedia.org/wiki/Path_(computing))?
+If we're inside the terminal and we want to travel through our file system to a specific directory (i.e. `traverse`), we first need to know where we are. That's what we use `pwd` for: printing the directory we're in currently.
 
-A path specifies the location of a particular file or folder in a file system.
+Once we know where we are, it makes sense to figure out where we can go from here. We use `ls` for that: listing all the files we can work with directly and the directories we can move to.
 
-A location can be specified by a relative path or an absolute path.
+To move from our current directory to another directory, we use the `cd` command. `cd` moves us from our current directory to another directory that we supply a path to.
 
-> What would you expect the difference to be based on names?
+You can think of a path as being similar to an address. There are two types of paths: *absolute* and *relative*.
 
-### Absolute Paths
+A *relative* path is similar to giving someone directions to a destination from their current location. Where is General Assembly? Two blocks up 15th street from where you are now.
 
-An **absolute path** is the sequence of all directories from the root to a particular file using the `/` symbol as a delimiter between directories.
+An *absolute* path is similar to giving someone coordinates to a  destination. Where is General Assembly? 38.9048728, -77.0340283.  An important aspect of an *absolute* path is the starting point. In a coordinate system (like longitude and latitude) that is the coordinates 0, 0 (where the equator crosses the prime meridian). In our file system it's the *root* directory, symbolized as `/`.
 
-You may have noticed that `pwd` returns not just the name of the current directory but the whole absolute path. Why is the name of the current directory alone not particularly helpful?
+Here is how that translates into actual commands you could run to navigate to your `Documents/` directory:
 
-We can think of an absolute path like this very specific mailing address of our classroom:
-
-```
-Classroom 1
-GA
-8th Floor
-1133 15th St NW
-Washington, DC 20003
-USA
+**Relative Path:**
+```sh
+cd ./Documents/
 ```
 
-Expressed as a path the address might look something like this:
-
-```bash
-; General Assembly in path form...
-/USA/Washington_DC/20003/1133_15th_St_NW/8th_Floor/GA/Classroom_1
+**Relative Path:**
+```sh
+cd /Users/wdistudent/Documents
 ```
 
-An absolute path can be expressed in terms of the `~` shorthand for the home directory by appending the rest of the path after the home directory to the tilda
+In the *relative* path, the leading `./` stands for: *from the current directory*. In the *absolute* path, the leading `/Users/wdistudent/` means from the root of the file system, the `Users/` directory and then the `wdistudent/` directory. The `wdistudent` directory has a special name too: the *home* directory.
 
-```bash
-; this path written using short hand
-~/wdi/lessons/cli-intro
+#### Go Explore
 
-; is the same as this path written out
-/Users/your_username/wdi/lessons/cli-intro
+Using the commands you've learned, go explore your file system for a few minutes. When you open a new terminal window and run `ls`, where in the file system are you? What do you see? Compare that to opening a new window in `Finder`.
+
+#### [You Do: Directory Tree](https://ga-wdi-exercises.github.io/dc_directory_tree/) (15 minutes / 1:55)
+
+### Working with Files and Directories
+
+Now that we can navigate the file system, it's time to chart our own paths (pun intended).
+
+The commands we'll be covering next are:
+
+| Command | Description |
+| --- | --- |
+| `mkdir` | make a new directory |
+| `rmdir` | remove a directory |
+| `touch` | create a new file |
+| `rm` | remove a file |
+| `mv` | move a file or directory |
+| `cp` | copy a file or directory |
+
+#### WDI Environment (5 minutes)
+
+To get your hands dirty, use the commands above to build out the following folders and files. This will be where you store all your work from WDI.
+
+```sh
+wdi
+  ├── homework
+  ├── labs
+  ├── lessons
+  │   └── cli_intro.md
+  ├── projects
+  └── sandbox
 ```
 
-> What are some reasons having a short hand for the user directory might be important?
+**Pro Tip:**
+Use brackets to substitute paths together. Lets say you want to create a markdown file (extension `.md`) for a couple of lessons. One way to do this would be to run the commands one-by-one:
 
-
-### Exploring the file system
-
-There are a few commands that will very useful to us in our exploration
-
-We have already talked about `pwd` which outputs the name of the current working directory ("print working directory").
-
-> After we know where we are, what's the next piece of information we might require?
-
-The `ls` command lists the files in the current working directory.
-
-And crucial to exploring, we will need to change the working directory which we can do with `cd` ("change directory").
-
-#### A bit more about `ls` and `cd`
-
-On its own, `cd` will change the directory to the home directory. We can also provide it a directory name to change to that directory.
-
-We can modify commands' behavior using **options** (which we will discuss the specifics of below). Two useful options for `ls` are `-a` which includes hidden files with names beginning with `.`, and `-l` which lists files in long form (including some information about the files)
-
-### Relative Paths
-
-> Let's talk a little about the argument we provide to `cd`
-
-Relative paths are interpreted as starting from the current working directory. In order to be explicit, we can begin them with `./`
-
-> How is this more clear?
-
-So if we were in our home directory, the path to this lesson's directory could be written in the following ways...
-
-```bash
-wdi/lessons/cli-intro                                   # relative
-./wdi/lessons/cli-intro                                 # relative
-~/wdi/lessons/cli-intro                                 # absolute
-/Users/generalassembly/wdi/lessons/cli-intro               # absolute
+```sh
+touch lessons/cli_intro.md
+touch lessons/git_intro.md
+touch lessons/html.md
+touch lessons/css.md
 ```
 
-Keep in mind these special directories' meanings:
-* `.` - one dot refers to the current directory
-* `..` - two dots refers to the parent directory
+That would absolutely work, but you could make do it in one command:
 
-So if we're in `~/wdi/lessons`, then the relative path `../projects` means "go up one level to the wdi folder, then down into my `projects` directory.
+```sh
+touch lessons/cli_intro.md lessons/git_intro.md lessons/html.md lessons/css.md
+```
 
-> Spend a few minutes with someone sitting near you writing out what the following commands are doing in English...
+That would also work, but we can make it a more succinct command by using substitution:
 
-1. `$ pwd`
-2. `$ cd ./lessons`
-3. `$ ls ..`
-4. `$ cd ../..`
-5. `$ mv ../index.html .`
+```sh
+touch lessons/{cli_intro,git_intro,html,css}.md
+```
 
-## [You Do: Directory Tree](https://ga-wdi-exercises.github.io/dc_directory_tree/)
+The above command will create the same set of files, but in one short command. It also works with directories! The list of file or directories must be separated by commas with *no spaces*.
 
 ### Output and Side Effects
 
@@ -235,7 +220,7 @@ Next come the **Options**, sometimes called flags or switches.
 
 Finally come the **Arguments**. These are "targets", or what you want to do the action to. These could be file names, URLs, etc.
 
-#### Common Patterns
+### Common Patterns
 
 The commands entered into the CLI are often in one of the following forms..
 
@@ -249,10 +234,10 @@ Not all commands follow this pattern, but many do.
 Let's take a look at something we did for installfest.
 
 ```
-$ brew install git
+$ brew install tree
 ```
 
-When we type this command and hit enter, we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is git.
+When we type this command and hit enter, we're saying, "Computer, we're about to do something with homebrew. The thing were going to do is install something. What we want to install is `tree`.
 
 > Spend 2 minutes writing down the commands, options, and arguments for each of the below commands. (some may not have flags and/or arguments.)
   1. `$ touch index.html`
@@ -261,36 +246,19 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
   4. `$ brew install git`
   5. `$ mkdir -p lessons/sandbox`
 
-
-## WDI Environment (5 minutes)
-
-### Directory Structure
-
-Here's the suggested structure for your WDI folder. Please create the following folders if they do not exist.
-
-  * ~/wdi
-    * sandbox
-    * homework
-    * labs
-    * projects
-
-
-### Getting Help
+## Getting Help
 
 There are three general ways to get help with a command.
 
 * Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
-* Use the manual -- or `man` -- tool (e.g., `man brew`).
+* Use the manual - or `man` - tool (e.g., `man brew`).
 * Google!
 
-The man will display the man pages using a program `less`. Use the arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the next or previous search result
+The `man` will display the man pages using a program `less`. Use the arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the next or previous search result
 
+## Break (10 minutes)
 
---------------------------------------------------------------------------------
-## BREAK (10 minutes)
---------------------------------------------------------------------------------
-
-### Common Command Teachbacks (25 minutes)
+## Common Command Teachbacks (25 minutes)
 
 > 15 minutes preparation. 10 minutes review.
 
@@ -301,7 +269,9 @@ Form groups of 3 and spend 10 minutes researching and preparing a short demo of 
 * Common flags or arguments.
 * Any "gotchas" (i.e., things we should be aware of when using this command)?
 
-#### Commands
+**Tip:** use the `man` pages!
+
+### Commands
 
 1. `ls`
 2. `cd`
@@ -309,8 +279,7 @@ Form groups of 3 and spend 10 minutes researching and preparing a short demo of 
 4. `cp`
 5. `mv`
 6. `rm`
-7. `atom`/`apm` OR `code`
-8. `sudo`
+7. `sudo`
 
 ## Unsafe Commands (5 minutes)
 
@@ -328,7 +297,6 @@ from.  So use `rm` with caution.
 You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
-
 
 ## Keyboard Shortcuts (5 minutes)
 
@@ -361,25 +329,43 @@ type only the first few letters and hit the TAB key.
 - command-k
 - `clear`
 
---------------------------------------------------------------------------------
+## Closing
+
+- learned the common commands for moving around and working with the file system (80% of your cli usage)
+- hopefully you are starting to see the power of using the CLI
+- your next step is to get really comfortable with the command line. That can mean practicing these commands more or learning about what else is capable with the command line
+
+### Go figure some stuff out
+
+Getting comfortable in the command line takes practice. Once you do get comfortable, you'll find it possible to be extremely productive by just adding a couple of commands together.
+
+The installfest script is a perfect example - your instructors wrote a single shell script that you can run to totally set up your computers for WDI. Ask your instructors about other shell scripts they wrote at previous jobs.
+
+For the remainder of class, here are some things you can go try to figure out how to do to get more comfortable with the command line:
+
+- **Review the commands we've covered in more depth.** Go through each and review the help and/or `man` page for each command. Type `man <some_command` (i.e. `man ls`) to view the man page. Use your arrow keys (up and down) to navigate through the man pages and `q` to quit.
+- **Practice each command.** Over time, these common commands will become part of your muscle memory. Get there sooner by practicing. Navigate to your `sandbox/` directory and create a `cli-practice/` directory. `cd` into your new directory and practice the above commands 20 times each.
+- **Customize your command line.** The sky is the limit here! You can change the font, the theme (colors), add emojis to your prompt, use a different terminal (many of your instructors use iTerm) or even use a different shell (Bash is the default shell, some of your instructors use [zsh](http://code.joejag.com/2014/why-zsh.html).
+- **Create Bash profile aliases.**  You can alias common commands in bash. One common alias you'll see a lot is an `ll` command that will perform an `ls -a` (list all files). See if you can figure out how to create that alias (google is your friend). Another possible alias you could make is `trash`, a command that will move a file or folder to the system Trash bin. What other aliases could you make?
+- **Review some more advanced commands.** Look up `grep`, `less`, `cal`, and `vim`. View the `man` pages or google them!
+- **Learn some custom, advanced commands.** [`Z`](https://github.com/rupa/z) is a command line tool for quickly navigating and traversing the file system. See if you can figure out how to install and use it. [This may be helpful!](https://commandlinepoweruser.com/).
 
 ## Homework: To Oz
 
 [To Oz](https://git.generalassemb.ly/ga-wdi-exercises/to_oz)
 
-#### Submission Instructions
+### Submission Instructions
 
 1. Go to the assignment's [issues page](https://git.generalassemb.ly/ga-wdi-exercises/to_oz/issues).
 2. Click 'New Issue’.
 3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with your actual name.
 4. For the description, copy paste the CLI commands you used to complete the assignment.
 
-## Additional Practice
+## Additional Practice / Bonus Material
 
 - [Command Line Fu](https://github.com/ga-wdi-exercises/command_line_fu)
 - [Kitchen Organizer](https://github.com/ga-wdi-exercises/kitchen_organizer)
-
---------------------------------------------------------------------------------
+- [Command Line Power User](https://commandlinepoweruser.com/)
 
 ## Bash Profile Aliases (Bonus Content)
 
@@ -403,7 +389,8 @@ alias sbx='cd ~/wdi/sandbox'
 ```
 
 We can also design functions in bash to allow for arguments and options...
-```
+
+```sh
 cdls () {
 cd "$@" && ls;
 }
@@ -415,8 +402,6 @@ cd "$@" && ls;
 
 Take the next five minutes to create your own alias and test it. If possible, alias something you think you'll find yourself doing frequently!
 
---------------------------------------------------------------------------------
-
 ## Sample Quiz Questions
 
 * Why would a developer prefer the command line over a GUI?
@@ -425,7 +410,7 @@ Take the next five minutes to create your own alias and test it. If possible, al
 * Describe 2 unsafe commands.
 * You are currently in the "code" folder in the below file tree. How would you get to the folder that contains "beach.png" using the command line?
 
-```
+```sh
 home
 ├── documents
 │   └── code
@@ -470,14 +455,3 @@ Our favorite features include:
 
 Bash isn't the only option. Check out zsh (http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
 
-## Glossary
-
-*  **Prompt** — is a sequence of (one or more) characters used in a command-line interface to indicate readiness to accept commands. Its intent is to literally prompt the user to take action. A prompt usually ends with one of the characters `$`, `%`, `#`, `:`, `>` and often includes other information, such as the path of the current working directory.
-
-*  **Arguments(Parameters)** — are items of information provided to a program or command when it is started. A program can have many command-line arguments that identify sources or destinations of information, or that alter the operation of the program.
-
-*  **Flags(Options)** — modify the operation of a command; the effect is determined by the command's program. Options follow the command name on the command line, separated by spaces. 
-
-*  **Path** - is the description that tells us (or a computer) where a file or folder is on our computer.
-
-* [More clarification between the shell, console, and terminal]( https://hackernoon.com/what-is-the-difference-between-shell-console-and-terminal-807aa8c7ab5c)
