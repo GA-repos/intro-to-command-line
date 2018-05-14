@@ -19,12 +19,9 @@ consumer computing possible.
 While the GUI is perfect for the average computer user, there are drawbacks for
 power users:
 
-- GUIs are slow - we can only work as fast as we can move and click with our
-  mouse
-- GUIs are inflexible - we can only perform tasks in an application that the
-  application creators preconceived
-- GUIs require manual effort - anything we want to achieve through a GUI we have
-  to do by pointing and clicking ourselves
+- GUIs are slow - we can only work as fast as we can move and click with our mouse
+- GUIs are inflexible - we can only perform tasks in an application that the application creators preconceived
+- GUIs require manual effort - anything we want to achieve through a GUI we have to do by pointing and clicking ourselves
 
 As a budding web developer, you are on your way to becoming a computer power
 user and will soon start to feel these limitations (if you haven't already).
@@ -33,19 +30,20 @@ This is where the Command Line comes in.
 The Command Line is a text-based interface for navigating and working with the
 file system on your computer. "Text-based" means you interact with it with text
 commands that are interpreted. There are a lot of different commands you can
-learn, each of which only performs a single action. You can use these commands
+learn, each of which only performs a single action. 
+
+> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says "make each program do one thing well".
+
+You can use these commands
 as they are for performing simple tasks or you can combine them to perform
 really complex tasks.
 
 #### Turn & Talk (10 minutes / 0:20)
-Given your exposure to the Command Line in the pre-work and Installfest, spend
-**5 minutes** discussing and writing down a few answers for the following
-questions with a partner.
+Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner.
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
-* Compared to a GUI, in what ways might using the CLI be better or worse for
-  developers?
+* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
 
 ### Benefits of the CLI (10 minutes / 0:30)
 
@@ -55,7 +53,7 @@ one command to another for additional processing) and more all contribute to
 this.
 
 **Precision.** We can look at the commands we're about to enter and understand
-exactly what they will do.
+exactly what they will do. This is because they do one thing 
 
 **Repeatability / Scriptability.** We can easily save commands and re-use them,
 or even share them with others.
@@ -64,7 +62,7 @@ What you did during Installfest was run a script that we shared with you!
 
 **Tools.** There are tons of tools (programs really) we can run from the CLI.
 Most of them are built in, but we can also download external ones using services
-like Homebrew (OSX) and `apt-get` (Linux).
+like Homebrew (macOS) and `apt-get` (Linux).
 
 Tools built for the command line usually follow something called the ['Unix
 philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each
@@ -75,7 +73,15 @@ chaining tools together.
 lot of information that we can use to then debug it. As developers, this is
 preferable to what can often be unhelpful GUI errors.
 
+Not helpful:
+
 ![unhelpful error](./assets/unhelpful-error.png)
+
+![error error](./assets/error-error.jpg)
+
+Helpful: 
+
+![helpful error](./assets/helpful_error.png)
 
 ## CLI Basics (15 minutes / 0:45)
 
@@ -117,7 +123,7 @@ A command is a program. Some come built into the shell and provide the basics
 for interacting with the operating system and some are written by programmers
 (like you!) to provide further functionality.
 
-## Break (10 minutes / 0:55
+## Break (10 minutes / 0:55)
 
 ## File System (45 minutes / 1:40)
 
@@ -128,7 +134,7 @@ working with files and directories.
 
 ### Navigating the File System
 
-The first set of commands we'll cover are for navigating: getting form one
+The first set of commands we'll cover are for navigating: getting from one
 directory to another.
 
 You may have seen these commands before (maybe in the prework):
@@ -164,7 +170,7 @@ An *absolute* path is similar to giving someone coordinates to a  destination.
 Where is General Assembly? 38.9048728, -77.0340283.  An important aspect of an
 *absolute* path is the starting point. In a coordinate system (like longitude
 and latitude) that is the coordinates 0, 0 (where the equator crosses the prime
-meridian). In our file system it's the *root* directory, symbolized as `/`.
+meridian). In our file system it's the *root* directory, symbolized as `/`
 
 Here is how that translates into actual commands you could run to navigate to
 your `Documents/` directory:
@@ -185,6 +191,22 @@ the root of the file system, the `Users/` directory and then the `wdistudent/`
 directory. The `wdistudent` directory has a special name too: the *home*
 directory.
 
+> A shortcut to this directory is represented by the character `~`
+>
+> If you type `cd ~` it will take you to the _home_ directory.
+
+#### Going up
+
+If you do an `ls -all` you will notice several dots at the top of the list of file contents.
+
+![ls all](./assets/lsall.png)
+
+> Can you guess what these mean?
+
+Try typing `cd ..` and seeing what happens.
+
+> What if you want to go up more than one level, without repeating the same command again?
+
 #### Go Explore
 
 Using the commands you've learned, go explore your file system for a few
@@ -192,7 +214,8 @@ minutes. When you open a new terminal window and run `ls`, where in the file
 system are you? What do you see? Compare that to opening a new window in
 `Finder`.
 
-#### [You Do: Directory Tree](https://git.generalassemb.ly/pages/dc-wdi-fundamentals/directory-tree/) (15 minutes / 1:55)
+#### [You Do: Directory Tree](https://git.generalassemb.ly/pages/dc-wdi-fundamentals/directory-tree/) (15 minutes)
+> 10 minute exercise, 5 minute review
 
 ### Working with Files and Directories
 
@@ -344,9 +367,9 @@ The `man` will display the man pages using a program `less`. Use the arrow keys
 to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the
 next or previous search result
 
-## Break (10 minutes)
+## Break (10 minutes / 1:50)
 
-## Common Command Teachbacks (25 minutes)
+## Common Command Teachbacks (25 minutes / 2:15)
 
 > 15 minutes preparation. 10 minutes review.
 
@@ -423,7 +446,7 @@ first few letters and hit the TAB key.
 - command-k
 - `clear`
 
-## Closing
+## Closing (15 minutes / 2:30)
 
 The commands we've covered in this lesson will probably account for 80% of your
 CLI usage. On the one hand, that means that learning them well and getting
