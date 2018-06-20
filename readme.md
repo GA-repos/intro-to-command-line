@@ -461,26 +461,6 @@ first few letters and hit the TAB key.
 - `clear`
 
 
-## Sample Quiz Questions
-
-* Why would a developer prefer the command line over a GUI?
-* Where can we find help for shell commands?
-* Describe 4 bash commands for managing folders and files.
-* Describe 2 unsafe commands.
-* You are currently in the "code" folder in the below file tree. How would you
-  get to the folder that contains "beach.png" using the command line?
-
-```sh
-home
-├── documents
-│   └── code
-├── photos
-│   ├── headshot.jpg
-│   └── summer_vacation_2014
-│       └── beach.png
-└── videos
-```
-
 
 
 ## Closing (15 minutes / 2:30)
@@ -538,6 +518,28 @@ how to do to get more comfortable with the command line:
   a command line tool for quickly navigating and traversing the file system. See
   if you can figure out how to install and use it. [This may be
   helpful!](https://commandlinepoweruser.com/).
+
+
+## Sample Quiz Questions
+
+* Why would a developer prefer the command line over a GUI?
+* Where can we find help for shell commands?
+* Describe 4 bash commands for managing folders and files.
+* Describe 2 unsafe commands.
+* You are currently in the "code" folder in the below file tree. How would you
+  get to the folder that contains "beach.png" using the command line?
+
+```sh
+home
+├── documents
+│   └── code
+├── photos
+│   ├── headshot.jpg
+│   └── summer_vacation_2014
+│       └── beach.png
+└── videos
+```
+
 
 
 
