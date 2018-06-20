@@ -24,7 +24,7 @@ Some of those hindrances include:
 
 You all are on your way to becoming full-stack developers, on your journey to that point you will need to make the most of your time, effort and to avoid common issues that come with using a GUI. So today we will be learning the command line.
 
-###What is the Command Line Interface or CLI
+### What is the Command Line Interface or CLI
 
 It is a tool to interact with your computer without a GUI, that allows you more abilities than a GUI has but with a higher learning curve. You are able to type commands/actions into a terminal and the computer will execute those commands or give you a fairly descriptive error regarding why it did not work.
 
