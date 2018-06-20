@@ -11,35 +11,39 @@
 
 ## Framing (10 minutes / 0:10)
 
-The majority of our interactions with computers so far have been through the
-graphical user interface (GUI) - the visual and spatial representation of the
-filesystem on our computer. The GUI is a great tool, it's what made modern
-consumer computing possible.
+The majority of our interactions with computers is through a graphical user interface, or a GUI. A GUI is a great tool, it adds a level of user experience that allowed computers to become more popular and mainstream.
 
-While the GUI is perfect for the average computer user, there are drawbacks for
-power users:
+While the GUI is perfect for the average computer user, there are drawbacks for power users:
 
-- GUIs are slow - we can only work as fast as we can move and click with our mouse
-- GUIs are inflexible - we can only perform tasks in an application that the application creators preconceived
-- GUIs require manual effort - anything we want to achieve through a GUI we have to do by pointing and clicking ourselves
+Some of those hindrances include:
+* GUI's can be slow
+* GUI's can be resource intensive, causing the gui to freeze which means you could lose data or it can cause other applications to stop working
+* GUI's lack flexibility, you can only use a gui for it’s intended purpose
+* GUI's require manual effort, pointing and clicking, require that you take your hands off the keyboard
 
-As a budding web developer, you are on your way to becoming a computer power
-user and will soon start to feel these limitations (if you haven't already).
-This is where the Command Line comes in.
 
-The Command Line is a text-based interface for navigating and working with the
-file system on your computer. "Text-based" means you interact with it with text
-commands that are interpreted. There are a lot of different commands you can
-learn, each of which only performs a single action. 
+You all are on your way to becoming full-stack developers, on your journey to that point you will need to make the most of your time, effort and to avoid common issues that come with using a GUI. So today we will be learning the command line.
+
+###What is the Command Line Interface or CLI
+
+It is a tool to interact with your computer without a GUI, that allows you more abilities than a GUI has but with a higher learning curve. You are able to type commands/actions into a terminal and the computer will execute those commands or give you a fairly descriptive error regarding why it did not work.
+
 
 > The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says "make each program do one thing well".
 
-You can use these commands
-as they are for performing simple tasks or you can combine them to perform
-really complex tasks.
+This concept is not unix specific, it carries itself in to other aspects of programming as well.
+
+You can create files, you can move between directories, you can connect to remote machines, you can pull code from a repository, you can scan ports, you can send http requests.
+
+Similar to how people make code and share it for things like Bootstrap, or Ruby on Rails, or any other open source technology, software engineers create command line tools that make completing task on the command line easier and then share them with other developers.
+
+Then developers like ourselves can install these tools and use them. We will do that in a moment.
+
+## CHECK FOR UNDERSTANDING/QUESTIONS (Hand 1 - 5)
+
 
 #### Turn & Talk (10 minutes / 0:20)
-Given your exposure to the Command Line in the pre-work and Installfest, spend **5 minutes** discussing and writing down a few answers for the following questions with a partner.
+Given the information I just gave you regarding the CLI and what you learned from completing the pre-work. I want you to discuss for 5 minutes the following with your classmates in your row.
 
 * How is the CLI different from the GUI?
 * What do you like / dislike about using it?
@@ -47,31 +51,22 @@ Given your exposure to the Command Line in the pre-work and Installfest, spend *
 
 ### Benefits of the CLI (10 minutes / 0:30)
 
-**Power/Speed.** Many tasks can be accomplished much faster using the CLI.
-Features such as tab completion, command history, piping (sending the output of
-one command to another for additional processing) and more all contribute to
-this.
+**Power/Speed.**
+Most tasks can be completed faster with the cli, features like tab completion, command history, piping contribute to this
 
-**Precision.** We can look at the commands we're about to enter and understand
-exactly what they will do. This is because they do one thing 
+**Precision.**
+Each command does only one thing and we can read them and understand what they do before we run them
 
-**Repeatability / Scriptability.** We can easily save commands and re-use them,
-or even share them with others.
-
+**Repeatability / Scriptability.**
+These commands can be saved, reused by others.
 What you did during Installfest was run a script that we shared with you!
 
-**Tools.** There are tons of tools (programs really) we can run from the CLI.
-Most of them are built in, but we can also download external ones using services
-like Homebrew (macOS) and `apt-get` (Linux).
+**Tools.**
+There are a lot of open source tools that you can use on the cli, you can install them with cli package managers like Advanced Packaging Tool (apt) or homebrew. Because each tool does one specific thing, it is possible to chain multiple tools together to automate processes.
 
-Tools built for the command line usually follow something called the ['Unix
-philosophy'](http://catb.org/esr/writings/taoup/html/#id2807216), meaning each
-tool should do one thing and do it well. Complex tasks can be achieved by
-chaining tools together.
 
-**Debugging.** Whenever we get an error in the CLI, it will often come with a
-lot of information that we can use to then debug it. As developers, this is
-preferable to what can often be unhelpful GUI errors.
+**Debugging.**
+The errors are better, the errors that you get from a GUI can be unhelpful while cli errors are generally more thought out and descriptive.
 
 Not helpful:
 
@@ -79,9 +74,14 @@ Not helpful:
 
 ![error error](./assets/error-error.jpg)
 
-Helpful: 
+Helpful:
 
 ![helpful error](./assets/helpful_error.png)
+
+## CHECK FOR UNDERSTANDING/QUESTIONS
+How do people feel about their level of understanding regarding what the CLI is, not using it, just their understanding of what it is, it’s benefits and it’s downsides.
+
+## REAL EXAMPLE OF CLI USAGE
 
 ## CLI Basics (15 minutes / 0:45)
 
@@ -130,7 +130,7 @@ for interacting with the operating system and some are written by programmers
 In the next section of this lesson, we're going to work through a couple of
 commands that you'll end up using almost every day as a developer. The commands
 can be divided into two kinds of tasks: Navigating around the file system and
-working with files and directories. 
+working with files and directories.
 
 ### Navigating the File System
 
@@ -145,7 +145,7 @@ You may have seen these commands before (maybe in the prework):
 | `ls` | list files and directories |
 | `cd` | change directory |
 
-How do these relate to navigating? 
+How do these relate to navigating?
 
 If we're inside the terminal and we want to travel through our file system to a
 specific directory (i.e. `traverse`), we first need to know where we are. That's
@@ -166,11 +166,19 @@ A *relative* path is similar to giving someone directions to a destination from
 their current location. Where is General Assembly? Two blocks up 15th street
 from where you are now.
 
-An *absolute* path is similar to giving someone coordinates to a  destination.
-Where is General Assembly? 38.9048728, -77.0340283.  An important aspect of an
-*absolute* path is the starting point. In a coordinate system (like longitude
+An example of an *absolute* path to General Assembly could be 1133 15th St NW, 8th Floor, Washington, DC 20005 or a longitude and latitude(38.9048728, -77.0340283).
+
+An absolute path is comparable to giving someone the direct location from a universally known starting point.
+On the command line that known starting point is the root directory.
+
+*/*
+
+Let's navigate/traverse our directory so we have a better understanding of these concepts.
+
+<!-- An *absolute* path is similar to giving someone coordinates to a  destination.
+Where is General Assembly? 1133 15th St NW, Washington, DC 20005. An important aspect of an *absolute* path is the starting point. In a coordinate system (like longitude
 and latitude) that is the coordinates 0, 0 (where the equator crosses the prime
-meridian). In our file system it's the *root* directory, symbolized as `/`
+meridian). In our file system it's the *root* directory, symbolized as `/` -->
 
 Here is how that translates into actual commands you could run to navigate to
 your `Documents/` directory:
@@ -206,6 +214,10 @@ If you do an `ls -all` you will notice several dots at the top of the list of fi
 Try typing `cd ..` and seeing what happens.
 
 > What if you want to go up more than one level, without repeating the same command again?
+
+
+## CHECK FOR UNDERSTANDING/QUESTIONS (Hand 1 - 5)
+
 
 #### Go Explore
 
@@ -335,6 +347,8 @@ Where **doSomething** is, in effect, a verb, **how** an adverb (for exampl
 should the command be executed "verbosely" or "quietly") and **toFiles** an
 object or objects (typically one or more files) on which the command should act.
 
+
+###Exercise
 Not all commands follow this pattern, but many do.
 
 Let's take a look at something we did for installfest.
@@ -446,6 +460,29 @@ first few letters and hit the TAB key.
 - command-k
 - `clear`
 
+
+## Sample Quiz Questions
+
+* Why would a developer prefer the command line over a GUI?
+* Where can we find help for shell commands?
+* Describe 4 bash commands for managing folders and files.
+* Describe 2 unsafe commands.
+* You are currently in the "code" folder in the below file tree. How would you
+  get to the folder that contains "beach.png" using the command line?
+
+```sh
+home
+├── documents
+│   └── code
+├── photos
+│   ├── headshot.jpg
+│   └── summer_vacation_2014
+│       └── beach.png
+└── videos
+```
+
+
+
 ## Closing (15 minutes / 2:30)
 
 The commands we've covered in this lesson will probably account for 80% of your
@@ -459,6 +496,9 @@ going to spend a lot of time in the command line over the next 12 weeks. That
 can mean practicing these commands more, almost like you would practice scales
 from music or drills from sports. That can also mean learning more about what
 else is capable with these commands.
+
+
+
 
 ### Go figure some stuff out
 
@@ -498,6 +538,8 @@ how to do to get more comfortable with the command line:
   a command line tool for quickly navigating and traversing the file system. See
   if you can figure out how to install and use it. [This may be
   helpful!](https://commandlinepoweruser.com/).
+
+
 
 ## [Homework: To Oz](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz)
 
@@ -560,25 +602,7 @@ cd "$@" && ls;
 Take the next five minutes to create your own alias and test it. If possible,
 alias something you think you'll find yourself doing frequently!
 
-## Sample Quiz Questions
 
-* Why would a developer prefer the command line over a GUI?
-* Where can we find help for shell commands?
-* Describe 4 bash commands for managing folders and files.
-* Describe 2 unsafe commands.
-* You are currently in the "code" folder in the below file tree. How would you
-  get to the folder that contains "beach.png" using the command line?
-
-```sh
-home
-├── documents
-│   └── code
-├── photos
-│   ├── headshot.jpg
-│   └── summer_vacation_2014
-│       └── beach.png
-└── videos
-```
 
 * **BONUS:** Write a command to list only files beginning with your first name.
   Label the parts of the command.
@@ -619,3 +643,7 @@ Our favorite features include:
 Bash isn't the only option. Check out zsh
 (http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
 
+
+<!-- ADD CHECKS FOR understanding
+MAKE IT MORE RELATABLE
+MOVE BONUS/HOMEWORK CONTENT -->
