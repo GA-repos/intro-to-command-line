@@ -361,6 +361,7 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
 do something with homebrew. The thing were going to do is install something.
 What we want to install is `tree`.
 
+### INTERACTIVE QUESTION
 > Spend 2 minutes writing down the commands, options, and arguments for each of
   the below commands. (some may not have flags and/or arguments.)
   1. `$ touch index.html`
