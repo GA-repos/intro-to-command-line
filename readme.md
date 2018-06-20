@@ -361,9 +361,9 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
 do something with homebrew. The thing were going to do is install something.
 What we want to install is `tree`.
 
-### INTERACTIVE QUESTION
-> Spend 2 minutes writing down the commands, options, and arguments for each of
-  the below commands. (some may not have flags and/or arguments.)
+### INTERACTIVE QUESTIONGS
+> Together, using the information that we just went over, let's focus on identifying the
+command, the option/flag and the target/argument for the next 5 command line items.
   1. `$ touch index.html`
   2. `$ ls -al`
   3. `$ cp index.html index2.html`
@@ -384,7 +384,7 @@ next or previous search result
 
 ## Break (10 minutes / 1:50)
 
-## Common Command Teachbacks (25 minutes / 2:15)
+## Common Command Teachbacks (25 minutes / 2:15) (Students Work together and then answer the question for the class)
 
 > 15 minutes preparation. 10 minutes review.
 
