@@ -348,7 +348,7 @@ should the command be executed "verbosely" or "quietly") and **toFiles** an
 object or objects (typically one or more files) on which the command should act.
 
 
-###Exercise
+### Exercise
 Not all commands follow this pattern, but many do.
 
 Let's take a look at something we did for installfest.
@@ -361,7 +361,7 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
 do something with homebrew. The thing were going to do is install something.
 What we want to install is `tree`.
 
-### INTERACTIVE QUESTIONGS
+### INTERACTIVE Questions
 > Together, using the information that we just went over, let's focus on identifying the
 command, the option/flag and the target/argument for the next 5 command line items.
   1. `$ touch index.html`
