@@ -11,62 +11,83 @@
 
 ## Framing (10 minutes / 0:10)
 
-The majority of our interactions with computers is through a graphical user interface, or a GUI. A GUI is a great tool, it adds a level of user experience that allowed computers to become more popular and mainstream.
+The majority of our interactions with computers is through a graphical user
+interface, or a GUI. A GUI is a great tool, it adds a level of user experience
+that allowed computers to become more popular and mainstream.
 
-While the GUI is perfect for the average computer user, there are drawbacks for power users:
+While the GUI is perfect for the average computer user, there are drawbacks for
+power users:
 
 Some of those hindrances include:
-* GUI's can be slow
-* GUI's can be resource intensive, causing the gui to freeze which means you could lose data or it can cause other applications to stop working
-* GUI's lack flexibility, you can only use a gui for it’s intended purpose
-* GUI's require manual effort, pointing and clicking, require that you take your hands off the keyboard
 
+- GUI's can be slow
+- GUI's can be resource intensive, causing the gui to freeze which means you
+  could lose data or it can cause other applications to stop working
+- GUI's lack flexibility, you can only use a gui for it’s intended purpose
+- GUI's require manual effort, pointing and clicking, require that you take your
+  hands off the keyboard
 
-You all are on your way to becoming full-stack developers, on your journey to that point you will need to make the most of your time, effort and to avoid common issues that come with using a GUI. So today we will be learning the command line.
+You all are on your way to becoming full-stack developers, on your journey to
+that point you will need to make the most of your time, effort and to avoid
+common issues that come with using a GUI. So today we will be learning the
+command line.
 
 ### What is the Command Line Interface or CLI
 
-It is a tool to interact with your computer without a GUI, that allows you more abilities than a GUI has but with a higher learning curve. You are able to type commands/actions into a terminal and the computer will execute those commands or give you a fairly descriptive error regarding why it did not work.
+It is a tool to interact with your computer without a GUI, that allows you more
+abilities than a GUI has but with a higher learning curve. You are able to type
+commands/actions into a terminal and the computer will execute those commands or
+give you a fairly descriptive error regarding why it did not work.
 
+> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says
+> "make each program do one thing well".
 
-> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says "make each program do one thing well".
+This concept is not unix specific, it carries itself in to other aspects of
+programming as well.
 
-This concept is not unix specific, it carries itself in to other aspects of programming as well.
+You can create files, you can move between directories, you can connect to
+remote machines, you can pull code from a repository, you can scan ports, you
+can send http requests.
 
-You can create files, you can move between directories, you can connect to remote machines, you can pull code from a repository, you can scan ports, you can send http requests.
+Similar to how people make code and share it for things like Bootstrap, or Ruby
+on Rails, or any other open source technology, software engineers create command
+line tools that make completing task on the command line easier and then share
+them with other developers.
 
-Similar to how people make code and share it for things like Bootstrap, or Ruby on Rails, or any other open source technology, software engineers create command line tools that make completing task on the command line easier and then share them with other developers.
-
-Then developers like ourselves can install these tools and use them. We will do that in a moment.
-
-## CHECK FOR UNDERSTANDING/QUESTIONS (Hand 1 - 5)
-
+Then developers like ourselves can install these tools and use them. We will do
+that in a moment.
 
 #### Turn & Talk (10 minutes / 0:20)
-Given the information I just gave you regarding the CLI and what you learned from completing the pre-work. I want you to discuss for 5 minutes the following with your classmates in your row.
 
-* How is the CLI different from the GUI?
-* What do you like / dislike about using it?
-* Compared to a GUI, in what ways might using the CLI be better or worse for developers?
+Given the information I just gave you regarding the CLI and what you learned
+from completing the pre-work. I want you to discuss for 5 minutes the following
+with your classmates in your row.
 
-### Benefits of the CLI (10 minutes / 0:30)
+- How is the CLI different from the GUI?
+- What do you like / dislike about using it?
+- Compared to a GUI, in what ways might using the CLI be better or worse for
+  developers?
 
-**Power/Speed.**
-Most tasks can be completed faster with the cli, features like tab completion, command history, piping contribute to this
+## Benefits of the CLI (10 minutes / 0:30)
 
-**Precision.**
-Each command does only one thing and we can read them and understand what they do before we run them
+**Power/Speed.** Most tasks can be completed faster with the cli. Features like
+tab completion, command history (hitting the up arrow in your terminal), piping
+contribute to this.
 
-**Repeatability / Scriptability.**
-These commands can be saved, reused by others.
-What you did during Installfest was run a script that we shared with you!
+**Precision.** Each command does only one thing and we can read them and
+understand what they do before we run them.
 
-**Tools.**
-There are a lot of open source tools that you can use on the cli, you can install them with cli package managers like Advanced Packaging Tool (apt) or homebrew. Because each tool does one specific thing, it is possible to chain multiple tools together to automate processes.
+**Repeatability / Scriptability.** These commands can be saved, reused by
+others. What you did during Installfest was run a script that we shared with
+you!
 
+**Tools.** There are a lot of open source tools that you can use on the cli, you
+can install them with cli package managers like Advanced Packaging Tool (apt) on
+linux or homebrew on macOS. Because each tool does one specific thing, it is
+possible to chain multiple tools together to automate processes.
 
-**Debugging.**
-The errors are better, the errors that you get from a GUI can be unhelpful while cli errors are generally more thought out and descriptive.
+**Debugging.** The errors are better, the errors that you get from a GUI can be
+unhelpful while cli errors are generally more thought out and descriptive.
 
 Not helpful:
 
@@ -78,10 +99,10 @@ Helpful:
 
 ![helpful error](./assets/helpful_error.png)
 
-## CHECK FOR UNDERSTANDING/QUESTIONS
-How do people feel about their level of understanding regarding what the CLI is, not using it, just their understanding of what it is, it’s benefits and it’s downsides.
+How do people feel about their level of understanding regarding what the CLI is?
 
-## REAL EXAMPLE OF CLI USAGE
+Not using it, just their understanding of what it is, it’s benefits and it’s
+downsides.
 
 ## CLI Basics (15 minutes / 0:45)
 
@@ -114,7 +135,8 @@ If you have a terminal open but do not see a prompt, that means that the shell
 is not ready to receive input.
 
 Typing a random string of characters and hitting enter will produce a message
-`-bash: <your-random-string>: command not found` ![Command not
+`-bash: <your-random-string>: command not found`
+![Command not
 found](./assets/command_not_found.png)
 
 > What is a command?
@@ -122,6 +144,8 @@ found](./assets/command_not_found.png)
 A command is a program. Some come built into the shell and provide the basics
 for interacting with the operating system and some are written by programmers
 (like you!) to provide further functionality.
+
+> What are some basic commands that you've covered previously?
 
 ## Break (10 minutes / 0:55)
 
@@ -139,11 +163,11 @@ directory to another.
 
 You may have seen these commands before (maybe in the prework):
 
-| command | definition |
-| --- | --- |
-| `pwd` | print working directory |
-| `ls` | list files and directories |
-| `cd` | change directory |
+| command | definition                 |
+| ------- | -------------------------- |
+| `pwd`   | print working directory    |
+| `ls`    | list files and directories |
+| `cd`    | change directory           |
 
 How do these relate to navigating?
 
@@ -160,43 +184,48 @@ command. `cd` moves us from our current directory to another directory that we
 supply a path to.
 
 You can think of a path as being similar to an address. There are two types of
-paths: *absolute* and *relative*.
+paths: _absolute_ and _relative_.
 
-A *relative* path is similar to giving someone directions to a destination from
+#### Absolute vs Relative
+
+A _relative_ path is similar to giving someone directions to a destination from
 their current location. Where is General Assembly? Two blocks up 15th street
 from where you are now.
 
-An example of an *absolute* path to General Assembly could be 1133 15th St NW, 8th Floor, Washington, DC 20005 or a longitude and latitude(38.9048728, -77.0340283).
+An example of an _absolute_ path to General Assembly could be 1133 15th St NW,
+8th Floor, Washington, DC 20005 or a longitude and latitude(38.9048728,
+-77.0340283).
 
-An absolute path is comparable to giving someone the direct location from a universally known starting point.
-On the command line that known starting point is the root directory.
+An absolute path is comparable to giving someone the direct location from a
+universally known starting point. On the command line that known starting point
+is the root directory.
 
-*/*
+_/_
 
-Let's navigate/traverse our directory so we have a better understanding of these concepts.
-
-<!-- An *absolute* path is similar to giving someone coordinates to a  destination.
-Where is General Assembly? 1133 15th St NW, Washington, DC 20005. An important aspect of an *absolute* path is the starting point. In a coordinate system (like longitude
-and latitude) that is the coordinates 0, 0 (where the equator crosses the prime
-meridian). In our file system it's the *root* directory, symbolized as `/` -->
+Let's navigate/traverse our directory so we have a better understanding of these
+concepts.
 
 Here is how that translates into actual commands you could run to navigate to
 your `Documents/` directory:
 
 **Relative Path:**
+
 ```sh
 cd ./Documents/
+cd Documents
+# these are equivalent
 ```
 
 **Absolute Path:**
+
 ```sh
 cd /Users/wdistudent/Documents
 ```
 
-In the *relative* path, the leading `./` stands for: *from the current
-directory*. In the *absolute* path, the leading `/Users/wdistudent/` means from
+In the _relative_ path, the leading `./` stands for: _from the current
+directory_. In the _absolute_ path, the leading `/Users/wdistudent/` means from
 the root of the file system, the `Users/` directory and then the `wdistudent/`
-directory. The `wdistudent` directory has a special name too: the *home*
+directory. The `wdistudent` directory has a special name too: the _home_
 directory.
 
 > A shortcut to this directory is represented by the character `~`
@@ -205,7 +234,8 @@ directory.
 
 #### Going up
 
-If you do an `ls -all` you will notice several dots at the top of the list of file contents.
+If you do an `ls -all` you will notice several dots at the top of the list of
+file contents.
 
 ![ls all](./assets/lsall.png)
 
@@ -213,21 +243,28 @@ If you do an `ls -all` you will notice several dots at the top of the list of fi
 
 Try typing `cd ..` and seeing what happens.
 
-> What if you want to go up more than one level, without repeating the same command again?
-
-
-## CHECK FOR UNDERSTANDING/QUESTIONS (Hand 1 - 5)
-
+> What if you want to go up more than one level, without repeating the same
+> command again?
 
 #### Go Explore
 
 Using the commands you've learned, go explore your file system for a few
-minutes. When you open a new terminal window and run `ls`, where in the file
-system are you? What do you see? Compare that to opening a new window in
-`Finder`.
+minutes. When you open a new terminal window, where in the file system are you?
+What do you see? Compare that to opening a new window in `Finder`.
 
 #### [You Do: Directory Tree](https://git.generalassemb.ly/pages/dc-wdi-fundamentals/directory-tree/) (15 minutes)
+
 > 10 minute exercise, 5 minute review
+
+- Open the link above in a new tab.
+- Open
+  [this link](https://git.generalassemb.ly/dc-wdi-fundamentals/directory-tree)
+- Click the `Clone or Download` button and then click `Download ZIP`
+- Create a new directory and unzip the file in it
+- Navigate your terminal to the directory you just created
+
+Follow the directions on the page. Use your terminal to navigate the directories
+or check your answers.
 
 ### Working with Files and Directories
 
@@ -236,16 +273,96 @@ intended).
 
 The commands we'll be covering next are:
 
-| Command | Description |
-| --- | --- |
-| `mkdir` | make a new directory |
-| `rmdir` | remove a directory |
-| `touch` | create a new file |
-| `rm` | remove a file |
-| `mv` | move a file or directory |
-| `cp` | copy a file or directory |
+| Command | Description              |
+| ------- | ------------------------ |
+| `mkdir` | make a new directory     |
+| `rmdir` | remove a directory       |
+| `touch` | create a new file        |
+| `rm`    | remove a file            |
+| `mv`    | move a file or directory |
+| `cp`    | copy a file or directory |
 
-#### WDI Environment (5 minutes)
+### Command Syntax
+
+Commands generally consist of three parts
+
+1. Command
+2. Options
+3. Arguments
+
+The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or
+`touch`). Think of it as the "verb" which indicates what we want to do.
+
+Next come the **Options**, sometimes called flags or switches.
+
+- Sometimes you won't be using any options. Other times you may use several
+- By convention, options will start with a dash or two; one if the option is a
+  single letter and two for the "long" name
+- Sometimes an option takes an argument. In these cases, the argument comes
+  right after the option
+
+Finally come the **Arguments**. These are "targets", or what you want to do the
+action to. These could be file names, URLs, etc.
+
+The commands entered into the CLI are often in one of the following forms..
+
+- `doSomething --how toFiles`
+- `doSomething -h toFiles`
+- `doSomething --how sourceFile destinationFile`
+
+Where **doSomething** is, in effect, a verb or command, **how** an adverb (for
+example, should the command be executed "verbosely" or "quietly")
+and **toFiles** an object or objects (typically one or more files or folders) on
+which the command should act.
+
+So, using a real example:
+
+```bash
+cd /Users/jabyess # takes me to the home directory
+cd ~ #takes me to the home directory
+mkdir wdi # makes a folder called wdi in the current directory
+mkdir /Users/jabyess/wdi/2018 # makes a folder called 2018 in my home/wdi directory
+touch index.js # makes a file called index.js in the current directory
+```
+
+Many commands have a short and a long version of the same options.
+
+The short form has a single `-` and a single letter, maybe upper or lowercase
+depending on the option.
+
+The long form has two `--` and usually a whole word, or several words separated
+by a dash.
+
+```bash
+ls -a
+ls --all
+# -a and --all are equivalent
+
+mkdir -p
+mkdir --parents
+# -a and --parents are equivalent
+```
+
+In most cases there's an equivalent short and long form of each option. But not
+always.
+
+```bash
+rm -r
+rm -R
+rm --recursive
+# all 3 are equivalent
+
+rm --no-preserve-root
+# no short form equivalent
+```
+
+You can combine multiple options by just cramming them together
+
+```bash
+rm -rf # same as rm --recursive --force
+```
+
+#### You do: Create WDI Environment (5 minutes)
 
 To get your hands dirty, use the commands above to build out the following
 folders and files. This will be where you store all your work from WDI.
@@ -286,16 +403,16 @@ touch lessons/{cli_intro,git_intro,html,css}.md
 
 The above command will create the same set of files, but in one short command.
 It also works with directories! The list of file or directories must be
-separated by commas with *no spaces*.
+separated by commas with _no spaces_.
 
 ### Output and Side Effects
 
 Some commands have **output**, which is displayed on the screen for us to see.
 Examples of commands that have output are...
 
-* `pwd`
-* `ls`
-* `brew install tree`.
+- `pwd`
+- `ls`
+- `brew install tree`.
 
 Other commands' primary purpose is to execute some **side-effect**, or in other
 words, to make some change that isn't necessarily printed in the Terminal after
@@ -315,40 +432,8 @@ hitting enter.
 
 Some commands may provide both an output and side effects.
 
-### Command Syntax
-
-Commands generally consist of three parts
-
-1. Command
-2. Options
-3. Arguments
-
-The **Command** is the first word you type into the CLI (e.g. `ls`, `cd`, or
-`touch`). Think of it as the "verb" which indicates what we want to do.
-
-Next come the **Options**, sometimes called flags or switches.
-* Sometimes you won't be using any options. Other times you may use several
-* By convention, options will start with a dash or two; one if the option is a
-  single letter and two for the "long" name
-* Sometimes an option takes an argument. In these cases, the argument comes
-  right after the option
-
-Finally come the **Arguments**. These are "targets", or what you want to do the
-action to. These could be file names, URLs, etc.
-
-### Common Patterns
-
-The commands entered into the CLI are often in one of the following forms..
-
-- `doSomething --how toFiles`
-- `doSomething --how sourceFile destinationFile`
-
-Where **doSomething** is, in effect, a verb, **how** an adverb (for example,
-should the command be executed "verbosely" or "quietly") and **toFiles** an
-object or objects (typically one or more files) on which the command should act.
-
-
 ### Exercise
+
 Not all commands follow this pattern, but many do.
 
 Let's take a look at something we did for installfest.
@@ -361,52 +446,53 @@ When we type this command and hit enter, we're saying, "Computer, we're about to
 do something with homebrew. The thing were going to do is install something.
 What we want to install is `tree`.
 
-### INTERACTIVE Questions
-> Together, using the information that we just went over, let's focus on identifying the
-command, the option/flag and the target/argument for the next 5 command line items.
-  1. `$ touch index.html`
-  2. `$ ls -al`
-  3. `$ cp index.html index2.html`
-  4. `$ brew install git`
-  5. `$ mkdir -p lessons/sandbox`
+> Together, using the information that we just went over, let's focus on
+> identifying the command, the option/flag and the target/argument for the next
+> 5 command line items.
+
+- `$ touch index.html`
+- `$ ls -al`
+- `$ cp index.html index2.html`
+- `$ brew install git`
+- `$ mkdir -p lessons/sandbox`
 
 ## Getting Help
 
 There are three general ways to get help with a command.
 
-* Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
-* Use the manual - or `man` - tool (e.g., `man brew`).
-* Google!
+- Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
+- Use the manual - or `man` - tool (e.g., `man brew`).
+- Google!
 
-The `man` will display the man pages using a program `less`. Use the arrow keys
-to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to go to the
-next or previous search result
+> The `man` command will display the man pages using a program `less`. Use the
+> arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to
+> go to the next or previous search result
 
 ## Break (10 minutes / 1:50)
 
-## Common Command Teachbacks (25 minutes / 2:15) (Students Work together and then answer the question for the class)
+## Common Command Teachbacks (25 minutes / 2:15)
 
 > 15 minutes preparation. 10 minutes review.
 
 Form groups of 3 and spend 10 minutes researching and preparing a short demo of
 your command. Focus on...
 
-* What it does.
-* Common uses.
-* Common flags or arguments.
-* Any "gotchas" (i.e., things we should be aware of when using this command)?
+- What it does.
+- Common uses.
+- Common flags or arguments.
+- Any "gotchas" (i.e., things we should be aware of when using this command)?
 
 **Tip:** use the `man` pages!
 
 ### Commands
 
 1. `ls`
-2. `cd`
-3. `touch` and `mkdir`
-4. `cp`
-5. `mv`
-6. `rm`
-7. `sudo`
+1. `touch` and `mkdir`
+1. `cp`
+1. `mv`
+1. `cat`
+1. `rm`
+1. `pipe or |`
 
 ## Unsafe Commands (5 minutes)
 
@@ -424,7 +510,7 @@ effects.
 ### `rm`
 
 `rm` -- or "remove" -- deletes files with no confirmation. There is no `trash`
-to recover removed files from.  So use `rm` with caution.
+to recover removed files from. So use `rm` with caution.
 
 You should especially use `rm -rf` with caution.
 
@@ -461,9 +547,6 @@ first few letters and hit the TAB key.
 - command-k
 - `clear`
 
-
-
-
 ## Closing (15 minutes / 2:30)
 
 The commands we've covered in this lesson will probably account for 80% of your
@@ -477,9 +560,6 @@ going to spend a lot of time in the command line over the next 12 weeks. That
 can mean practicing these commands more, almost like you would practice scales
 from music or drills from sports. That can also mean learning more about what
 else is capable with these commands.
-
-
-
 
 ### Go figure some stuff out
 
@@ -507,7 +587,7 @@ how to do to get more comfortable with the command line:
   (many of your instructors use iTerm) or even use a different shell (Bash is
   the default shell, some of your instructors use
   [zsh](http://code.joejag.com/2014/why-zsh.html).
-- **Create Bash profile aliases.**  You can alias common commands in bash. One
+- **Create Bash profile aliases.** You can alias common commands in bash. One
   common alias you'll see a lot is an `ll` command that will perform an `ls -a`
   (list all files). See if you can figure out how to create that alias (google
   is your friend). Another possible alias you could make is `trash`, a command
@@ -517,17 +597,16 @@ how to do to get more comfortable with the command line:
   `vim`. View the `man` pages or google them!
 - **Learn some custom, advanced commands.** [`Z`](https://github.com/rupa/z) is
   a command line tool for quickly navigating and traversing the file system. See
-  if you can figure out how to install and use it. [This may be
-  helpful!](https://commandlinepoweruser.com/).
-
+  if you can figure out how to install and use it.
+  [This may be helpful!](https://commandlinepoweruser.com/).
 
 ## Sample Quiz Questions
 
-* Why would a developer prefer the command line over a GUI?
-* Where can we find help for shell commands?
-* Describe 4 bash commands for managing folders and files.
-* Describe 2 unsafe commands.
-* You are currently in the "code" folder in the below file tree. How would you
+- Why would a developer prefer the command line over a GUI?
+- Where can we find help for shell commands?
+- Describe 4 bash commands for managing folders and files.
+- Describe 2 unsafe commands.
+- You are currently in the "code" folder in the below file tree. How would you
   get to the folder that contains "beach.png" using the command line?
 
 ```sh
@@ -541,15 +620,12 @@ home
 └── videos
 ```
 
-
-
-
 ## [Homework: To Oz](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz)
 
 ### Submission Instructions
 
-1. Go to the assignment's [issues
-   page](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz/issues).
+1. Go to the assignment's
+   [issues page](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz/issues).
 2. Click 'New Issue’.
 3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with
    your actual name.
@@ -580,7 +656,7 @@ a pain to type out these commands in full all the time. It would be really nice
 if we could shorten some of these commands... enter aliasing. Aliasing is really
 quite simple!
 
-Let's open our  `~/.bash_profile` in atom and type in the following...
+Let's open our `~/.bash_profile` in atom and type in the following...
 
 ```
 alias greeting="echo 'hello world'"
@@ -605,19 +681,17 @@ cd "$@" && ls;
 Take the next five minutes to create your own alias and test it. If possible,
 alias something you think you'll find yourself doing frequently!
 
-
-
-* **BONUS:** Write a command to list only files beginning with your first name.
+- **BONUS:** Write a command to list only files beginning with your first name.
   Label the parts of the command.
 
 ## Hungry for More?
 
-* `grep`
-* `cat`
-* `less`
-* `find`
-* `cal`
-* `vim` and `vimtutor`
+- `grep`
+- `cat`
+- `less`
+- `find`
+- `cal`
+- `vim` and `vimtutor`
 
 [Linux Command](http://linuxcommand.org/) is a wonderful introduction to the
 command line. Macs are Unix systems and so very similar to Linux. Almost
@@ -625,11 +699,13 @@ everything (everything I've found so far)
 
 ## Own your terminal
 
-1. [Color your
-   prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-  - It will be WAY easier to read
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+
+- It will be WAY easier to read
+
 2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-  - Pick something you like to look at
+
+- Pick something you like to look at
 
 ## [iTerm2](https://www.iterm2.com/features.html)
 
@@ -645,7 +721,6 @@ Our favorite features include:
 
 Bash isn't the only option. Check out zsh
 (http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
-
 
 <!-- ADD CHECKS FOR understanding
 MAKE IT MORE RELATABLE
