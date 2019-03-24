@@ -34,16 +34,16 @@ command line.
 
 ### What is the Command Line Interface or CLI
 
-It is a tool to interact with your computer without a GUI, that allows you more
-abilities than a GUI has but with a higher learning curve. You are able to type
-commands/actions into a terminal and the computer will execute those commands or
-give you a fairly descriptive error regarding why it did not work.
+A text-based way of interacting with your computer, that gives you more
+abilities than a GUI has. Except with a higher learning curve.
 
-> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says
-> "make each program do one thing well".
+The CLI works by typing commands (running programs) into a terminal and the
+computer executes those commands or gives you a fairly descriptive error
+regarding why it did not work.
 
-This concept is not unix specific, it carries itself in to other aspects of
-programming as well.
+> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says >
+> "make each program do one thing well". This concept is not unix specific, it
+> carries itself in to other aspects of programming as well.
 
 You can create files, you can move between directories, you can connect to
 remote machines, you can pull code from a repository, you can scan ports, you
@@ -147,9 +147,7 @@ for interacting with the operating system and some are written by programmers
 
 > What are some basic commands that you've covered previously?
 
-## Break (10 minutes / 0:55)
-
-## File System (45 minutes / 1:40)
+## File System (45 minutes / 1:30)
 
 In the next section of this lesson, we're going to work through a couple of
 commands that you'll end up using almost every day as a developer. The commands
@@ -183,6 +181,8 @@ To move from our current directory to another directory, we use the `cd`
 command. `cd` moves us from our current directory to another directory that we
 supply a path to.
 
+> When we open a terminal window for the first time, what directory are we in?
+
 You can think of a path as being similar to an address. There are two types of
 paths: _absolute_ and _relative_.
 
@@ -200,13 +200,31 @@ An absolute path is comparable to giving someone the direct location from a
 universally known starting point. On the command line that known starting point
 is the root directory.
 
-_/_
+```
+/
+```
+
+This is not the same as the directory that we start in when we open the terminal
+for the first time. That's called `home` and looks something like this:
+
+```bash
+# mac
+/Users/seistudent
+
+# ubuntu linux
+/home/seistudent
+
+# replace seistudent with your computer username
+```
+
+Note the `/` before `home` and before `Users`. That is the root. It's the top of
+the navigable filesystem, we can't go above it, but we can go to it.
 
 Let's navigate/traverse our directory so we have a better understanding of these
 concepts.
 
 Here is how that translates into actual commands you could run to navigate to
-your `Documents/` directory:
+your `Documents/` directory from your `home` directory:
 
 **Relative Path:**
 
@@ -219,18 +237,25 @@ cd Documents
 **Absolute Path:**
 
 ```sh
-cd /Users/wdistudent/Documents
+cd /Users/seistudent/Documents
 ```
 
 In the _relative_ path, the leading `./` stands for: _from the current
-directory_. In the _absolute_ path, the leading `/Users/wdistudent/` means from
-the root of the file system, the `Users/` directory and then the `wdistudent/`
-directory. The `wdistudent` directory has a special name too: the _home_
-directory.
+directory_. You can also omit the `./` and it means the same thing, but it's a
+good idea to include it because it's more explicit.
 
-> A shortcut to this directory is represented by the character `~`
+In the _absolute_ path, the leading `/` means from the root of the file system.
+Then we add the `Users/` directory and then the `seistudent/` directory, and
+`Documents` is inside of there.
+
+The `seistudent` directory has a special name too: the _home_ directory.
+
+> A shortcut to this directory is represented by the tilde character `~`
 >
-> If you type `cd ~` it will take you to the _home_ directory.
+> If you type `cd ~` it will take you to the _home_ directory, no matter where
+> you are
+> 
+> If you see `~` in a file path, you can imagine it as a substitute for `/Users/seistudent`, which is helpful to save a lot of typing.
 
 #### Going up
 
@@ -243,10 +268,10 @@ file contents.
 
 Try typing `cd ..` and seeing what happens.
 
-> What if you want to go up more than one level, without repeating the same
-> command again?
+> What if you want to go up more than one level at a time, without repeating the
+> same command again?
 
-#### Go Explore
+#### You do: Go Explore (5 min)
 
 Using the commands you've learned, go explore your file system for a few
 minutes. When you open a new terminal window, where in the file system are you?
@@ -265,6 +290,8 @@ What do you see? Compare that to opening a new window in `Finder`.
 
 Follow the directions on the page. Use your terminal to navigate the directories
 or check your answers.
+
+## Break (10 min)
 
 ### Working with Files and Directories
 
@@ -321,13 +348,13 @@ So, using a real example:
 cd /Users/jabyess # takes me to the home directory
 cd ~ #takes me to the home directory
 mkdir wdi # makes a folder called wdi in the current directory
-mkdir /Users/jabyess/wdi/2018 # makes a folder called 2018 in my home/wdi directory
+mkdir /Users/jabyess/wdi/2018 # makes a folder called 2018 in my ~/wdi directory
 touch index.js # makes a file called index.js in the current directory
 ```
 
 Many commands have a short and a long version of the same options.
 
-The short form has a single `-` and a single letter, maybe upper or lowercase
+The short form has a single `-` and a single letter, upper or lowercase
 depending on the option.
 
 The long form has two `--` and usually a whole word, or several words separated
@@ -356,19 +383,21 @@ rm --no-preserve-root
 # no short form equivalent
 ```
 
-You can combine multiple options by just cramming them together
+You can combine multiple options by just jamming them together without a dash
 
 ```bash
 rm -rf # same as rm --recursive --force
+
+tar -xvzf # same as tar --extract --verbose --gzip --file or tar -x -v -z -f
 ```
 
-#### You do: Create WDI Environment (5 minutes)
+#### You do: Create SEI Environment (5 minutes)
 
 To get your hands dirty, use the commands above to build out the following
-folders and files. This will be where you store all your work from WDI.
+folders and files. This will be where you store all your work from SEI.
 
 ```sh
-wdi
+sei
   ├── homework
   ├── labs
   ├── lessons
@@ -419,16 +448,14 @@ words, to make some change that isn't necessarily printed in the Terminal after
 hitting enter.
 
 Often times, a command whose main job is a side effect may not provide any
-output if it succeeds. If there is an error, it will provide output (we would
-get an error if there were a problem so no news is good news).
+output if it succeeds. If there is an error it will provide output, so no news
+is good news.
 
 > What's an example of this we've already seen?
 
 Another example would be `touch`. This command creates a file in an indicated
 location. We do not, however, get a confirmation it did this immediately after
 hitting enter.
-
-> Related to touch, what do you think `mkdir` does?
 
 Some commands may provide both an output and side effects.
 
@@ -461,21 +488,20 @@ What we want to install is `tree`.
 There are three general ways to get help with a command.
 
 - Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
-- Use the manual - or `man` - tool (e.g., `man brew`).
+- Use the manual or `man` - tool (e.g., `man brew`). For a really fun time look
+  up the manual for man (`man man`).
 - Google!
 
 > The `man` command will display the man pages using a program `less`. Use the
-> arrow keys to navigate. Type `q` to quit. Use `/` to search and `n` and `p` to
-> go to the next or previous search result
-
-## Break (10 minutes / 1:50)
+> arrow keys or mouse to navigate. Type `q` to quit. Use `/` to search and `n`
+> and `p` to go to the next or previous search result
 
 ## Common Command Teachbacks (25 minutes / 2:15)
 
 > 15 minutes preparation. 10 minutes review.
 
-Form groups of 3 and spend 10 minutes researching and preparing a short demo of
-your command. Focus on...
+Form groups of 3 and spend 10 minutes researching and preparing a short (60
+second) demo of your command. Focus on...
 
 - What it does.
 - Common uses.
@@ -518,11 +544,13 @@ You should especially use `rm -rf` with caution.
 
 ## Keyboard Shortcuts (5 minutes)
 
-The next three points are reasons not to hold down the arrow or delete keys.
+The next three points are handy shortcuts that prevent you from having to
+backspace a bunch to erase the previous command.
 
 ### `ctrl-c`
 
-Cancel whatever you were typing before. Abort!
+Cancel whatever you were typing before, or exit the currently running program.
+Abort!
 
 ### `ctrl-e`
 
@@ -532,14 +560,14 @@ Move cursor to the end of the line.
 
 Move cursor to the beginning of the line
 
-### The up and down arrows
+### The `up` and `down` arrows
 
 Cycle through previous commands
 
-### Tab completion
+### `Tab` completion
 
-When typing a command that has a file as an argument, like `cd`, type only the
-first few letters and hit the TAB key.
+When typing a command that has a file or path as an argument, like `cd`, type
+only the first few letters and hit the TAB key.
 
 ### Clear the screen
 
