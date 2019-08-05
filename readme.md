@@ -41,7 +41,7 @@ The CLI works by typing commands (running programs) into a terminal and the
 computer executes those commands or gives you a fairly descriptive error
 regarding why it did not work.
 
-> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says >
+> The [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) says
 > "make each program do one thing well". This concept is not unix specific, it
 > carries itself in to other aspects of programming as well.
 
@@ -254,8 +254,9 @@ The `seistudent` directory has a special name too: the _home_ directory.
 >
 > If you type `cd ~` it will take you to the _home_ directory, no matter where
 > you are
-> 
-> If you see `~` in a file path, you can imagine it as a substitute for `/Users/seistudent`, which is helpful to save a lot of typing.
+>
+> If you see `~` in a file path, you can imagine it as a substitute for
+> `/Users/seistudent`, which is helpful to save a lot of typing.
 
 #### Going up
 
