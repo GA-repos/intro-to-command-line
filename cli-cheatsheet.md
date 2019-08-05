@@ -22,7 +22,3 @@
 | `rm`    | remove a file            |
 | `mv`    | move a file or directory |
 | `cp`    | copy a file or directory |
-
-## Absolute and Relative Paths
-
-## Commands, Options, and Arguments
