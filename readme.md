@@ -616,6 +616,7 @@ else is capable with these commands.
 - [Kitchen Organizer](https://git.generalassemb.ly/dc-wdi-fundamentals/kitchen-organizer)
 - [Learn You Bash](https://github.com/denysdovhan/learnyoubash)
 - [Command Line Power User](https://commandlinepoweruser.com/)
+- [Awesome Bash](https://github.com/awesome-lists/awesome-bash)
 
 ## Bash Profile Aliases (Bonus Content)
 
