@@ -497,30 +497,7 @@ There are three general ways to get help with a command.
 > arrow keys or mouse to navigate. Type `q` to quit. Use `/` to search and `n`
 > and `p` to go to the next or previous search result
 
-## Common Command Teachbacks (25 minutes / 2:15)
-
-> 15 minutes preparation. 10 minutes review.
-
-Form groups of 3 and spend 10 minutes researching and preparing a short (60
-second) demo of your command. Focus on...
-
-- What it does.
-- Common uses.
-- Common flags or arguments.
-- Any "gotchas" (i.e., things we should be aware of when using this command)?
-
-**Tip:** use the `man` pages!
-
-### Commands
-
-1. `echo`
-1. `cat`
-1. `pipe or |`
-1. `grep`
-1. `find`
-1. `vimtutor`
-
-## Unsafe Commands (5 minutes)
+## Unsafe Commands
 
 ### `sudo`
 
@@ -541,6 +518,30 @@ to recover removed files from. So use `rm` with caution.
 You should especially use `rm -rf` with caution.
 
 > Based on your knowledge of flags, what does `rm -rf` do?
+
+## Common Command Teachbacks (25 minutes)
+
+> 15 minutes preparation. 10 minutes review.
+
+Form groups of 3 and spend 10 minutes researching and preparing a short (60
+second) demo of your command. Focus on...
+
+- What it does.
+- Common uses.
+- Common flags or arguments.
+- Any "gotchas" (i.e., things we should be aware of when using this command)?
+
+**Tip:** use the `man` pages!
+
+### Commands
+
+1. `echo`
+1. `cat`
+1. `pipe or |`
+1. `grep`
+1. `find`
+1. `chown` and `chmod`
+1. `vimtutor`
 
 ## Keyboard Shortcuts (5 minutes)
 
