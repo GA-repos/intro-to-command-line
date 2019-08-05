@@ -250,27 +250,27 @@ Then we add the `Users/` directory and then the `seistudent/` directory, and
 
 The `seistudent` directory has a special name too: the _home_ directory.
 
-> A shortcut to this directory is represented by the tilde character `~`
->
-> If you type `cd ~` it will take you to the _home_ directory, no matter where
-> you are
->
-> If you see `~` in a file path, you can imagine it as a substitute for
-> `/Users/seistudent`, which is helpful to save a lot of typing.
+A shortcut to this directory is represented by the tilde character `~`
+
+If you type `cd ~` it will take you to the home directory, no matter where you
+are
+
+If you see `~` in a file path, you can imagine it as a substitute for
+`/Users/seistudent`, which is helpful to save a lot of typing.
 
 #### Going up
 
-If you do an `ls -all` you will notice several dots at the top of the list of
+If you do an `ls -al` you will notice several dots at the top of the list of
 file contents.
 
-![ls all](./assets/lsall.png)
+![ls al](./assets/ls-al.png)
 
-> Can you guess what these mean?
+Can you guess what these mean?
 
 Try typing `cd ..` and seeing what happens.
 
-> What if you want to go up more than one level at a time, without repeating the
-> same command again?
+- What if you want to go up more than one level at a time, without repeating the
+  same command again?
 
 #### You do: Go Explore (5 min)
 
