@@ -346,10 +346,10 @@ which the command should act.
 So, using a real example:
 
 ```bash
-cd /Users/jabyess # takes me to the home directory
+cd /Users/hammad # takes me to the home directory
 cd ~ #takes me to the home directory
-mkdir wdi # makes a folder called wdi in the current directory
-mkdir /Users/jabyess/wdi/2018 # makes a folder called 2018 in my ~/wdi directory
+mkdir sei # makes a folder called wdi in the current directory
+mkdir /Users/hammad/sei/2019 # makes a folder called 2019 in my ~/sei directory
 touch index.js # makes a file called index.js in the current directory
 ```
 
@@ -362,13 +362,13 @@ The long form has two `--` and usually a whole word, or several words separated
 by a dash.
 
 ```bash
-ls -a
-ls --all
-# -a and --all are equivalent
+ls -h
+ls --help
+# -h and --help are equivalent
 
 mkdir -p
 mkdir --parents
-# -a and --parents are equivalent
+# -p and --parents are equivalent
 ```
 
 In most cases there's an equivalent short and long form of each option. But not
