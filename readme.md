@@ -392,6 +392,31 @@ rm -rf # same as rm --recursive --force
 tar -xvzf # same as tar --extract --verbose --gzip --file or tar -x -v -z -f
 ```
 
+### Output and Side Effects
+
+Some commands have **output**, which is displayed on the screen for us to see.
+Examples of commands that have output are...
+
+- `pwd`
+- `ls`
+- `brew install tree`.
+
+Other commands' primary purpose is to execute some **side-effect**, or in other
+words, to make some change that isn't necessarily printed in the Terminal after
+hitting enter.
+
+Often times, a command whose main job is a side effect may not provide any
+output if it succeeds. If there is an error it will provide output, so no news
+is good news.
+
+> What's an example of this we've already seen?
+
+Another example would be `touch`. This command creates a file in an indicated
+location. We do not, however, get a confirmation it did this immediately after
+hitting enter.
+
+Some commands may provide both an output and side effects.
+
 #### You do: Create SEI Environment (5 minutes)
 
 To get your hands dirty, use the commands above to build out the following
@@ -435,32 +460,7 @@ The above command will create the same set of files, but in one short command.
 It also works with directories! The list of file or directories must be
 separated by commas with _no spaces_.
 
-### Output and Side Effects
-
-Some commands have **output**, which is displayed on the screen for us to see.
-Examples of commands that have output are...
-
-- `pwd`
-- `ls`
-- `brew install tree`.
-
-Other commands' primary purpose is to execute some **side-effect**, or in other
-words, to make some change that isn't necessarily printed in the Terminal after
-hitting enter.
-
-Often times, a command whose main job is a side effect may not provide any
-output if it succeeds. If there is an error it will provide output, so no news
-is good news.
-
-> What's an example of this we've already seen?
-
-Another example would be `touch`. This command creates a file in an indicated
-location. We do not, however, get a confirmation it did this immediately after
-hitting enter.
-
-Some commands may provide both an output and side effects.
-
-### Exercise
+### Exercise: Command-Option-Argument patterns
 
 Not all commands follow this pattern, but many do.
 
