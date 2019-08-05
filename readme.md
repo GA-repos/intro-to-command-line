@@ -513,13 +513,12 @@ second) demo of your command. Focus on...
 
 ### Commands
 
-1. `ls`
-1. `touch` and `mkdir`
-1. `cp`
-1. `mv`
+1. `echo`
 1. `cat`
-1. `rm`
 1. `pipe or |`
+1. `grep`
+1. `find`
+1. `vimtutor`
 
 ## Unsafe Commands (5 minutes)
 
