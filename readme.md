@@ -533,6 +533,10 @@ second) demo of your command. Focus on...
 
 **Tip:** use the `man` pages!
 
+[Linux Command](http://linuxcommand.org/) is a wonderful introduction to the
+command line. Macs are Unix systems and so very similar to Linux. Almost
+everything (everything I've found so far)
+
 ### Commands
 
 1. `echo`
@@ -540,7 +544,9 @@ second) demo of your command. Focus on...
 1. `pipe or |`
 1. `grep`
 1. `find`
+1. `less`
 1. `chown` and `chmod`
+1. `cal`
 1. `vimtutor`
 
 ## Keyboard Shortcuts (5 minutes)
@@ -548,18 +554,10 @@ second) demo of your command. Focus on...
 The next three points are handy shortcuts that prevent you from having to
 backspace a bunch to erase the previous command.
 
-### `ctrl-c`
+### `CTRL + C`
 
 Cancel whatever you were typing before, or exit the currently running program.
 Abort!
-
-### `ctrl-e`
-
-Move cursor to the end of the line.
-
-### `ctrl-a`
-
-Move cursor to the beginning of the line
 
 ### The `up` and `down` arrows
 
@@ -570,11 +568,33 @@ Cycle through previous commands
 When typing a command that has a file or path as an argument, like `cd`, type
 only the first few letters and hit the TAB key.
 
-### Clear the screen
+## More Terminal Keyboard shortcuts
 
-- ctrl-l
-- command-k
-- `clear`
+In the long term, reduce your reliance on the mouse. More Bash keyboard
+shortcuts:
+
+`COMMAND + K` Clear the Terminal window
+
+- can also use `CTRL + L` or the command `$ clear` as well
+
+`OPTION + <arrow>` Move cursor by word
+
+`CTRL + A` Go to beginning of line
+
+`CTRL + E` Go to end of line
+
+`CTRL + K` Kill line to end
+
+`CTRL + U` Kill line to beginning
+
+`CTRL + Y` Paste whatever was killed using Ctrl+K or Ctrl+U
+
+_Nifty Navigation Command:_
+
+`$ cd -` toggle previous directory
+
+There are also video tutorials made by GA
+[here](https://www.youtube.com/playlist?list=PLdnONIhPScSToZztXRHyKZTQEsE30luMx)
 
 ## Closing (15 minutes / 2:30)
 
@@ -590,7 +610,89 @@ can mean practicing these commands more, almost like you would practice scales
 from music or drills from sports. That can also mean learning more about what
 else is capable with these commands.
 
-### Go figure some stuff out
+## Additional Practice / Bonus Material
+
+- [Command Line Fu](https://git.generalassemb.ly/dc-wdi-fundamentals/command-line-fu)
+- [Kitchen Organizer](https://git.generalassemb.ly/dc-wdi-fundamentals/kitchen-organizer)
+- [Learn You Bash](https://github.com/denysdovhan/learnyoubash)
+- [Command Line Power User](https://commandlinepoweruser.com/)
+
+## Bash Profile Aliases (Bonus Content)
+
+You may have noticed during Installfest that we messed with this file:
+`~/.bash_profile`.
+
+<details>
+  <summary> <b>Q:</b> Based on the path, where is this file located?</summary>
+  In the home directory (i.e., Users/your-name-here).
+</details>
+
+Essentially, we changed the `~/.bash_profile` to make your prompt into a better
+one!
+
+There will be commands you will find yourself doing frequently. It might become
+a pain to type out these commands in full all the time. It would be really nice
+if we could shorten some of these commands... enter aliasing. Aliasing is really
+quite simple!
+
+Let's open our `~/.bash_profile` in atom and type in the following...
+
+```
+alias greeting="echo 'hello world'"
+alias gs='git status'
+alias sbx='cd ~/wdi/sandbox'
+```
+
+We can also design functions in bash to allow for arguments and options...
+
+```sh
+cdls () {
+cd "$@" && ls;
+}
+```
+
+> At this point you may be wondering what exactly "bash" is. Bash is a language
+> we can use to interact with our computer via the shell (via Terminal or some
+> other text-based interface).
+
+### Make An Alias
+
+Take the next five minutes to create your own alias and test it. If possible,
+alias something you think you'll find yourself doing frequently!
+
+- **BONUS:** Write a command to list only files beginning with your first name.
+  Label the parts of the command.
+
+## Own your terminal
+
+1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+
+- It will be WAY easier to read
+
+2. [Choose a theme](http://apple.stackexchange.com/a/92769)
+
+- Pick something you like to look at
+
+## [iTerm2](https://www.iterm2.com/features.html)
+
+Some instructors use iTerm2 as a terminal replacement.
+
+Our favorite features include:
+
+- A better, more readable font
+- Hotkey support (full screen and tabs)
+- Unlimited Scroll Back history
+
+## Feeling Adventurous?
+
+Bash isn't the only option. Check out zsh
+(http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
+
+<!-- ADD CHECKS FOR understanding
+MAKE IT MORE RELATABLE
+MOVE BONUS/HOMEWORK CONTENT -->
+
+## Go figure some stuff out
 
 Getting comfortable in the command line takes practice. Once you do get
 comfortable, you'll find it possible to be extremely productive by just adding a
@@ -648,109 +750,3 @@ home
 │       └── beach.png
 └── videos
 ```
-
-## [Homework: To Oz](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz)
-
-### Submission Instructions
-
-1. Go to the assignment's
-   [issues page](https://git.generalassemb.ly/dc-wdi-fundamentals/to-oz/issues).
-2. Click 'New Issue’.
-3. Give it a title of `CLI HW (Your Name Here)`. Replace "Your Name Here" with
-   your actual name.
-4. For the description, copy paste the CLI commands you used to complete the
-   assignment.
-
-## Additional Practice / Bonus Material
-
-- [Command Line Fu](https://git.generalassemb.ly/dc-wdi-fundamentals/command-line-fu)
-- [Kitchen Organizer](https://git.generalassemb.ly/dc-wdi-fundamentals/kitchen-organizer)
-- [Command Line Power User](https://commandlinepoweruser.com/)
-
-## Bash Profile Aliases (Bonus Content)
-
-You may have noticed during Installfest that we messed with this file:
-`~/.bash_profile`.
-
-<details>
-  <summary> <b>Q:</b> Based on the path, where is this file located?</summary>
-  In the home directory (i.e., Users/your-name-here).
-</details>
-
-Essentially, we changed the `~/.bash_profile` to make your prompt into a better
-one!
-
-There will be commands you will find yourself doing frequently. It might become
-a pain to type out these commands in full all the time. It would be really nice
-if we could shorten some of these commands... enter aliasing. Aliasing is really
-quite simple!
-
-Let's open our `~/.bash_profile` in atom and type in the following...
-
-```
-alias greeting="echo 'hello world'"
-alias gs='git status'
-alias sbx='cd ~/wdi/sandbox'
-```
-
-We can also design functions in bash to allow for arguments and options...
-
-```sh
-cdls () {
-cd "$@" && ls;
-}
-```
-
-> At this point you may be wondering what exactly "bash" is. Bash is a language
-> we can use to interact with our computer via the shell (via Terminal or some
-> other text-based interface).
-
-### Make An Alias
-
-Take the next five minutes to create your own alias and test it. If possible,
-alias something you think you'll find yourself doing frequently!
-
-- **BONUS:** Write a command to list only files beginning with your first name.
-  Label the parts of the command.
-
-## Hungry for More?
-
-- `grep`
-- `cat`
-- `less`
-- `find`
-- `cal`
-- `vim` and `vimtutor`
-
-[Linux Command](http://linuxcommand.org/) is a wonderful introduction to the
-command line. Macs are Unix systems and so very similar to Linux. Almost
-everything (everything I've found so far)
-
-## Own your terminal
-
-1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-
-- It will be WAY easier to read
-
-2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-
-- Pick something you like to look at
-
-## [iTerm2](https://www.iterm2.com/features.html)
-
-Some instructors use iTerm2 as a terminal replacement.
-
-Our favorite features include:
-
-- A better, more readable font
-- Hotkey support (full screen and tabs)
-- Unlimited Scroll Back history
-
-## Feeling Adventurous?
-
-Bash isn't the only option. Check out zsh
-(http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
-
-<!-- ADD CHECKS FOR understanding
-MAKE IT MORE RELATABLE
-MOVE BONUS/HOMEWORK CONTENT -->
