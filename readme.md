@@ -362,10 +362,6 @@ The long form has two `--` and usually a whole word, or several words separated
 by a dash.
 
 ```bash
-ls -h
-ls --help
-# -h and --help are equivalent
-
 mkdir -p
 mkdir --parents
 # -p and --parents are equivalent
