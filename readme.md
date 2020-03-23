@@ -7,7 +7,6 @@
 - Describe the file system and how it relates to the CLI
 - Introduce common commands and list unsafe ones
 - Learn how to find more information on using commands
-- Introduce Bash and how to customize the command line
 
 ## Framing (10 minutes / 0:10)
 
