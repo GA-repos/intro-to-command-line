@@ -57,18 +57,7 @@ them with other developers.
 Then developers like ourselves can install these tools and use them. We will do
 that in a moment.
 
-#### Turn & Talk (10 minutes / 0:20)
-
-Given the information I just gave you regarding the CLI and what you learned
-from completing the pre-work. I want you to discuss for 5 minutes the following
-with your classmates in your row.
-
-- How is the CLI different from the GUI?
-- What do you like / dislike about using it?
-- Compared to a GUI, in what ways might using the CLI be better or worse for
-  developers?
-
-## Benefits of the CLI (10 minutes / 0:30)
+## Benefits of the CLI 
 
 **Power/Speed.** Most tasks can be completed faster with the cli. Features like
 tab completion, command history (hitting the up arrow in your terminal), piping
@@ -89,22 +78,7 @@ possible to chain multiple tools together to automate processes.
 **Debugging.** The errors are better, the errors that you get from a GUI can be
 unhelpful while cli errors are generally more thought out and descriptive.
 
-Not helpful:
-
-![unhelpful error](./assets/unhelpful-error.png)
-
-![error error](./assets/error-error.jpg)
-
-Helpful:
-
-![helpful error](./assets/helpful_error.png)
-
-How do people feel about their level of understanding regarding what the CLI is?
-
-Not using it, just their understanding of what it is, it’s benefits and it’s
-downsides.
-
-## CLI Basics (15 minutes / 0:45)
+## CLI Basics
 
 ### The Terminal and the Shell
 
@@ -115,7 +89,7 @@ Terminal app will call a program called a **shell**.
 
 A shell is a program that takes commands, passes them to the operating system
 and returns any output or errors. The default shell used by terminal is called
-**Bash**. There are other shells but all operate very similarly.
+**Bash** or **ZSH** on MacOS Catalina or later. There are other shells but all operate very similarly.
 
 Let's fire up our terminals and get exploring!
 
@@ -147,7 +121,7 @@ for interacting with the operating system and some are written by programmers
 
 > What are some basic commands that you've covered previously?
 
-## File System (45 minutes / 1:30)
+## File System 
 
 In the next section of this lesson, we're going to work through a couple of
 commands that you'll end up using almost every day as a developer. The commands
@@ -260,7 +234,7 @@ If you see `~` in a file path, you can imagine it as a substitute for
 
 #### Going up
 
-If you do an `ls -al` you will notice several dots at the top of the list of
+If you do an `ls -a` you will notice several dots at the top of the list of
 file contents.
 
 ![ls al](./assets/ls-al.png)
@@ -271,28 +245,6 @@ Try typing `cd ..` and seeing what happens.
 
 - What if you want to go up more than one level at a time, without repeating the
   same command again?
-
-#### You do: Go Explore (5 min)
-
-Using the commands you've learned, go explore your file system for a few
-minutes. When you open a new terminal window, where in the file system are you?
-What do you see? Compare that to opening a new window in `Finder`.
-
-#### [You Do: Directory Tree](https://git.generalassemb.ly/pages/dc-wdi-fundamentals/directory-tree/) (15 minutes)
-
-> 10 minute exercise, 5 minute review
-
-- Open the link above in a new tab.
-- Open
-  [this link](https://git.generalassemb.ly/dc-wdi-fundamentals/directory-tree)
-- Click the `Clone or Download` button and then click `Download ZIP`
-- Create a new directory and unzip the file in it
-- Navigate your terminal to the directory you just created
-
-Follow the directions on the page. Use your terminal to navigate the directories
-or check your answers.
-
-## Break (10 min)
 
 ### Working with Files and Directories
 
@@ -545,7 +497,7 @@ everything (everything I've found so far)
 1. `cal`
 1. `vimtutor`
 
-## Keyboard Shortcuts (5 minutes)
+## Keyboard Shortcuts
 
 The next three points are handy shortcuts that prevent you from having to
 backspace a bunch to erase the previous command.
@@ -592,143 +544,7 @@ _Nifty Navigation Command:_
 There are also video tutorials made by GA
 [here](https://www.youtube.com/playlist?list=PLdnONIhPScSToZztXRHyKZTQEsE30luMx)
 
-## Closing (15 minutes / 2:30)
-
-The commands we've covered in this lesson will probably account for 80% of your
-CLI usage. On the one hand, that means that learning them well and getting
-comfortable is really important; on the other hand, it's not a big universe of
-commands to learn and memorize.
-
-Regardless of how much experience with the command line you have coming in to
-this class, your next step should be to get really comfortable with it - we're
-going to spend a lot of time in the command line over the next 12 weeks. That
-can mean practicing these commands more, almost like you would practice scales
-from music or drills from sports. That can also mean learning more about what
-else is capable with these commands.
-
-## Additional Practice / Bonus Material
-
-- [Command Line Fu](https://git.generalassemb.ly/dc-wdi-fundamentals/command-line-fu)
-- [Kitchen Organizer](https://git.generalassemb.ly/dc-wdi-fundamentals/kitchen-organizer)
-- [Learn You Bash](https://github.com/denysdovhan/learnyoubash)
-- [Command Line Power User](https://commandlinepoweruser.com/)
-- [Awesome Bash](https://github.com/awesome-lists/awesome-bash)
-
-## Bash Profile Aliases (Bonus Content)
-
-You may have noticed during Installfest that we messed with this file:
-`~/.bash_profile`.
-
-<details>
-  <summary> <b>Q:</b> Based on the path, where is this file located?</summary>
-  In the home directory (i.e., Users/your-name-here).
-</details>
-
-Essentially, we changed the `~/.bash_profile` to make your prompt into a better
-one!
-
-There will be commands you will find yourself doing frequently. It might become
-a pain to type out these commands in full all the time. It would be really nice
-if we could shorten some of these commands... enter aliasing. Aliasing is really
-quite simple!
-
-Let's open our `~/.bash_profile` in atom and type in the following...
-
-```
-alias greeting="echo 'hello world'"
-alias gs='git status'
-alias sbx='cd ~/wdi/sandbox'
-```
-
-We can also design functions in bash to allow for arguments and options...
-
-```sh
-cdls () {
-cd "$@" && ls;
-}
-```
-
-> At this point you may be wondering what exactly "bash" is. Bash is a language
-> we can use to interact with our computer via the shell (via Terminal or some
-> other text-based interface).
-
-### Make An Alias
-
-Take the next five minutes to create your own alias and test it. If possible,
-alias something you think you'll find yourself doing frequently!
-
-- **BONUS:** Write a command to list only files beginning with your first name.
-  Label the parts of the command.
-
-## Own your terminal
-
-1. [Color your prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
-
-- It will be WAY easier to read
-
-2. [Choose a theme](http://apple.stackexchange.com/a/92769)
-
-- Pick something you like to look at
-
-## [iTerm2](https://www.iterm2.com/features.html)
-
-Some instructors use iTerm2 as a terminal replacement.
-
-Our favorite features include:
-
-- A better, more readable font
-- Hotkey support (full screen and tabs)
-- Unlimited Scroll Back history
-
-## Feeling Adventurous?
-
-Bash isn't the only option. Check out zsh
-(http://code.joejag.com/2014/why-zsh.html) or fish (http://fishshell.com/)
-
-<!-- ADD CHECKS FOR understanding
-MAKE IT MORE RELATABLE
-MOVE BONUS/HOMEWORK CONTENT -->
-
-## Go figure some stuff out
-
-Getting comfortable in the command line takes practice. Once you do get
-comfortable, you'll find it possible to be extremely productive by just adding a
-couple of commands together.
-
-The installfest script is a perfect example - your instructors wrote a single
-shell script that you can run to totally set up your computers for WDI. Ask your
-instructors about other shell scripts they wrote at previous jobs.
-
-For the remainder of class, here are some things you can go try to figure out
-how to do to get more comfortable with the command line:
-
-- **Review the commands we've covered in more depth.** Go through each and
-  review the help and/or `man` page for each command. Type `man <some_command`
-  (i.e. `man ls`) to view the man page. Use your arrow keys (up and down) to
-  navigate through the man pages and `q` to quit.
-- **Practice each command.** Over time, these common commands will become part
-  of your muscle memory. Get there sooner by practicing. Navigate to your
-  `sandbox/` directory and create a `cli-practice/` directory. `cd` into your
-  new directory and practice the above commands 20 times each.
-- **Customize your command line.** The sky is the limit here! You can change the
-  font, the theme (colors), add emojis to your prompt, use a different terminal
-  (many of your instructors use iTerm) or even use a different shell (Bash is
-  the default shell, some of your instructors use
-  [zsh](http://code.joejag.com/2014/why-zsh.html).
-- **Create Bash profile aliases.** You can alias common commands in bash. One
-  common alias you'll see a lot is an `ll` command that will perform an `ls -a`
-  (list all files). See if you can figure out how to create that alias (google
-  is your friend). Another possible alias you could make is `trash`, a command
-  that will move a file or folder to the system Trash bin. What other aliases
-  could you make?
-- **Review some more advanced commands.** Look up `grep`, `less`, `cal`, and
-  `vim`. View the `man` pages or google them!
-- **Learn some custom, advanced commands.** [`Z`](https://github.com/rupa/z) is
-  a command line tool for quickly navigating and traversing the file system. See
-  if you can figure out how to install and use it.
-  [This may be helpful!](https://commandlinepoweruser.com/).
-
-## Sample Quiz Questions
+## Review
 
 - Why would a developer prefer the command line over a GUI?
 - Where can we find help for shell commands?
@@ -747,3 +563,20 @@ home
 │       └── beach.png
 └── videos
 ```
+
+## Closing
+
+The commands we've covered in this lesson will probably account for 80% of your
+CLI usage. Regardless of how much experience with the command line you have coming in to
+this class, your next step should be to get really comfortable with it - we're
+going to spend a lot of time in the command line over the next 12 weeks. 
+
+
+## Additional Practice / Bonus Material
+
+- [Command Line Fu](https://git.generalassemb.ly/dc-wdi-fundamentals/command-line-fu)
+- [Kitchen Organizer](https://git.generalassemb.ly/dc-wdi-fundamentals/kitchen-organizer)
+- [Learn You Bash](https://github.com/denysdovhan/learnyoubash)
+- [Command Line Power User](https://commandlinepoweruser.com/)
+- [Awesome Bash](https://github.com/awesome-lists/awesome-bash)
+
