@@ -1,3 +1,6 @@
+## SEIR 322, March 23 2021
+
+
 # The CLI (Command Line Interface)
 
 ## Learning Objectives
@@ -238,7 +241,7 @@ file contents.
 
 ![ls al](./assets/ls-al.png)
 
-Can you guess what these mean?
+These are "Hidden" files that work behind the scenes of the software and files that we are running. 99% of the time, we are not going to touch then
 
 Try typing `cd ..` and seeing what happens.
 
@@ -297,10 +300,10 @@ which the command should act.
 So, using a real example:
 
 ```bash
-cd /Users/hammad # takes me to the home directory
+cd /Users/jeremy # takes me to the home directory
 cd ~ #takes me to the home directory
 mkdir sei # makes a folder called wdi in the current directory
-mkdir /Users/hammad/sei/2019 # makes a folder called 2019 in my ~/sei directory
+mkdir /Users/jeremy/sei/322 # makes a folder called 2019 in my ~/sei directory
 touch index.js # makes a file called index.js in the current directory
 ```
 
