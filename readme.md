@@ -264,6 +264,62 @@ The commands we'll be covering next are:
 | `mv`    | move a file or directory |
 | `cp`    | copy a file or directory |
 
+#### You do: Create SEI Environment (5 minutes)
+
+To get your hands dirty, use the commands above to build out the following
+folders and files. This will be where you store all your work from SEI.
+
+```sh
+sei
+  ├── homework
+  ├── labs
+  ├── lessons
+  │   └── cli_intro.md
+  ├── projects
+  └── sandbox
+```
+
+**Pro Tip:** Use brackets to substitute paths together. Lets say you want to
+create a markdown file (extension `.md`) for a couple of lessons. One way to do
+this would be to run the commands one-by-one:
+
+```sh
+touch lessons/cli_intro.md
+touch lessons/git_intro.md
+touch lessons/html.md
+touch lessons/css.md
+```
+
+That would absolutely work, but you could make do it in one command:
+
+```sh
+touch lessons/cli_intro.md lessons/git_intro.md lessons/html.md lessons/css.md
+```
+
+That would also work, but we can make it a more succinct command by using
+substitution:
+
+```sh
+touch lessons/{cli_intro,git_intro,html,css}.md
+```
+
+The above command will create the same set of files, but in one short command.
+It also works with directories! The list of file or directories must be
+separated by commas with _no spaces_.
+
+## Getting Help
+
+There are three general ways to get help with a command.
+
+- Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
+- Use the manual or `man` - tool (e.g., `man brew`). For a really fun time look
+  up the manual for man (`man man`).
+- Google!
+
+> The `man` command will display the man pages using a program `less`. Use the
+> arrow keys or mouse to navigate. Type `q` to quit. Use `/` to search and `n`
+> and `p` to go to the next or previous search result
+
 ### Command Syntax
 
 Commands generally consist of three parts
@@ -367,48 +423,7 @@ hitting enter.
 
 Some commands may provide both an output and side effects.
 
-#### You do: Create SEI Environment (5 minutes)
 
-To get your hands dirty, use the commands above to build out the following
-folders and files. This will be where you store all your work from SEI.
-
-```sh
-sei
-  ├── homework
-  ├── labs
-  ├── lessons
-  │   └── cli_intro.md
-  ├── projects
-  └── sandbox
-```
-
-**Pro Tip:** Use brackets to substitute paths together. Lets say you want to
-create a markdown file (extension `.md`) for a couple of lessons. One way to do
-this would be to run the commands one-by-one:
-
-```sh
-touch lessons/cli_intro.md
-touch lessons/git_intro.md
-touch lessons/html.md
-touch lessons/css.md
-```
-
-That would absolutely work, but you could make do it in one command:
-
-```sh
-touch lessons/cli_intro.md lessons/git_intro.md lessons/html.md lessons/css.md
-```
-
-That would also work, but we can make it a more succinct command by using
-substitution:
-
-```sh
-touch lessons/{cli_intro,git_intro,html,css}.md
-```
-
-The above command will create the same set of files, but in one short command.
-It also works with directories! The list of file or directories must be
-separated by commas with _no spaces_.
 
 ### Exercise: Command-Option-Argument patterns
 
@@ -434,18 +449,7 @@ What we want to install is `tree`.
 - `$ brew install git`
 - `$ mkdir -p lessons/sandbox`
 
-## Getting Help
 
-There are three general ways to get help with a command.
-
-- Add `--help` or `-h` to the end of the command (e.g., `brew --help`).
-- Use the manual or `man` - tool (e.g., `man brew`). For a really fun time look
-  up the manual for man (`man man`).
-- Google!
-
-> The `man` command will display the man pages using a program `less`. Use the
-> arrow keys or mouse to navigate. Type `q` to quit. Use `/` to search and `n`
-> and `p` to go to the next or previous search result
 
 ## Unsafe Commands
 
